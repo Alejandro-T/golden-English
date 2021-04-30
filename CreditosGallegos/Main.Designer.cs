@@ -32,9 +32,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.buttonEqDepor = new System.Windows.Forms.Button();
-            this.buttonDepartamentos = new System.Windows.Forms.Button();
-            this.buttonEntrenador = new System.Windows.Forms.Button();
+            this.buttonUser = new System.Windows.Forms.Button();
+            this.buttonNiveles = new System.Windows.Forms.Button();
+            this.buttonLecciones = new System.Windows.Forms.Button();
             this.buttonAlumnos = new System.Windows.Forms.Button();
             this.buttonSalones = new System.Windows.Forms.Button();
             this.buttonReportes = new System.Windows.Forms.Button();
@@ -57,9 +57,9 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(152)))), ((int)(((byte)(17)))));
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.buttonEqDepor);
-            this.panel1.Controls.Add(this.buttonDepartamentos);
-            this.panel1.Controls.Add(this.buttonEntrenador);
+            this.panel1.Controls.Add(this.buttonUser);
+            this.panel1.Controls.Add(this.buttonNiveles);
+            this.panel1.Controls.Add(this.buttonLecciones);
             this.panel1.Controls.Add(this.buttonAlumnos);
             this.panel1.Controls.Add(this.buttonSalones);
             this.panel1.Controls.Add(this.buttonReportes);
@@ -86,50 +86,50 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.DoubleClick += new System.EventHandler(this.pictureBox2_DoubleClick);
             // 
-            // buttonEqDepor
+            // buttonUser
             // 
-            this.buttonEqDepor.BackColor = System.Drawing.Color.Transparent;
-            this.buttonEqDepor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonEqDepor.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEqDepor.ForeColor = System.Drawing.Color.White;
-            this.buttonEqDepor.Location = new System.Drawing.Point(0, 382);
-            this.buttonEqDepor.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonEqDepor.Name = "buttonEqDepor";
-            this.buttonEqDepor.Size = new System.Drawing.Size(196, 60);
-            this.buttonEqDepor.TabIndex = 6;
-            this.buttonEqDepor.Text = "Usuarios";
-            this.buttonEqDepor.UseVisualStyleBackColor = false;
-            this.buttonEqDepor.Click += new System.EventHandler(this.buttonEqDepor_Click);
+            this.buttonUser.BackColor = System.Drawing.Color.Transparent;
+            this.buttonUser.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUser.ForeColor = System.Drawing.Color.White;
+            this.buttonUser.Location = new System.Drawing.Point(0, 382);
+            this.buttonUser.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonUser.Name = "buttonUser";
+            this.buttonUser.Size = new System.Drawing.Size(196, 60);
+            this.buttonUser.TabIndex = 6;
+            this.buttonUser.Text = "Usuarios";
+            this.buttonUser.UseVisualStyleBackColor = false;
+            this.buttonUser.Click += new System.EventHandler(this.buttonUser_Click);
             // 
-            // buttonDepartamentos
+            // buttonNiveles
             // 
-            this.buttonDepartamentos.BackColor = System.Drawing.Color.Transparent;
-            this.buttonDepartamentos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonDepartamentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDepartamentos.ForeColor = System.Drawing.Color.White;
-            this.buttonDepartamentos.Location = new System.Drawing.Point(0, 321);
-            this.buttonDepartamentos.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonDepartamentos.Name = "buttonDepartamentos";
-            this.buttonDepartamentos.Size = new System.Drawing.Size(196, 60);
-            this.buttonDepartamentos.TabIndex = 5;
-            this.buttonDepartamentos.Text = "Niveles";
-            this.buttonDepartamentos.UseVisualStyleBackColor = false;
-            this.buttonDepartamentos.Click += new System.EventHandler(this.buttonDepartamentos_Click);
+            this.buttonNiveles.BackColor = System.Drawing.Color.Transparent;
+            this.buttonNiveles.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonNiveles.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonNiveles.ForeColor = System.Drawing.Color.White;
+            this.buttonNiveles.Location = new System.Drawing.Point(0, 321);
+            this.buttonNiveles.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonNiveles.Name = "buttonNiveles";
+            this.buttonNiveles.Size = new System.Drawing.Size(196, 60);
+            this.buttonNiveles.TabIndex = 5;
+            this.buttonNiveles.Text = "Niveles";
+            this.buttonNiveles.UseVisualStyleBackColor = false;
+            this.buttonNiveles.Click += new System.EventHandler(this.buttonNiveles_Click);
             // 
-            // buttonEntrenador
+            // buttonLecciones
             // 
-            this.buttonEntrenador.BackColor = System.Drawing.Color.Transparent;
-            this.buttonEntrenador.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonEntrenador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEntrenador.ForeColor = System.Drawing.Color.White;
-            this.buttonEntrenador.Location = new System.Drawing.Point(0, 260);
-            this.buttonEntrenador.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonEntrenador.Name = "buttonEntrenador";
-            this.buttonEntrenador.Size = new System.Drawing.Size(196, 60);
-            this.buttonEntrenador.TabIndex = 4;
-            this.buttonEntrenador.Text = "Lecciones";
-            this.buttonEntrenador.UseVisualStyleBackColor = false;
-            this.buttonEntrenador.Click += new System.EventHandler(this.buttonEntrenador_Click);
+            this.buttonLecciones.BackColor = System.Drawing.Color.Transparent;
+            this.buttonLecciones.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonLecciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLecciones.ForeColor = System.Drawing.Color.White;
+            this.buttonLecciones.Location = new System.Drawing.Point(0, 260);
+            this.buttonLecciones.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonLecciones.Name = "buttonLecciones";
+            this.buttonLecciones.Size = new System.Drawing.Size(196, 60);
+            this.buttonLecciones.TabIndex = 4;
+            this.buttonLecciones.Text = "Lecciones";
+            this.buttonLecciones.UseVisualStyleBackColor = false;
+            this.buttonLecciones.Click += new System.EventHandler(this.buttonLecciones_Click);
             // 
             // buttonAlumnos
             // 
@@ -266,9 +266,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonReportes;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonEqDepor;
-        private System.Windows.Forms.Button buttonDepartamentos;
-        private System.Windows.Forms.Button buttonEntrenador;
+        private System.Windows.Forms.Button buttonUser;
+        private System.Windows.Forms.Button buttonNiveles;
+        private System.Windows.Forms.Button buttonLecciones;
         private System.Windows.Forms.Button buttonAlumnos;
         private System.Windows.Forms.Button buttonSalones;
         private System.Windows.Forms.Label label1;

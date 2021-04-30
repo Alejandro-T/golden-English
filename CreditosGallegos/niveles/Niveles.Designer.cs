@@ -30,13 +30,13 @@ namespace GoldenE.niveles
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.buttonActu = new System.Windows.Forms.Button();
             this.buttonAgre = new System.Windows.Forms.Button();
@@ -57,23 +57,6 @@ namespace GoldenE.niveles
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(840, 41);
             this.panel1.TabIndex = 30;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Niveles";
-            // 
-            // panelContenedor
-            // 
-            this.panelContenedor.Location = new System.Drawing.Point(12, 118);
-            this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(761, 400);
-            this.panelContenedor.TabIndex = 31;
             // 
             // panel2
             // 
@@ -136,6 +119,23 @@ namespace GoldenE.niveles
             this.label2.TabIndex = 0;
             this.label2.Text = "Borrar Generos";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Niveles";
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.Location = new System.Drawing.Point(12, 118);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(761, 400);
+            this.panelContenedor.TabIndex = 31;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(11)))), ((int)(((byte)(29)))));
@@ -188,6 +188,7 @@ namespace GoldenE.niveles
             this.buttonSelec.TabIndex = 1;
             this.buttonSelec.Text = "Seleccionar";
             this.buttonSelec.UseVisualStyleBackColor = true;
+            this.buttonSelec.Click += new System.EventHandler(this.buttonSelec_Click);
             // 
             // label3
             // 

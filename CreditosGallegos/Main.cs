@@ -1,4 +1,5 @@
 ﻿using GoldenE.alumnos;
+using GoldenE.niveles;
 using GoldenE.usuarios;
 using System;
 using System.Collections.Generic;
@@ -21,10 +22,7 @@ namespace Ge
             InitializeComponent();
         }
 
-        private void aToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-        }
+        
         private void AbrirFormEnPanel(object Formhijo)
         {
             if (this.panel2.Controls.Count > 0)
@@ -59,10 +57,7 @@ namespace Ge
 
         }
 
-        private void buttonCarreras_Click(object sender, EventArgs e)
-        {
-          
-        }
+       
 
         private void buttonDepartamentos_Click(object sender, EventArgs e)
         {
@@ -106,31 +101,15 @@ namespace Ge
             bk.Show();
         }
 
-        private void buttonEntrenador_Click(object sender, EventArgs e)
-        {
-           
-        }
+        
 
         private void buttonAlumnos_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new Alumnos());
         }
 
-        private void buttonEqDepor_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(new Usuarios());
-        }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void buttonParticipa_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+       
         private void buttonSalones_Click(object sender, EventArgs e)
         {
 
@@ -142,6 +121,21 @@ namespace Ge
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNiveles_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Niveles());
+        }
+
+        private void buttonUser_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Usuarios());
+        }
+
+        private void buttonLecciones_Click(object sender, EventArgs e)
         {
 
         }
