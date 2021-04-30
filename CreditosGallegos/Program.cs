@@ -18,7 +18,7 @@ namespace Ge
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InsertaAlumno());
+            Application.Run(new Form1());
         }
     }
 }
