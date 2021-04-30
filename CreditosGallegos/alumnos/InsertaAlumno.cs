@@ -50,7 +50,10 @@ namespace GoldenE.alumnos
             try
             {
                //correcciones
+<<<<<<< HEAD
                
+=======
+>>>>>>> alejandro
 
                 OracleCommand comandoinse = new OracleCommand("insertar_alumno", Conexion.conectar());
                 comandoinse.CommandType = CommandType.StoredProcedure;
