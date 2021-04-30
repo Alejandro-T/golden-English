@@ -1,4 +1,5 @@
-﻿using Oracle.DataAccess.Client;
+﻿using GoldenE;
+using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,8 +65,8 @@ namespace Ge
         public byte intento = 0;
         private void button1_Click(object sender, EventArgs e)
         {
-            
-            string comp = " select tipo_usuario_id_tipo_usuario from usuarios where id_usuario ='" + this.textBoxUser.Text + "'and contrasena='"+this.textBoxPassword.Text +"'";
+            string hash = Helper.EncodePassword(string.Concat(this.textBoxUser.Text, this.textBoxPassword.Text));
+            string comp = " select tipo_usuario_id_tipo_usuario from usuarios where id_usuario ='" + this.textBoxUser.Text + "'and contrasena='"+ hash + "'";
             OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
             OracleDataReader dre = cpe.ExecuteReader();
             if (dre.Read())

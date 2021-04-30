@@ -217,7 +217,8 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(138, -2);
+            this.pictureBox1.Image = global::GoldenE.Properties.Resources.icons8_close_window_96px_1;
+            this.pictureBox1.Location = new System.Drawing.Point(130, -1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(30, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
