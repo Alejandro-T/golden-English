@@ -49,7 +49,7 @@ namespace GoldenE.alumnos
         {
             try
             {
-               
+               //correccion
                
 
                 OracleCommand comandoinse = new OracleCommand("insertar_alumno", Conexion.conectar());
