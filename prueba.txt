@@ -1,0 +1,5 @@
+insert into alumnos( RFC_ALUMNO, SEXO_ID_SEXO,NOMBRE,PATERNO,MATERNO,FECHA_NACIMIENTO,TELEFONO,DIRECCION) values('ADAS',1,'S','SA','SDA','07-01-1999','FF','54')
+
+insert into tipo_usuario values(1,'administrador');
+insert into sexo values(1,'masculino');
+insert into usuarios values(1,1,1,'pablo','hernandez','perez','03-05-1976','8442212735','Valle de las flores','yK4rIB@hU!');

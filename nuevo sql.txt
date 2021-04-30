@@ -1,0 +1,164 @@
+CREATE TABLE tipo_usuario (
+  id_tipo_usuario NUMBER(1) NOT NULL,
+  descripcion VARCHAR2(15) NOT NULL,
+  PRIMARY KEY(id_tipo_usuario)
+);
+
+CREATE TABLE sexo (
+  id_sexo NUMBER(1) NOT NULL,
+  descripcion VARCHAR2(15) NULL,
+  PRIMARY KEY(id_sexo)
+);
+
+CREATE TABLE alumnos (
+  id_alumno NUMBER(5) NOT NULL,
+  rfc_alumno varchar2(40) not null,
+  sexo_id_sexo NUMBER(1) NOT NULL,
+  nombre VARCHAR2(15) not NULL,
+  paterno VARCHAR2(15) not NULL,
+  materno VARCHAR2(15) not NULL,
+  fecha_nacimiento DATE not NULL,
+  telefono VARCHAR2(15) not NULL,
+  direccion VARCHAR2(50) not NULL,
+  PRIMARY KEY(id_alumno,rfc_alumno),
+  constraint fk_alu_sexo foreign key(sexo_id_sexo)references sexo(id_sexo)
+);
+
+CREATE TABLE usuarios (
+  id_usuario NUMBER(5) NOT NULL,
+  tipo_usuario_id_tipo_usuario NUMBER(1) NOT NULL,
+  sexo_id_sexo NUMBER(1) NOT NULL,
+  nombre VARCHAR2(15) NOT NULL,
+  paterno VARCHAR2(15) NOT NULL,
+  materno VARCHAR2(15) NOT NULL,
+  fecha_nacimiento DATE NOT NULL,
+  telefono VARCHAR2(15) NOT NULL,
+  direccion VARCHAR2(50) NOT NULL,
+  contrasena VARCHAR2(30) NOT NULL,
+  PRIMARY KEY(id_usuario),
+  constraint fk_user_sexo foreign key(sexo_id_sexo)references sexo(id_sexo),
+  constraint fk_user_tuser foreign key(tipo_usuario_id_tipo_usuario)references tipo_usuario(id_tipo_usuario)
+);
+
+CREATE TABLE salones (
+  id_salon NUMBER(2) NOT NULL,
+  descripcion VARCHAR2(15) NOT NULL,
+  PRIMARY KEY(id_salon)
+);
+
+CREATE TABLE niveles (
+  id_nivel NUMBER(2) NOT NULL,
+  descripcion VARCHAR2(15) NOT NULL,
+  PRIMARY KEY(id_nivel)
+);
+
+CREATE TABLE lecciones (
+  id_leccion NUMBER(2) NOT NULL,
+  niveles_id_nivel NUMBER(2) NOT NULL,
+  descripcion VARCHAR2(30) NULL,
+  PRIMARY KEY(id_leccion),
+  constraint fk_niveles_lecc foreign key(niveles_id_nivel)references niveles(id_nivel)
+);
+
+CREATE TABLE tipo_clase (
+  id_clase NUMBER(1) NOT NULL,
+  descripcion VARCHAR2(20) NOT NULL,
+  PRIMARY KEY(id_clase)
+);
+
+CREATE TABLE calificaciones (
+  id_calificacion NUMBER(5) NOT NULL,
+  tipo_clase_id_clase NUMBER(1) NOT NULL,
+  lecciones_id_leccion NUMBER(2) NOT NULL,
+  alumnos_id_alumno NUMBER(5) NOT NULL,
+  usuarios_id_maestro NUMBER(5) NOT NULL,
+  calificacion NUMBER(1) NOT NULL,
+  PRIMARY KEY(id_calificacion),
+  constraint fk_califi_tipo_clase foreign key(tipo_clase_id_clase)references tipo_clase(id_clase),
+  constraint fk_califi_leccion foreign key(lecciones_id_leccion)references lecciones(id_leccion),
+  constraint fk_califi_alumno foreign key(alumnos_id_alumno)references alumnos(id_alumno),
+  constraint fk_califi_user foreign key(usuarios_id_maestro)references usuarios(id_usuario)
+);
+
+CREATE TABLE horarios (
+  id_horario NUMERIC NOT NULL,
+  tipo_clase_id_clase NUMBER(1) NOT NULL,
+  lecciones_id_leccion NUMBER(2) NOT NULL,
+  usuarios_id_maestro NUMBER(5) NOT NULL,
+  alumnos_id_alumno NUMBER(5) NOT NULL,
+  salones_id_salon NUMBER(2) NOT NULL,
+  fecha DATE NOT NULL,
+  PRIMARY KEY(id_horario),
+  constraint fk_hoarario_tipo_clase foreign key(tipo_clase_id_clase)references tipo_clase(id_clase),
+  constraint fk_horario_leccion foreign key(lecciones_id_leccion)references lecciones(id_leccion),
+  constraint fk_horario_alumno foreign key(alumnos_id_alumno)references alumnos(id_alumno),
+  constraint fk_horario_user foreign key(usuarios_id_maestro)references usuarios(id_usuario)
+);
+
+CREATE SEQUENCE seq_user_id_user
+START WITH 1
+INCREMENT BY 1 
+NOMAXVALUE; 
+
+CREATE SEQUENCE seq_user_id_nivel START WITH 1
+ INCREMENT BY 1 
+NOMAXVALUE; 
+
+CREATE SEQUENCE seq_alum_id_alum START WITH 1 INCREMENT BY 1 NOMAXVALUE; 
+
+create or replace trigger alumno_triger_auto
+before insert on alumnos
+for each row
+begin
+select seq_alum_id_alum.nextval
+into:new.id_alumno
+from dual;
+end;
+
+create or replace trigger nivel_triger_auto
+before insert on niveles
+for each row
+begin
+select seq_user_id_nivel.nextval
+into:new.id_nivel
+from dual;
+end;
+
+create or replace procedure insertar_usuario
+(id_usuario numeric,usuario_id_tipo_usuario numeric,usuario_id_genero numeric,usuario_nombre varchar2,usuario_paterno varchar2,usuario_materno varchar2,usuario_fecha_na Date,usuario_telefono varchar2,usuario_direccion varchar2,usuario_contrasena varchar2)
+as
+begin
+      insert into usuarios(id_usuario,TIPO_USUARIO_ID_TIPO_USUARIO,SEXO_ID_SEXO,nombre,paterno,materno,FECHA_NACIMIENTO,telefono,direccion,contrasena) 
+      values(id_usuario,usuario_id_tipo_usuario,usuario_id_genero,lower(usuario_nombre),lower(usuario_paterno),lower(usuario_materno),usuario_fecha_na,usuario_telefono,usuario_direccion,usuario_contrasena);
+end insertar_usuario;
+/
+
+create or replace procedure insertar_alumno
+(alumno_rfc varchar2,alumno_sexo numeric,alumno_nombre varchar2,alumno_paterno varchar2,alumno_materno varchar2,alumno_fecha_na Date,alumno_telefono varchar2,alumno_direccion varchar2)
+as
+begin
+      insert into alumnos(RFC_ALUMNO,SEXO_ID_SEXO,NOMBRE,PATERNO,MATERNO,FECHA_NACIMIENTO,TELEFONO,DIRECCION) 
+      values(alumno_rfc,alumno_sexo,lower(alumno_nombre),lower(alumno_paterno),lower(alumno_materno),alumno_fecha_na,alumno_telefono,alumno_direccion);
+end insertar_alumno;
+/
+
+create or replace procedure insertar_nivel
+(nivel_descripcion varchar2)
+as
+begin
+      insert into niveles(descripcion) 
+      values(lower(nivel_descripcion));
+end insertar_nivel;
+/
+
+
+
+
+
+CREATE OR REPLACE PROCEDURE  ACTUALIZAUSUARIOS (id_usuario_in numeric,usuario_id_tipo_usuario numeric,usuario_id_genero numeric,NOMBREIN varchar2,PATERNOIN varchar2,MATERNOIN varchar2,usuario_fecha_na Date,usuario_telefono varchar2,usuario_direccion varchar2,usuario_contrasena varchar2)
+as
+begin
+update USUARIOS set TIPO_USUARIO_ID_TIPO_USUARIO = usuario_id_tipo_usuario,SEXO_ID_SEXO = usuario_id_genero,nombre = lower(nombrein),paterno=lower(PATERNOIN),MATERNO=lower(MATERNOIN),FECHA_NACIMIENTO = usuario_fecha_na, telefono = usuario_telefono, direccion = usuario_direccion, contrasena = usuario_contrasena
+where(ID_USUARIO)=id_usuario_in;
+end ACTUALIZAUSUARIOS;
+/
