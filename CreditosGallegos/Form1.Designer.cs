@@ -56,11 +56,10 @@
             this.panel1.Controls.Add(this.textBoxUser);
             this.panel1.Controls.Add(this.shapeContainer2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 295);
+            this.panel1.Location = new System.Drawing.Point(0, 273);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 255);
+            this.panel1.Size = new System.Drawing.Size(400, 277);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // buttonIngresa
             // 
@@ -76,7 +75,7 @@
             this.buttonIngresa.TabIndex = 5;
             this.buttonIngresa.Text = "Entrar";
             this.buttonIngresa.UseVisualStyleBackColor = false;
-            this.buttonIngresa.Click += new System.EventHandler(this.button1_Click);
+            this.buttonIngresa.Click += new System.EventHandler(this.Button1_Click);
             // 
             // textBoxPassword
             // 
@@ -88,7 +87,6 @@
             this.textBoxPassword.Size = new System.Drawing.Size(100, 13);
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.Click += new System.EventHandler(this.textBox2_Click);
-            this.textBoxPassword.TextChanged += new System.EventHandler(this.textBoxPassword_TextChanged);
             // 
             // textBoxUser
             // 
@@ -98,7 +96,7 @@
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(100, 13);
             this.textBoxUser.TabIndex = 2;
-            this.textBoxUser.Click += new System.EventHandler(this.textBox1_Click);
+            this.textBoxUser.Click += new System.EventHandler(this.TextBox1_Click);
             // 
             // shapeContainer2
             // 
@@ -110,7 +108,7 @@
             this.ovalShape3,
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(400, 255);
+            this.shapeContainer2.Size = new System.Drawing.Size(400, 277);
             this.shapeContainer2.TabIndex = 4;
             this.shapeContainer2.TabStop = false;
             // 
@@ -162,7 +160,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(400, 270);
             this.panel2.TabIndex = 1;
-            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
             // panel3
             // 
@@ -173,7 +170,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(400, 51);
             this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
             // 
             // linkLabel1
             // 
@@ -187,7 +184,7 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "X";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-            this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
+            this.linkLabel1.Click += new System.EventHandler(this.LinkLabel1_Click);
             // 
             // shapeContainer1
             // 
@@ -203,14 +200,14 @@
             // ovalShape1
             // 
             this.ovalShape1.BackColor = System.Drawing.Color.Transparent;
-            
+            this.ovalShape1.BackgroundImage = global::GoldenE.Properties.Resources.logo1;
             this.ovalShape1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ovalShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalShape1.BorderColor = System.Drawing.Color.Transparent;
             this.ovalShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             this.ovalShape1.FillColor = System.Drawing.Color.Transparent;
             this.ovalShape1.FillGradientColor = System.Drawing.Color.Transparent;
-            this.ovalShape1.Location = new System.Drawing.Point(106, 100);
+            this.ovalShape1.Location = new System.Drawing.Point(112, 98);
             this.ovalShape1.Name = "ovalShape1";
             this.ovalShape1.Size = new System.Drawing.Size(205, 210);
             // 

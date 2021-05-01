@@ -151,6 +151,14 @@ begin
 end insertar_nivel;
 /
 
+create or replace procedure insertar_salon
+(salon_id numeric,salon_descripcion varchar2)
+as
+begin
+      insert into salones(id_salon,descripcion) 
+      values(salon_id,lower(salon_descripcion));
+end insertar_salon;
+/
 
 
 

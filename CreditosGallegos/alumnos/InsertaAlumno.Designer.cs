@@ -34,6 +34,10 @@ namespace GoldenE.alumnos
             this.textBoxTelefono = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxRfc = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBoxKardex = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,10 +50,6 @@ namespace GoldenE.alumnos
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.comboBoxGenero = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxKardex = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBoxRfc = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,14 +77,14 @@ namespace GoldenE.alumnos
             this.textBoxTelefono.Location = new System.Drawing.Point(116, 287);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(100, 13);
-            this.textBoxTelefono.TabIndex = 12;
+            this.textBoxTelefono.TabIndex = 8;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(367, 360);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
+            this.button1.TabIndex = 10;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -118,13 +118,48 @@ namespace GoldenE.alumnos
             this.groupBox1.Text = "Datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(48, 311);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(24, 13);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Rfc";
+            // 
+            // textBoxRfc
+            // 
+            this.textBoxRfc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxRfc.Location = new System.Drawing.Point(116, 311);
+            this.textBoxRfc.Name = "textBoxRfc";
+            this.textBoxRfc.Size = new System.Drawing.Size(100, 13);
+            this.textBoxRfc.TabIndex = 9;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(48, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Kardex";
+            // 
+            // textBoxKardex
+            // 
+            this.textBoxKardex.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxKardex.Enabled = false;
+            this.textBoxKardex.Location = new System.Drawing.Point(116, 19);
+            this.textBoxKardex.Name = "textBoxKardex";
+            this.textBoxKardex.Size = new System.Drawing.Size(100, 13);
+            this.textBoxKardex.TabIndex = 1;
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(116, 255);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 17;
+            this.dateTimePicker1.TabIndex = 7;
             this.dateTimePicker1.Value = new System.DateTime(2020, 12, 9, 0, 0, 0, 0);
             // 
             // label8
@@ -161,7 +196,7 @@ namespace GoldenE.alumnos
             this.textBoxDireccion.Location = new System.Drawing.Point(116, 210);
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(100, 13);
-            this.textBoxDireccion.TabIndex = 13;
+            this.textBoxDireccion.TabIndex = 6;
             // 
             // textBoxMaterno
             // 
@@ -169,7 +204,7 @@ namespace GoldenE.alumnos
             this.textBoxMaterno.Location = new System.Drawing.Point(116, 126);
             this.textBoxMaterno.Name = "textBoxMaterno";
             this.textBoxMaterno.Size = new System.Drawing.Size(100, 13);
-            this.textBoxMaterno.TabIndex = 3;
+            this.textBoxMaterno.TabIndex = 4;
             // 
             // label6
             // 
@@ -186,7 +221,7 @@ namespace GoldenE.alumnos
             this.textBoxPaterno.Location = new System.Drawing.Point(116, 89);
             this.textBoxPaterno.Name = "textBoxPaterno";
             this.textBoxPaterno.Size = new System.Drawing.Size(100, 13);
-            this.textBoxPaterno.TabIndex = 2;
+            this.textBoxPaterno.TabIndex = 3;
             // 
             // label5
             // 
@@ -212,7 +247,7 @@ namespace GoldenE.alumnos
             this.textBoxName.Location = new System.Drawing.Point(116, 49);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(100, 13);
-            this.textBoxName.TabIndex = 1;
+            this.textBoxName.TabIndex = 2;
             // 
             // comboBoxGenero
             // 
@@ -221,42 +256,7 @@ namespace GoldenE.alumnos
             this.comboBoxGenero.Location = new System.Drawing.Point(116, 159);
             this.comboBoxGenero.Name = "comboBoxGenero";
             this.comboBoxGenero.Size = new System.Drawing.Size(100, 21);
-            this.comboBoxGenero.TabIndex = 4;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 19);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(40, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Kardex";
-            // 
-            // textBoxKardex
-            // 
-            this.textBoxKardex.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxKardex.Enabled = false;
-            this.textBoxKardex.Location = new System.Drawing.Point(116, 19);
-            this.textBoxKardex.Name = "textBoxKardex";
-            this.textBoxKardex.Size = new System.Drawing.Size(100, 13);
-            this.textBoxKardex.TabIndex = 18;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(48, 311);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(24, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Rfc";
-            // 
-            // textBoxRfc
-            // 
-            this.textBoxRfc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxRfc.Location = new System.Drawing.Point(116, 311);
-            this.textBoxRfc.Name = "textBoxRfc";
-            this.textBoxRfc.Size = new System.Drawing.Size(100, 13);
-            this.textBoxRfc.TabIndex = 21;
+            this.comboBoxGenero.TabIndex = 5;
             // 
             // InsertaAlumno
             // 

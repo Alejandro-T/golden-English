@@ -38,18 +38,11 @@ namespace GoldenE.niveles
             }
             catch (OracleException ex)
             {
-                switch (ex.Number)
-                {
-                    case 1722:
-                        MessageBox.Show("Numero invalido(FormatException)--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                    case 2292:
-                        MessageBox.Show("No se puede eliminar el dato, porque existe una tabla hijo con ese dato", "Aviso", MessageBoxButtons.OK);
-                        break;
-                    default:
-                        MessageBox.Show("Formato invalido--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                }
+                ManejoErrores.erroresOracle(ex);
+            }
+            catch (System.FormatException exe)
+            {
+                ManejoErrores.erroresSystem(exe);
             }
         }
 
