@@ -25,6 +25,7 @@ namespace GoldenE.alumnos
             {
                 OracleCommand act = new OracleCommand("ACTUALIZAUSUARIOS", Conexion.conectar());
                 act.CommandType = System.Data.CommandType.StoredProcedure;
+                string password = Helper.EncodePassword(string.Concat(textBoxSidUsuario.Text, this.textBoxAcontraseña.Text));
 
                 act.Parameters.Add("id_usuario_in", OracleDbType.Int16).Value = textBoxSidUsuario.Text;
                 act.Parameters.Add("usuario_id_genero", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxGeneros.SelectedValue);
@@ -48,7 +49,7 @@ namespace GoldenE.alumnos
                 act.Parameters.Add("usuario_fecha_na", OracleDbType.Varchar2).Value = dateTimePicker1.Text;
                 act.Parameters.Add("usuario_telefono", OracleDbType.Varchar2).Value = textBoxAtelefono.Text;
                 act.Parameters.Add("usuario_direccion", OracleDbType.Varchar2).Value = textBoxAdireccion.Text;
-                act.Parameters.Add("usuario_contrasena", OracleDbType.Varchar2).Value = textBoxAcontraseña.Text;
+                act.Parameters.Add("usuario_contrasena", OracleDbType.Varchar2).Value = password;
 
 
                 //

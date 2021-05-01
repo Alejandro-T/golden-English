@@ -57,6 +57,8 @@ namespace GoldenE.alumnos
                 OracleCommand comandoinse = new OracleCommand("insertar_usuario", Conexion.conectar());
                 comandoinse.CommandType = CommandType.StoredProcedure;
 
+                string password = Helper.EncodePassword(string.Concat(publicas.id_usuario, this.textBoxContrasena.Text));
+
                 comandoinse.Parameters.Add("@id_usuario", OracleDbType.Int32).Value = publicas.id_usuario.ToString();
                 if(this.radioButtonGerente.Checked == true)
                 {
@@ -72,14 +74,14 @@ namespace GoldenE.alumnos
                 {
                     MessageBox.Show("Seleccion tipo de usuario!!", "aviso", MessageBoxButtons.OK);
                 }
-            comandoinse.Parameters.Add("@SEXO_ID_SEXO", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxGenero.SelectedValue);
+                comandoinse.Parameters.Add("@SEXO_ID_SEXO", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxGenero.SelectedValue);
                 comandoinse.Parameters.Add("@nombre", OracleDbType.Varchar2).Value = this.textBoxName.Text;
                 comandoinse.Parameters.Add("@paterno", OracleDbType.Varchar2).Value = this.textBoxPaterno.Text;
                 comandoinse.Parameters.Add("@materno", OracleDbType.Varchar2).Value = this.textBoxMaterno.Text;
                 comandoinse.Parameters.Add("@FECHA_NACIMIENTO", OracleDbType.Varchar2).Value = this.dateTimePicker1.Text;
                 comandoinse.Parameters.Add("@direccion", OracleDbType.Varchar2).Value = this.textBoxDireccion.Text;
                 comandoinse.Parameters.Add("@telefono", OracleDbType.Varchar2).Value = this.textBoxTelefono.Text;
-                comandoinse.Parameters.Add("@contrasena", OracleDbType.Varchar2).Value = this.textBoxContrasena.Text;
+                comandoinse.Parameters.Add("@contrasena", OracleDbType.Varchar2).Value = password;
 
                 comandoinse.ExecuteNonQuery();
                 MessageBox.Show("Agregando usuario con id "+ publicas.id_usuario.ToString(), "aviso", MessageBoxButtons.OK);

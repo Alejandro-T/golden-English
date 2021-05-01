@@ -78,7 +78,7 @@ namespace GoldenE.alumnos
             this.textBoxTelefono.Location = new System.Drawing.Point(116, 266);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(100, 13);
-            this.textBoxTelefono.TabIndex = 12;
+            this.textBoxTelefono.TabIndex = 7;
             // 
             // button1
             // 
@@ -160,7 +160,7 @@ namespace GoldenE.alumnos
             this.textBoxContrasena.Location = new System.Drawing.Point(116, 301);
             this.textBoxContrasena.Name = "textBoxContrasena";
             this.textBoxContrasena.Size = new System.Drawing.Size(100, 13);
-            this.textBoxContrasena.TabIndex = 19;
+            this.textBoxContrasena.TabIndex = 8;
             // 
             // labelContrasena
             // 
@@ -177,7 +177,7 @@ namespace GoldenE.alumnos
             this.dateTimePicker1.Location = new System.Drawing.Point(116, 234);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 17;
+            this.dateTimePicker1.TabIndex = 6;
             this.dateTimePicker1.Value = new System.DateTime(2020, 12, 9, 0, 0, 0, 0);
             // 
             // label8
@@ -214,7 +214,7 @@ namespace GoldenE.alumnos
             this.textBoxDireccion.Location = new System.Drawing.Point(116, 189);
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(100, 13);
-            this.textBoxDireccion.TabIndex = 13;
+            this.textBoxDireccion.TabIndex = 5;
             // 
             // textBoxMaterno
             // 

@@ -125,6 +125,7 @@
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManejoErrores.cs" />
     <Compile Include="niveles\InsertarNivel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +152,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="publicas.cs" />
+    <Compile Include="salones\InsertarSalones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salones\InsertarSalones.Designer.cs">
+      <DependentUpon>InsertarSalones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salones\Salones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salones\Salones.Designer.cs">
+      <DependentUpon>Salones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="usuarios\ActualizarUsuarios.cs">
       <SubType>Form</SubType>
@@ -210,6 +223,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salones\InsertarSalones.resx">
+      <DependentUpon>InsertarSalones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usuarios\ActualizarUsuarios.resx">
       <DependentUpon>ActualizarUsuarios.cs</DependentUpon>

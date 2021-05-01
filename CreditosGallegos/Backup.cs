@@ -29,7 +29,7 @@ namespace Ge
                 string backupFileName = textBox1.Text + ".dmp";
                 //your ORACLE_HOME enviroment variable must be setted or you need to set the path here:
                 string oracleHome = Environment.GetEnvironmentVariable(@"C:\oraclexe\app\oracle\product\11.2.0\server");
-                string oracleUser = "gallegos";
+                string oracleUser = "golden";
                 string oraclePassword = "patito";
                 string oracleSID = "xe";
                 //###

@@ -1,7 +1,7 @@
 ﻿
-namespace GoldenE.niveles
+namespace GoldenE.salones
 {
-    partial class InsertarNivel
+    partial class InsertarSalones
     {
         /// <summary>
         /// Required designer variable.
@@ -33,18 +33,18 @@ namespace GoldenE.niveles
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxNombreNivel = new System.Windows.Forms.TextBox();
+            this.textBoxNombreSalon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxNivel = new System.Windows.Forms.TextBox();
+            this.textBoxSalon = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(346, 330);
+            this.button1.Location = new System.Drawing.Point(365, 341);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
+            this.button1.TabIndex = 20;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -53,13 +53,13 @@ namespace GoldenE.niveles
             // 
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBoxNombreNivel);
+            this.groupBox1.Controls.Add(this.textBoxNombreSalon);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBoxNivel);
-            this.groupBox1.Location = new System.Drawing.Point(230, 76);
+            this.groupBox1.Controls.Add(this.textBoxSalon);
+            this.groupBox1.Location = new System.Drawing.Point(249, 87);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(302, 220);
-            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
@@ -70,7 +70,7 @@ namespace GoldenE.niveles
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 11;
-            this.label1.Text = " del nivel";
+            this.label1.Text = "del salon";
             // 
             // label6
             // 
@@ -81,42 +81,40 @@ namespace GoldenE.niveles
             this.label6.TabIndex = 10;
             this.label6.Text = "Nombre";
             // 
-            // textBoxNombreNivel
+            // textBoxNombreSalon
             // 
-            this.textBoxNombreNivel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNombreNivel.Location = new System.Drawing.Point(116, 128);
-            this.textBoxNombreNivel.Name = "textBoxNombreNivel";
-            this.textBoxNombreNivel.Size = new System.Drawing.Size(100, 13);
-            this.textBoxNombreNivel.TabIndex = 2;
+            this.textBoxNombreSalon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNombreSalon.Location = new System.Drawing.Point(116, 128);
+            this.textBoxNombreSalon.Name = "textBoxNombreSalon";
+            this.textBoxNombreSalon.Size = new System.Drawing.Size(100, 13);
+            this.textBoxNombreSalon.TabIndex = 2;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(48, 49);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(31, 13);
+            this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 8;
-            this.label5.Text = "Nivel";
+            this.label5.Text = "Id_salon";
             // 
-            // textBoxNivel
+            // textBoxSalon
             // 
-            this.textBoxNivel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNivel.Enabled = false;
-            this.textBoxNivel.Location = new System.Drawing.Point(116, 49);
-            this.textBoxNivel.Name = "textBoxNivel";
-            this.textBoxNivel.Size = new System.Drawing.Size(100, 13);
-            this.textBoxNivel.TabIndex = 1;
+            this.textBoxSalon.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSalon.Location = new System.Drawing.Point(116, 49);
+            this.textBoxSalon.Name = "textBoxSalon";
+            this.textBoxSalon.Size = new System.Drawing.Size(100, 13);
+            this.textBoxSalon.TabIndex = 1;
             // 
-            // InsertarNivel
+            // InsertarSalones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "InsertarNivel";
-            this.Text = "InsertarNivel";
-            this.Load += new System.EventHandler(this.InsertarNivel_Load);
+            this.Name = "InsertarSalones";
+            this.Text = "InsertarSalones";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -127,10 +125,10 @@ namespace GoldenE.niveles
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxNombreNivel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxNombreSalon;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxNivel;
+        private System.Windows.Forms.TextBox textBoxSalon;
     }
 }

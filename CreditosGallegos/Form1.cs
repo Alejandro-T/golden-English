@@ -1,4 +1,5 @@
-﻿using Oracle.DataAccess.Client;
+﻿using GoldenE;
+using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,7 +38,7 @@ namespace Ge
             
         }
 
-        private void textBox1_Click(object sender, EventArgs e)
+        private void TextBox1_Click(object sender, EventArgs e)
         {
            
         }
@@ -46,54 +47,52 @@ namespace Ge
         {
             
         }
-        int posx = 0;
-        int posy = 0;
-        private void panel2_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (e.Button != MouseButtons.Left)
-            {
-                posx = e.X;
-                posy = e.Y;
-            }
-            else
-            {
-                Left = Left + (e.X - posx);
-                Top = Top + (e.Y - posy);
-            }
-        }
+       
         public byte intento = 0;
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            
-            string comp = " select tipo_usuario_id_tipo_usuario from usuarios where id_usuario ='" + this.textBoxUser.Text + "'and contrasena='"+this.textBoxPassword.Text +"'";
-            OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
-            OracleDataReader dre = cpe.ExecuteReader();
-            if (dre.Read())
+            try
             {
-                publicas.id_t_user = Convert.ToInt32(cpe.ExecuteScalar());
-
-                //Mostar menu      
-                
-                this.Hide();
-                InsertarCarreras m = new InsertarCarreras();
-                m.Show();
-               
-                MessageBox.Show("BIENVENIDO " + textBoxUser.Text, "aviso", MessageBoxButtons.OK);
-                
-            }
-            else
-            {
-                intento += 1;
-                if (intento == 3)
+                string hash = Helper.EncodePassword(string.Concat(this.textBoxUser.Text, this.textBoxPassword.Text));
+                string comp = " select tipo_usuario_id_tipo_usuario from usuarios where id_usuario ='" + this.textBoxUser.Text + "'and contrasena='" + hash + "'";
+                OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
+                OracleDataReader dre = cpe.ExecuteReader();
+                if (dre.Read())
                 {
-                    MessageBox.Show("Adios", "aviso", MessageBoxButtons.OK);
-                    Application.Exit();
+                    publicas.id_t_user = Convert.ToInt32(cpe.ExecuteScalar());
+
+                    //Mostar menu      
+
+                    this.Hide();
+                    InsertarCarreras m = new InsertarCarreras();
+                    m.Show();
+
+                    MessageBox.Show("BIENVENIDO " + textBoxUser.Text, "aviso", MessageBoxButtons.OK);
+
                 }
-                MessageBox.Show("Error no existe", "aviso", MessageBoxButtons.OK);
+                else
+                {
+                    intento += 1;
+                    if (intento == 3)
+                    {
+                        MessageBox.Show("Adios", "aviso", MessageBoxButtons.OK);
+                        Application.Exit();
+                    }
+                    MessageBox.Show("Error no existe", "aviso", MessageBoxButtons.OK);
+                }
             }
+            catch (OracleException ex)
+            {
+                ManejoErrores.erroresOracle(ex);
+            }
+            catch(FormatException exe)
+            {
+                ManejoErrores.erroresSystem(exe);
+            }
+            
         }
 
-        private void linkLabel1_Click(object sender, EventArgs e)
+        private void LinkLabel1_Click(object sender, EventArgs e)
         {
             DialogResult yes;
             yes = MessageBox.Show("¿Desea salir?","Aviso",MessageBoxButtons.YesNo);
@@ -108,16 +107,6 @@ namespace Ge
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBoxPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DialogResult yes;
@@ -127,10 +116,20 @@ namespace Ge
                 Application.Exit();
             }
         }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        int posx = 0;
+        int posy = 0;
+        private void panel3_MouseMove(object sender, MouseEventArgs e)
         {
-
+            if (e.Button != MouseButtons.Left)
+            {
+                posx = e.X;
+                posy = e.Y;
+            }
+            else
+            {
+                Left = Left + (e.X - posx);
+                Top = Top + (e.Y - posy);
+            }
         }
     }
 }

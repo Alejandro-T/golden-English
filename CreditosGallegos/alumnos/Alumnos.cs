@@ -41,5 +41,10 @@ namespace GoldenE.alumnos
         {
             AbrirFormEnPanel(new ActualizarAlumnos());
         }
+
+        private void Alumnos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
