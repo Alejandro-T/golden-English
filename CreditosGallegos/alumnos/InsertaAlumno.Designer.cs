@@ -56,7 +56,7 @@ namespace GoldenE.alumnos
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(48, 210);
+            this.label4.Location = new System.Drawing.Point(48, 214);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 10;
@@ -65,7 +65,7 @@ namespace GoldenE.alumnos
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 287);
+            this.label3.Location = new System.Drawing.Point(47, 293);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 9;
@@ -73,15 +73,15 @@ namespace GoldenE.alumnos
             // 
             // textBoxTelefono
             // 
-            this.textBoxTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxTelefono.Location = new System.Drawing.Point(116, 287);
+            this.textBoxTelefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxTelefono.Location = new System.Drawing.Point(116, 286);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(100, 13);
+            this.textBoxTelefono.Size = new System.Drawing.Size(100, 20);
             this.textBoxTelefono.TabIndex = 8;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(367, 360);
+            this.button1.Location = new System.Drawing.Point(367, 367);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 10;
@@ -112,7 +112,7 @@ namespace GoldenE.alumnos
             this.groupBox1.Controls.Add(this.comboBoxGenero);
             this.groupBox1.Location = new System.Drawing.Point(226, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(392, 333);
+            this.groupBox1.Size = new System.Drawing.Size(392, 345);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
@@ -121,7 +121,7 @@ namespace GoldenE.alumnos
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(48, 311);
+            this.label10.Location = new System.Drawing.Point(48, 320);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(24, 13);
             this.label10.TabIndex = 20;
@@ -129,10 +129,10 @@ namespace GoldenE.alumnos
             // 
             // textBoxRfc
             // 
-            this.textBoxRfc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxRfc.Location = new System.Drawing.Point(116, 311);
+            this.textBoxRfc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxRfc.Location = new System.Drawing.Point(116, 315);
             this.textBoxRfc.Name = "textBoxRfc";
-            this.textBoxRfc.Size = new System.Drawing.Size(100, 13);
+            this.textBoxRfc.Size = new System.Drawing.Size(100, 20);
             this.textBoxRfc.TabIndex = 9;
             // 
             // label9
@@ -146,11 +146,11 @@ namespace GoldenE.alumnos
             // 
             // textBoxKardex
             // 
-            this.textBoxKardex.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxKardex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxKardex.Enabled = false;
             this.textBoxKardex.Location = new System.Drawing.Point(116, 19);
             this.textBoxKardex.Name = "textBoxKardex";
-            this.textBoxKardex.Size = new System.Drawing.Size(100, 13);
+            this.textBoxKardex.Size = new System.Drawing.Size(100, 20);
             this.textBoxKardex.TabIndex = 1;
             // 
             // dateTimePicker1
@@ -165,7 +165,7 @@ namespace GoldenE.alumnos
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(48, 262);
+            this.label8.Location = new System.Drawing.Point(48, 266);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(60, 13);
             this.label8.TabIndex = 16;
@@ -174,7 +174,7 @@ namespace GoldenE.alumnos
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(48, 241);
+            this.label1.Location = new System.Drawing.Point(48, 245);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 13);
             this.label1.TabIndex = 15;
@@ -192,18 +192,18 @@ namespace GoldenE.alumnos
             // 
             // textBoxDireccion
             // 
-            this.textBoxDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDireccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxDireccion.Location = new System.Drawing.Point(116, 210);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(100, 13);
+            this.textBoxDireccion.Size = new System.Drawing.Size(100, 20);
             this.textBoxDireccion.TabIndex = 6;
             // 
             // textBoxMaterno
             // 
-            this.textBoxMaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxMaterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxMaterno.Location = new System.Drawing.Point(116, 126);
             this.textBoxMaterno.Name = "textBoxMaterno";
-            this.textBoxMaterno.Size = new System.Drawing.Size(100, 13);
+            this.textBoxMaterno.Size = new System.Drawing.Size(100, 20);
             this.textBoxMaterno.TabIndex = 4;
             // 
             // label6
@@ -217,10 +217,10 @@ namespace GoldenE.alumnos
             // 
             // textBoxPaterno
             // 
-            this.textBoxPaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPaterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxPaterno.Location = new System.Drawing.Point(116, 89);
             this.textBoxPaterno.Name = "textBoxPaterno";
-            this.textBoxPaterno.Size = new System.Drawing.Size(100, 13);
+            this.textBoxPaterno.Size = new System.Drawing.Size(100, 20);
             this.textBoxPaterno.TabIndex = 3;
             // 
             // label5
@@ -243,10 +243,10 @@ namespace GoldenE.alumnos
             // 
             // textBoxName
             // 
-            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxName.Location = new System.Drawing.Point(116, 49);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(100, 13);
+            this.textBoxName.Size = new System.Drawing.Size(100, 20);
             this.textBoxName.TabIndex = 2;
             // 
             // comboBoxGenero
@@ -262,9 +262,11 @@ namespace GoldenE.alumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InsertaAlumno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InsertaAlumno";

@@ -50,16 +50,12 @@ namespace GoldenE.alumnos
             try
             {
                
-                string comp = "Select seq_user_id_user.nextval from dual";
-                OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
-                publicas.id_usuario = Convert.ToInt32(cpe.ExecuteScalar());
-
+               
                 OracleCommand comandoinse = new OracleCommand("insertar_usuario", Conexion.conectar());
                 comandoinse.CommandType = CommandType.StoredProcedure;
 
                 string password = Helper.EncodePassword(string.Concat(publicas.id_usuario, this.textBoxContrasena.Text));
 
-                comandoinse.Parameters.Add("@id_usuario", OracleDbType.Int32).Value = publicas.id_usuario.ToString();
                 if(this.radioButtonGerente.Checked == true)
                 {
                     comandoinse.Parameters.Add("@TIPO_USUARIO_ID_TIPO_USUARIO", OracleDbType.Int32).Value = 1;
@@ -81,12 +77,13 @@ namespace GoldenE.alumnos
                 comandoinse.Parameters.Add("@FECHA_NACIMIENTO", OracleDbType.Varchar2).Value = this.dateTimePicker1.Text;
                 comandoinse.Parameters.Add("@direccion", OracleDbType.Varchar2).Value = this.textBoxDireccion.Text;
                 comandoinse.Parameters.Add("@telefono", OracleDbType.Varchar2).Value = this.textBoxTelefono.Text;
+                comandoinse.Parameters.Add("@rfc", OracleDbType.Varchar2).Value = this.textBoxRfcUser.Text;
                 comandoinse.Parameters.Add("@contrasena", OracleDbType.Varchar2).Value = password;
 
                 comandoinse.ExecuteNonQuery();
                 MessageBox.Show("Agregando usuario con id "+ publicas.id_usuario.ToString(), "aviso", MessageBoxButtons.OK);
                 //Select para saber el numero actual.
-
+                actualizarIdUser();
                 Limpiar();
             }
             catch (OracleException ex)
@@ -117,8 +114,16 @@ namespace GoldenE.alumnos
         private void InsertaAlumno_Load(object sender, EventArgs e)
         {
             SeleccionacomboGenero();
+            actualizarIdUser();
         }
-
+        public void actualizarIdUser()
+        {
+            string comp = "select * from(select id_usuario from usuarios order by id_usuario desc) where rownum =1";
+            OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
+            publicas.id_usuario = Convert.ToInt32(cpe.ExecuteScalar());
+            publicas.id_usuario += 1;
+            textBoxIdUser.Text = publicas.id_usuario.ToString();
+        }
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 

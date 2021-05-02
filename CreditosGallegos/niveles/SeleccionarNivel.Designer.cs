@@ -50,7 +50,7 @@ namespace GoldenE.niveles
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(330, 24);
+            this.label3.Location = new System.Drawing.Point(309, 6);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 13);
             this.label3.TabIndex = 21;
@@ -58,23 +58,23 @@ namespace GoldenE.niveles
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.Controls.Add(this.dataGridViewCargaNivel);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.btncbuscar);
-            this.panel1.Location = new System.Drawing.Point(80, 50);
+            this.panel1.Location = new System.Drawing.Point(59, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(641, 377);
+            this.panel1.Size = new System.Drawing.Size(610, 349);
             this.panel1.TabIndex = 20;
             // 
             // dataGridViewCargaNivel
             // 
             this.dataGridViewCargaNivel.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCargaNivel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCargaNivel.Location = new System.Drawing.Point(118, 178);
+            this.dataGridViewCargaNivel.Location = new System.Drawing.Point(110, 140);
             this.dataGridViewCargaNivel.Name = "dataGridViewCargaNivel";
             this.dataGridViewCargaNivel.Size = new System.Drawing.Size(399, 150);
             this.dataGridViewCargaNivel.TabIndex = 10;
@@ -84,9 +84,9 @@ namespace GoldenE.niveles
             this.groupBox2.Controls.Add(this.textBoxNivelName);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(315, 39);
+            this.groupBox2.Location = new System.Drawing.Point(307, 39);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(230, 133);
+            this.groupBox2.Size = new System.Drawing.Size(230, 78);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             // 
@@ -114,7 +114,7 @@ namespace GoldenE.niveles
             this.groupBox1.Controls.Add(this.textBoxSidNivel);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(37, 49);
+            this.groupBox1.Location = new System.Drawing.Point(29, 49);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(187, 56);
             this.groupBox1.TabIndex = 19;
@@ -141,7 +141,7 @@ namespace GoldenE.niveles
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(375, 16);
+            this.checkBox2.Location = new System.Drawing.Point(367, 16);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(63, 17);
             this.checkBox2.TabIndex = 2;
@@ -152,7 +152,7 @@ namespace GoldenE.niveles
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(59, 16);
+            this.checkBox1.Location = new System.Drawing.Point(51, 16);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(63, 17);
             this.checkBox1.TabIndex = 1;
@@ -162,7 +162,7 @@ namespace GoldenE.niveles
             // 
             // btncbuscar
             // 
-            this.btncbuscar.Location = new System.Drawing.Point(265, 334);
+            this.btncbuscar.Location = new System.Drawing.Point(257, 296);
             this.btncbuscar.Name = "btncbuscar";
             this.btncbuscar.Size = new System.Drawing.Size(75, 23);
             this.btncbuscar.TabIndex = 8;
@@ -174,10 +174,13 @@ namespace GoldenE.niveles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ClientSize = new System.Drawing.Size(726, 423);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SeleccionarNivel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SeleccionarNivel";
             this.Load += new System.EventHandler(this.SeleccionarNivel_Load);
             this.panel1.ResumeLayout(false);

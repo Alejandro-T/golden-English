@@ -49,7 +49,7 @@ namespace Ge
             label1.Text = DateTime.Now.ToLongDateString();
             timer1.Enabled = true;
             timer1.Interval = 100;
-            label3.Text = publicas.id_t_user.ToString();
+            label3.Text = publicas.nombre.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)

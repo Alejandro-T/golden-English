@@ -145,7 +145,7 @@ namespace GoldenE.niveles
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(0, 38);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(839, 44);
+            this.panel3.Size = new System.Drawing.Size(840, 44);
             this.panel3.TabIndex = 32;
             // 
             // buttonActu
@@ -203,11 +203,14 @@ namespace GoldenE.niveles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(840, 515);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelContenedor);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Niveles";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Niveles";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

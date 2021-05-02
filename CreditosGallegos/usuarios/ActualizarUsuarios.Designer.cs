@@ -85,12 +85,13 @@ namespace GoldenE.alumnos
             // 
             // btncActu
             // 
+            this.btncActu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
             this.btncActu.Location = new System.Drawing.Point(631, 320);
             this.btncActu.Name = "btncActu";
-            this.btncActu.Size = new System.Drawing.Size(75, 23);
+            this.btncActu.Size = new System.Drawing.Size(78, 28);
             this.btncActu.TabIndex = 8;
             this.btncActu.Text = "Actualizar";
-            this.btncActu.UseVisualStyleBackColor = true;
+            this.btncActu.UseVisualStyleBackColor = false;
             this.btncActu.Click += new System.EventHandler(this.btncActu_Click);
             // 
             // checkBox1
@@ -425,7 +426,7 @@ namespace GoldenE.alumnos
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.Controls.Add(this.buttonBuscar);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.dataGridViewCargaUsuario);
@@ -441,12 +442,13 @@ namespace GoldenE.alumnos
             // 
             // buttonBuscar
             // 
+            this.buttonBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
             this.buttonBuscar.Location = new System.Drawing.Point(409, 321);
             this.buttonBuscar.Name = "buttonBuscar";
-            this.buttonBuscar.Size = new System.Drawing.Size(75, 23);
+            this.buttonBuscar.Size = new System.Drawing.Size(78, 28);
             this.buttonBuscar.TabIndex = 22;
             this.buttonBuscar.Text = "Buscar";
-            this.buttonBuscar.UseVisualStyleBackColor = true;
+            this.buttonBuscar.UseVisualStyleBackColor = false;
             this.buttonBuscar.Click += new System.EventHandler(this.buttonBuscar_Click);
             // 
             // dataGridViewCargaUsuario
@@ -463,11 +465,13 @@ namespace GoldenE.alumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(913, 491);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.ClientSize = new System.Drawing.Size(852, 446);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ActualizarUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Actualizar Usuarios";
             this.Load += new System.EventHandler(this.ActualizarUsuarios_Load);
             this.groupBox1.ResumeLayout(false);

@@ -1,4 +1,5 @@
 ﻿using GoldenE.alumnos;
+using GoldenE.lecciones;
 using GoldenE.niveles;
 using GoldenE.salones;
 using System;

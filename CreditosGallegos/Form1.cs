@@ -59,7 +59,11 @@ namespace Ge
                 OracleDataReader dre = cpe.ExecuteReader();
                 if (dre.Read())
                 {
-                    publicas.id_t_user = Convert.ToInt32(cpe.ExecuteScalar());
+                    string comp2 = "Select nombre from usuarios where id_usuario ='" + this.textBoxUser.Text + "'and contrasena='" + hash + "'";
+                    OracleCommand cpe2 = new OracleCommand(comp2, Conexion.conectar());
+                    publicas.nombre = Convert.ToString(cpe2.ExecuteScalar());
+
+                    
 
                     //Mostar menu      
 
@@ -67,7 +71,7 @@ namespace Ge
                     InsertarCarreras m = new InsertarCarreras();
                     m.Show();
 
-                    MessageBox.Show("BIENVENIDO " + textBoxUser.Text, "aviso", MessageBoxButtons.OK);
+                    MessageBox.Show("BIENVENIDO " + publicas.nombre.ToString(), "aviso", MessageBoxButtons.OK);
 
                 }
                 else

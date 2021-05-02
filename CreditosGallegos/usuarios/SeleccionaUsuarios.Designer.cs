@@ -54,7 +54,7 @@ namespace GoldenE.usuarios
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(207, 4);
+            this.label3.Location = new System.Drawing.Point(268, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(173, 13);
             this.label3.TabIndex = 21;
@@ -62,14 +62,14 @@ namespace GoldenE.usuarios
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.panel1.Controls.Add(this.dataGridViewCargaUsuarios);
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.checkBox2);
             this.panel1.Controls.Add(this.checkBox1);
             this.panel1.Controls.Add(this.btncbuscar);
-            this.panel1.Location = new System.Drawing.Point(10, 30);
+            this.panel1.Location = new System.Drawing.Point(71, 30);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(641, 377);
             this.panel1.TabIndex = 20;
@@ -78,7 +78,7 @@ namespace GoldenE.usuarios
             // 
             this.dataGridViewCargaUsuarios.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewCargaUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCargaUsuarios.Location = new System.Drawing.Point(118, 178);
+            this.dataGridViewCargaUsuarios.Location = new System.Drawing.Point(109, 178);
             this.dataGridViewCargaUsuarios.Name = "dataGridViewCargaUsuarios";
             this.dataGridViewCargaUsuarios.Size = new System.Drawing.Size(399, 150);
             this.dataGridViewCargaUsuarios.TabIndex = 10;
@@ -205,23 +205,26 @@ namespace GoldenE.usuarios
             // 
             // btncbuscar
             // 
-            this.btncbuscar.Location = new System.Drawing.Point(265, 334);
+            this.btncbuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
+            this.btncbuscar.Location = new System.Drawing.Point(256, 334);
             this.btncbuscar.Name = "btncbuscar";
-            this.btncbuscar.Size = new System.Drawing.Size(75, 23);
+            this.btncbuscar.Size = new System.Drawing.Size(91, 29);
             this.btncbuscar.TabIndex = 8;
             this.btncbuscar.Text = "Buscar";
-            this.btncbuscar.UseVisualStyleBackColor = true;
+            this.btncbuscar.UseVisualStyleBackColor = false;
             this.btncbuscar.Click += new System.EventHandler(this.btncbuscar_Click);
             // 
             // SeleccionaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SeleccionaUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SeleccionaUsuarios";
             this.Load += new System.EventHandler(this.SeleccionaUsuarios_Load);
             this.panel1.ResumeLayout(false);

@@ -34,8 +34,9 @@ CREATE TABLE usuarios (
   fecha_nacimiento DATE NOT NULL,
   telefono VARCHAR2(15) NOT NULL,
   direccion VARCHAR2(50) NOT NULL,
+  rfc VARCHAR2(50) NOT NULL,
   contrasena VARCHAR2(30) NOT NULL,
-  PRIMARY KEY(id_usuario),
+  PRIMARY KEY(id_usuario,RFC),
   constraint fk_user_sexo foreign key(sexo_id_sexo)references sexo(id_sexo),
   constraint fk_user_tuser foreign key(tipo_usuario_id_tipo_usuario)references tipo_usuario(id_tipo_usuario)
 );
@@ -115,6 +116,15 @@ into:new.id_alumno
 from dual;
 end;
 
+create or replace trigger usuarios_triger_auto
+before insert on usuarios
+for each row
+begin
+select seq_user_id_user.nextval
+into:new.ID_USUARIO
+from dual;
+end;
+
 create or replace trigger nivel_triger_auto
 before insert on niveles
 for each row
@@ -125,11 +135,11 @@ from dual;
 end;
 
 create or replace procedure insertar_usuario
-(id_usuario numeric,usuario_id_tipo_usuario numeric,usuario_id_genero numeric,usuario_nombre varchar2,usuario_paterno varchar2,usuario_materno varchar2,usuario_fecha_na Date,usuario_telefono varchar2,usuario_direccion varchar2,usuario_contrasena varchar2)
+(usuario_id_tipo_usuario numeric,usuario_id_genero numeric,usuario_nombre varchar2,usuario_paterno varchar2,usuario_materno varchar2,usuario_fecha_na Date,usuario_telefono varchar2,usuario_direccion varchar2,usuario_rfc varchar2,usuario_contrasena varchar2)
 as
 begin
-      insert into usuarios(id_usuario,TIPO_USUARIO_ID_TIPO_USUARIO,SEXO_ID_SEXO,nombre,paterno,materno,FECHA_NACIMIENTO,telefono,direccion,contrasena) 
-      values(id_usuario,usuario_id_tipo_usuario,usuario_id_genero,lower(usuario_nombre),lower(usuario_paterno),lower(usuario_materno),usuario_fecha_na,usuario_telefono,usuario_direccion,usuario_contrasena);
+      insert into usuarios(TIPO_USUARIO_ID_TIPO_USUARIO,SEXO_ID_SEXO,nombre,paterno,materno,FECHA_NACIMIENTO,telefono,direccion,rfc,contrasena) 
+      values(usuario_id_tipo_usuario,usuario_id_genero,lower(usuario_nombre),lower(usuario_paterno),lower(usuario_materno),usuario_fecha_na,usuario_telefono,usuario_direccion,lower(usuario_rfc),usuario_contrasena);
 end insertar_usuario;
 /
 
@@ -149,6 +159,16 @@ begin
       insert into niveles(descripcion) 
       values(lower(nivel_descripcion));
 end insertar_nivel;
+/
+
+
+create or replace procedure insertar_leccion
+(leccion_id numeric,leccion_nivel numeric,leccion_descripcion varchar2)
+as
+begin
+      insert into lecciones(id_leccion,niveles_id_nivel,descripcion) 
+      values(leccion_id,leccion_nivel,lower(leccion_descripcion));
+end insertar_leccion;
 /
 
 create or replace procedure insertar_salon
