@@ -52,7 +52,7 @@ namespace GoldenE.lecciones
 
                 comandoinse.Parameters.Add("@id_leccion", OracleDbType.Int16).Value =  Convert.ToInt16(this.textBoxLeccionId.Text);
                 comandoinse.Parameters.Add("@NIVELES_ID_NIVEL", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxNiveles.SelectedValue);
-                comandoinse.Parameters.Add("@descripcion", OracleDbType.Varchar2).Value = this.textBoxNombreSalon.Text;
+                comandoinse.Parameters.Add("@descripcion", OracleDbType.Varchar2).Value = this.textBoxNombreLeccion.Text;
 
 
                 comandoinse.ExecuteNonQuery();               

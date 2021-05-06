@@ -36,5 +36,10 @@ namespace GoldenE.niveles
         {
             AbrirFormEnPanel(new SeleccionarNivel());
         }
+
+        private void buttonActu_Click(object sender, EventArgs e)
+        {
+            //AbrirFormEnPanel(new ActualizarNiveles());
+        }
     }
 }

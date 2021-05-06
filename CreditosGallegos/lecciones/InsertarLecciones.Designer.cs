@@ -31,13 +31,13 @@ namespace GoldenE.lecciones
         {
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBoxNiveles = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxNombreSalon = new System.Windows.Forms.TextBox();
+            this.textBoxNombreLeccion = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxLeccionId = new System.Windows.Forms.TextBox();
-            this.comboBoxNiveles = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@ namespace GoldenE.lecciones
             this.groupBox1.Controls.Add(this.comboBoxNiveles);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBoxNombreSalon);
+            this.groupBox1.Controls.Add(this.textBoxNombreLeccion);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBoxLeccionId);
             this.groupBox1.Location = new System.Drawing.Point(249, 87);
@@ -66,6 +66,23 @@ namespace GoldenE.lecciones
             this.groupBox1.TabIndex = 23;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(48, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Nivel";
+            // 
+            // comboBoxNiveles
+            // 
+            this.comboBoxNiveles.FormattingEnabled = true;
+            this.comboBoxNiveles.Location = new System.Drawing.Point(125, 84);
+            this.comboBoxNiveles.Name = "comboBoxNiveles";
+            this.comboBoxNiveles.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxNiveles.TabIndex = 12;
             // 
             // label1
             // 
@@ -85,13 +102,13 @@ namespace GoldenE.lecciones
             this.label6.TabIndex = 10;
             this.label6.Text = "Nombre";
             // 
-            // textBoxNombreSalon
+            // textBoxNombreLeccion
             // 
-            this.textBoxNombreSalon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNombreSalon.Location = new System.Drawing.Point(125, 128);
-            this.textBoxNombreSalon.Name = "textBoxNombreSalon";
-            this.textBoxNombreSalon.Size = new System.Drawing.Size(100, 13);
-            this.textBoxNombreSalon.TabIndex = 2;
+            this.textBoxNombreLeccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNombreLeccion.Location = new System.Drawing.Point(125, 128);
+            this.textBoxNombreLeccion.Name = "textBoxNombreLeccion";
+            this.textBoxNombreLeccion.Size = new System.Drawing.Size(100, 13);
+            this.textBoxNombreLeccion.TabIndex = 2;
             // 
             // label5
             // 
@@ -109,23 +126,6 @@ namespace GoldenE.lecciones
             this.textBoxLeccionId.Name = "textBoxLeccionId";
             this.textBoxLeccionId.Size = new System.Drawing.Size(100, 13);
             this.textBoxLeccionId.TabIndex = 1;
-            // 
-            // comboBoxNiveles
-            // 
-            this.comboBoxNiveles.FormattingEnabled = true;
-            this.comboBoxNiveles.Location = new System.Drawing.Point(125, 84);
-            this.comboBoxNiveles.Name = "comboBoxNiveles";
-            this.comboBoxNiveles.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxNiveles.TabIndex = 12;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(48, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 13);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Nivel";
             // 
             // InsertarLecciones
             // 
@@ -149,7 +149,7 @@ namespace GoldenE.lecciones
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxNombreSalon;
+        private System.Windows.Forms.TextBox textBoxNombreLeccion;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxLeccionId;
         private System.Windows.Forms.Label label2;

@@ -160,6 +160,7 @@ namespace GoldenE.niveles
             this.buttonActu.TabIndex = 5;
             this.buttonActu.Text = "Actualizar";
             this.buttonActu.UseVisualStyleBackColor = true;
+            this.buttonActu.Click += new System.EventHandler(this.buttonActu_Click);
             // 
             // buttonAgre
             // 

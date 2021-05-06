@@ -119,6 +119,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="lecciones\ActualizarLecciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lecciones\ActualizarLecciones.Designer.cs">
+      <DependentUpon>ActualizarLecciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="lecciones\InsertarLecciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,12 @@
       <DependentUpon>Main.cs</DependentUpon>
     </Compile>
     <Compile Include="ManejoErrores.cs" />
+    <Compile Include="niveles\ActualizarNiveles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="niveles\ActualizarNiveles.Designer.cs">
+      <DependentUpon>ActualizarNiveles.cs</DependentUpon>
+    </Compile>
     <Compile Include="niveles\InsertarNivel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +176,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="publicas.cs" />
+    <Compile Include="salones\ActualizarSalones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salones\ActualizarSalones.Designer.cs">
+      <DependentUpon>ActualizarSalones.cs</DependentUpon>
+    </Compile>
     <Compile Include="salones\InsertarSalones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +193,12 @@
     </Compile>
     <Compile Include="salones\Salones.Designer.cs">
       <DependentUpon>Salones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="salones\SeleccionarSalon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="salones\SeleccionarSalon.Designer.cs">
+      <DependentUpon>SeleccionarSalon.cs</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="usuarios\ActualizarUsuarios.cs">
@@ -219,11 +243,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="lecciones\ActualizarLecciones.resx">
+      <DependentUpon>ActualizarLecciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="lecciones\InsertarLecciones.resx">
       <DependentUpon>InsertarLecciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="niveles\ActualizarNiveles.resx">
+      <DependentUpon>ActualizarNiveles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="niveles\InsertarNivel.resx">
       <DependentUpon>InsertarNivel.cs</DependentUpon>
@@ -239,8 +269,17 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="salones\ActualizarSalones.resx">
+      <DependentUpon>ActualizarSalones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="salones\InsertarSalones.resx">
       <DependentUpon>InsertarSalones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salones\Salones.resx">
+      <DependentUpon>Salones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="salones\SeleccionarSalon.resx">
+      <DependentUpon>SeleccionarSalon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usuarios\ActualizarUsuarios.resx">
       <DependentUpon>ActualizarUsuarios.cs</DependentUpon>

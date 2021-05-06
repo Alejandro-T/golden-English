@@ -118,7 +118,7 @@ namespace GoldenE.alumnos
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dataGridViewCargaUsuario.Rows[e.RowIndex];
+                DataGridViewRow row = this.dataGridViewCargaUsuario.Rows[e.RowIndex];;
                 this.textBoxAnombre.Text = row.Cells["nombre"].Value.ToString();
                 this.textBoxApaterno.Text = row.Cells["paterno"].Value.ToString();
                 this.textBoxAmaterno.Text = row.Cells["materno"].Value.ToString();

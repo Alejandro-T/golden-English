@@ -190,3 +190,27 @@ update USUARIOS set TIPO_USUARIO_ID_TIPO_USUARIO = usuario_id_tipo_usuario,SEXO_
 where(ID_USUARIO)=id_usuario_in;
 end ACTUALIZAUSUARIOS;
 /
+
+CREATE OR REPLACE PROCEDURE  ACTUALIZANIVELES (id_nivel_in numeric,nivel_descripcion varchar2)
+as 
+begin 
+update NIVELES set descripcion = nivel_descripcion 
+where(ID_NIVEL)=id_nivel_in; 
+end ACTUALIZANIVELES;
+/
+
+CREATE OR REPLACE PROCEDURE  ACTUALIZASALONES (id_salon_in numeric,salon_descripcion varchar2)
+as 
+begin 
+update SALONES set descripcion = salon_descripcion 
+where(ID_SALON)=id_salon_in; 
+end ACTUALIZASALONES;
+/
+
+CREATE OR REPLACE PROCEDURE  ACTUALIZALECCIONES (id_leccion_in numeric,leccion_id_nivel numeric,leccion_descripcion varchar2)
+as 
+begin 
+update LECCIONES set NIVELES_ID_NIVEL = leccion_id_nivel, descripcion = leccion_descripcion  
+where(ID_LECCION)=id_leccion_in; 
+end ACTUALIZALECCIONES;
+/
