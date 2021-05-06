@@ -25,14 +25,12 @@ namespace GoldenE.alumnos
             {
                 OracleCommand act = new OracleCommand("ACTUALIZANIVELES", Conexion.conectar());
                 act.CommandType = System.Data.CommandType.StoredProcedure;
-
                 act.Parameters.Add("id_nivel_in", OracleDbType.Int16).Value = textBoxNid.Text;
-
                 act.Parameters.Add("nivel_descripcion", OracleDbType.Varchar2).Value = textBoxAdescripcion.Text;
 
                 //
                 string comprobacion2 =
-                    "SELECT ID_NIVEL from niveles where ID_NIVEL='" + textBoxIdNivel.Text + "'";
+                    "SELECT ID_NIVEL from niveles where ID_NIVEL='" + textBoxNid.Text + "'";
                 OracleCommand cp2 = new OracleCommand(comprobacion2, Conexion.conectar());
                 OracleDataReader dr2 = cp2.ExecuteReader();
                 if (dr2.Read())
@@ -153,6 +151,7 @@ namespace GoldenE.alumnos
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             this.cargarNivel(this.dataGridViewCargaNivel);
+            
         }
 
         private void ActualizarNiveles_Load(object sender, EventArgs e)

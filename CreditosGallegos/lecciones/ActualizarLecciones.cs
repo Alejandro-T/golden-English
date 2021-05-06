@@ -26,10 +26,10 @@ namespace GoldenE.alumnos
                 OracleCommand act = new OracleCommand("ACTUALIZALECCIONES", Conexion.conectar());
                 act.CommandType = System.Data.CommandType.StoredProcedure;
 
-                act.Parameters.Add("id_leccion_in", OracleDbType.Int16).Value = textBoxSid.Text;
-                act.Parameters.Add("leccion_descripcion", OracleDbType.Varchar2).Value = textBoxAdescripcion.Text;
-                act.Parameters.Add("leccion_id_nivel", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxNiveles.SelectedValue);
+                act.Parameters.Add("id_leccion_in", OracleDbType.Int16).Value = Convert.ToInt16(textBoxSid.Text);
 
+                act.Parameters.Add("leccion_id_nivel", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxNiveles.SelectedValue);
+                act.Parameters.Add("leccion_descripcion", OracleDbType.Varchar2).Value = textBoxAdescripcion.Text;
                 //
                 string comprobacion2 =
                     "SELECT ID_LECCION from lecciones where ID_LECCION='" + textBoxSid.Text + "'";
@@ -51,23 +51,15 @@ namespace GoldenE.alumnos
             }
             catch (OracleException ex)
             {
-                switch (ex.Number)
-                {
-                    case 1722:
-                        MessageBox.Show("Numero invalido(FormatException)--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                    case 2292:
-                        MessageBox.Show("No se puede eliminar el dato, porque existe una tabla hijo con ese dato", "Aviso", MessageBoxButtons.OK);
-                        break;
-                    default:
-                        MessageBox.Show("Formato invalido--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                }
+                ManejoErrores.erroresOracle(ex);
             }
-            finally
+            catch (System.FormatException exe)
             {
-                Conexion.cerrar();
+                ManejoErrores.erroresSystem(exe);
             }
+
+
+
         }
 
         public void SeleccionacomboNivles()
@@ -110,7 +102,7 @@ namespace GoldenE.alumnos
             try
             {
                 DataTable dtsLec = new DataTable();
-                string comprobacion = "select L.ID_LECCION, N.Descripcion as Nivel, L.NIVELES_ID_NIVEL L.descripcion from lecciones L JOIN niveles N ON N.id_nivel = L.niveles_id_nivel where L.DESCRIPCION like '" + Convert.ToString(this.textBoxBdescripcion.Text).ToLower() + "%' order by L.id_leccion";
+                string comprobacion = "select L.ID_LECCION, N.Descripcion as Nivel, L.NIVELES_ID_NIVEL, L.descripcion from lecciones L JOIN niveles N ON N.id_nivel = L.niveles_id_nivel where L.DESCRIPCION like '" + Convert.ToString(this.textBoxBdescripcion.Text).ToLower() + "%' order by L.id_leccion";
 
                 OracleDataAdapter da = new OracleDataAdapter
                     (comprobacion, Conexion.conectar());

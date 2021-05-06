@@ -249,6 +249,9 @@
     <EmbeddedResource Include="lecciones\InsertarLecciones.resx">
       <DependentUpon>InsertarLecciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="lecciones\Lecciones.resx">
+      <DependentUpon>Lecciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

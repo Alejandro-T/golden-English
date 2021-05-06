@@ -210,7 +210,7 @@ end ACTUALIZASALONES;
 CREATE OR REPLACE PROCEDURE  ACTUALIZALECCIONES (id_leccion_in numeric,leccion_id_nivel numeric,leccion_descripcion varchar2)
 as 
 begin 
-update LECCIONES set NIVELES_ID_NIVEL = leccion_id_nivel, descripcion = leccion_descripcion  
+update LECCIONES set NIVELES_ID_NIVEL = leccion_id_nivel,descripcion = leccion_descripcion
 where(ID_LECCION)=id_leccion_in; 
-end ACTUALIZALECCIONES;
+end ACTUALIZALECCIONES;	
 /

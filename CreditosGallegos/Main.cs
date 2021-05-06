@@ -1,4 +1,5 @@
 ﻿using GoldenE.alumnos;
+using GoldenE.lecciones;
 using GoldenE.niveles;
 using GoldenE.usuarios;
 using System;
@@ -112,7 +113,7 @@ namespace Ge
        
         private void buttonSalones_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(new Salones());
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -137,7 +138,7 @@ namespace Ge
 
         private void buttonLecciones_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(new Lecciones());
         }
     }
 }

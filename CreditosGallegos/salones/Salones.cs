@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GoldenE.alumnos;
+using GoldenE.salones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,17 +31,17 @@ namespace GoldenE.niveles
         }
         private void buttonAgre_Click(object sender, EventArgs e)
         {
-           // AbrirFormEnPanel(new InsertarSalones());
+            AbrirFormEnPanel(new InsertarSalones());
         }
 
         private void buttonSelec_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new SeleccionarNivel());
+            AbrirFormEnPanel(new SeleccionarSalon());
         }
 
         private void buttonActu_Click(object sender, EventArgs e)
         {
-            //AbrirFormEnPanel(new ActualizarNiveles());
+            AbrirFormEnPanel(new ActualizarSalones());
         }
     }
 }

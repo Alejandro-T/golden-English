@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoldenE.alumnos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,7 +40,12 @@ namespace GoldenE.niveles
 
         private void buttonActu_Click(object sender, EventArgs e)
         {
-            //AbrirFormEnPanel(new ActualizarNiveles());
+            AbrirFormEnPanel(new ActualizarNiveles());
+        }
+
+        private void Niveles_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
