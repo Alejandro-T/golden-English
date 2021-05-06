@@ -77,7 +77,7 @@ namespace GoldenE.usuarios
             try
             {
                 DataTable dtuser = new DataTable();
-                string comprobacion = "Select U.ID_usuario,U.NOMBRE,U.PATERNO,U.MATERNO,G.DESCRIPCION AS SEXO ,U.TELEFONO,U.DIRECCION,U.FECHA_NACIMIENTO,U.sexo_id_sexo from usuarios U JOIN sexo G ON U.sexo_id_sexo=G.ID_sexo  where U.ID_usuario='" + this.textBoxSidUsuario.Text + "'";
+                string comprobacion = "Select U.ID_usuario as Matricula,U.NOMBRE,U.PATERNO,U.MATERNO,G.DESCRIPCION AS SEXO ,U.TELEFONO,U.DIRECCION,U.FECHA_NACIMIENTO,U.sexo_id_sexo from usuarios U JOIN sexo G ON U.sexo_id_sexo=G.ID_sexo  where U.ID_usuario='" + this.textBoxSidUsuario.Text + "'";
                 OracleDataAdapter da = new OracleDataAdapter
                     (comprobacion, Conexion.conectar());
                 OracleCommand cp = new OracleCommand(comprobacion, Conexion.conectar());
@@ -123,7 +123,7 @@ namespace GoldenE.usuarios
             try
             {
                 DataTable dtsAlu = new DataTable();
-                string comprobacion = "select U.ID_USUARIO,U.NOMBRE,U.PATERNO,U.MATERNO,G.DESCRIPCION AS SEXO ,U.TELEFONO,U.DIRECCION,U.FECHA_NACIMIENTO,U.sexo_id_sexo from usuarios U JOIN sexo G ON U.sexo_id_sexo=G.ID_sexo where U.NOMBRE like '" + Convert.ToString(this.textBox1.Text).ToLower() + "%'and U.PATERNO like'" + Convert.ToString(this.textBoxPaterno.Text).ToLower() + "%' and U.MATERNO like'" + Convert.ToString(this.textBoxMaterno.Text).ToLower() + "%' order by U.id_usuario";
+                string comprobacion = "select U.ID_USUARIO as Matricula,U.NOMBRE,U.PATERNO,U.MATERNO,G.DESCRIPCION AS SEXO ,U.TELEFONO,U.DIRECCION,U.FECHA_NACIMIENTO,U.sexo_id_sexo from usuarios U JOIN sexo G ON U.sexo_id_sexo=G.ID_sexo where U.NOMBRE like '" + Convert.ToString(this.textBox1.Text).ToLower() + "%'and U.PATERNO like'" + Convert.ToString(this.textBoxPaterno.Text).ToLower() + "%' and U.MATERNO like'" + Convert.ToString(this.textBoxMaterno.Text).ToLower() + "%' order by U.id_usuario";
 
                 OracleDataAdapter da = new OracleDataAdapter
                     (comprobacion, Conexion.conectar());

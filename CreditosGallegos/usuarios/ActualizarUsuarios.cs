@@ -145,7 +145,7 @@ namespace GoldenE.alumnos
             try
             {
                 DataTable dtsAlu = new DataTable();
-                string comprobacion = "select U.ID_USUARIO,U.NOMBRE,U.PATERNO,U.MATERNO,G.DESCRIPCION AS SEXO ,U.TELEFONO,U.DIRECCION,U.FECHA_NACIMIENTO,U.sexo_id_sexo,U.tipo_usuario_id_tipo_usuario,U.contrasena from usuarios U JOIN sexo G ON U.sexo_id_sexo=G.ID_sexo where U.NOMBRE like '" + Convert.ToString(this.textBoxBnombre.Text).ToLower() + "%'and U.PATERNO like'" + Convert.ToString(this.textBoxBPaterno.Text).ToLower() + "%' and U.MATERNO like'" + Convert.ToString(this.textBoxBMaterno.Text).ToLower() + "%' order by U.id_usuario";
+                string comprobacion = "select U.ID_USUARIO as Matricula,U.NOMBRE,U.PATERNO,U.MATERNO,G.DESCRIPCION AS SEXO ,U.TELEFONO,U.DIRECCION,U.FECHA_NACIMIENTO,U.sexo_id_sexo,U.tipo_usuario_id_tipo_usuario,U.contrasena from usuarios U JOIN sexo G ON U.sexo_id_sexo=G.ID_sexo where U.NOMBRE like '" + Convert.ToString(this.textBoxBnombre.Text).ToLower() + "%'and U.PATERNO like'" + Convert.ToString(this.textBoxBPaterno.Text).ToLower() + "%' and U.MATERNO like'" + Convert.ToString(this.textBoxBMaterno.Text).ToLower() + "%' order by U.id_usuario";
 
                 OracleDataAdapter da = new OracleDataAdapter
                     (comprobacion, Conexion.conectar());
@@ -185,7 +185,7 @@ namespace GoldenE.alumnos
             try
             {
                 DataTable dtalumnos = new DataTable();
-                string comprobacion = "Select A.ID_USUARIO,A.NOMBRE,A.PATERNO,A.MATERNO,G.DESCRIPCION AS SEXO ,A.TELEFONO,A.DIRECCION,A.FECHA_NACIMIENTO,A.sexo_id_sexo,A.tipo_usuario_id_tipo_usuario,A.contrasena from usuarios A JOIN sexo G ON A.sexo_id_sexo=G.id_sexo  where A.ID_USUARIO='" + this.textBoxSidUsuario.Text + "'";
+                string comprobacion = "Select A.ID_USUARIO as Matricula,A.NOMBRE,A.PATERNO,A.MATERNO,G.DESCRIPCION AS SEXO ,A.TELEFONO,A.DIRECCION,A.FECHA_NACIMIENTO,A.sexo_id_sexo,A.tipo_usuario_id_tipo_usuario,A.contrasena from usuarios A JOIN sexo G ON A.sexo_id_sexo=G.id_sexo  where A.ID_USUARIO='" + this.textBoxSidUsuario.Text + "'";
                 OracleDataAdapter da = new OracleDataAdapter
                     (comprobacion, Conexion.conectar());
                 OracleCommand cp = new OracleCommand(comprobacion, Conexion.conectar());
