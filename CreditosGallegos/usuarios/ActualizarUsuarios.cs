@@ -29,15 +29,15 @@ namespace GoldenE.alumnos
 
                 act.Parameters.Add("id_usuario_in", OracleDbType.Int16).Value = textBoxSidUsuario.Text;
                 act.Parameters.Add("usuario_id_genero", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxGeneros.SelectedValue);
-                if (this.radioButtonGerente.Checked == true)
+                if(this.radioButtonGerente.Checked == true)
                 {
                     act.Parameters.Add("usuario_id_tipo_usuario", OracleDbType.Int16).Value = 1;
                 }
-                else if (this.radioButtonRecepcionista.Checked == true)
+                if (this.radioButtonRecepcionista.Checked == true)
                 {
                     act.Parameters.Add("usuario_id_tipo_usuario", OracleDbType.Int16).Value = 2;
                 }
-                else if (this.radioButtonMaestro.Checked == true)
+                if (this.radioButtonMaestro.Checked == true)
                 {
                     act.Parameters.Add("usuario_id_tipo_usuario", OracleDbType.Int16).Value = 3;
                 }

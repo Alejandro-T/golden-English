@@ -137,6 +137,12 @@
     <Compile Include="lecciones\Lecciones.Designer.cs">
       <DependentUpon>Lecciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="lecciones\SeleccionarLeccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lecciones\SeleccionarLeccion.Designer.cs">
+      <DependentUpon>SeleccionarLeccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="lecciones\Lecciones.resx">
       <DependentUpon>Lecciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lecciones\SeleccionarLeccion.resx">
+      <DependentUpon>SeleccionarLeccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

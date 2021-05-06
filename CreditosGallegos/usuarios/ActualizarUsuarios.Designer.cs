@@ -253,6 +253,7 @@ namespace GoldenE.alumnos
             this.radioButtonMaestro.TabStop = true;
             this.radioButtonMaestro.Text = "Maestro";
             this.radioButtonMaestro.UseVisualStyleBackColor = true;
+            
             // 
             // radioButtonRecepcionista
             // 
@@ -264,6 +265,7 @@ namespace GoldenE.alumnos
             this.radioButtonRecepcionista.TabStop = true;
             this.radioButtonRecepcionista.Text = "Recepcionista";
             this.radioButtonRecepcionista.UseVisualStyleBackColor = true;
+            
             // 
             // radioButtonGerente
             // 
@@ -275,6 +277,7 @@ namespace GoldenE.alumnos
             this.radioButtonGerente.TabStop = true;
             this.radioButtonGerente.Text = "Gerente";
             this.radioButtonGerente.UseVisualStyleBackColor = true;
+            
             // 
             // label14
             // 

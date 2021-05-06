@@ -20,7 +20,7 @@ namespace Ge
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ActualizarLecciones());
+            Application.Run(new Form1());
         }
     }
 }

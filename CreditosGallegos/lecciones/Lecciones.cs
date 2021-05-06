@@ -30,7 +30,7 @@ namespace GoldenE.lecciones
         }
         private void buttonSelec_Click(object sender, EventArgs e)
         {
-           // AbrirFormEnPanel(new InsertarNivel());
+            //AbrirFormEnPanel(new SeleccionarLeccion());
         }
 
         private void buttonAgre_Click(object sender, EventArgs e)
