@@ -49,8 +49,7 @@ namespace GoldenE.lecciones
 
                 OracleCommand comandoinse = new OracleCommand("insertar_leccion", Conexion.conectar());
                 comandoinse.CommandType = CommandType.StoredProcedure;
-
-                comandoinse.Parameters.Add("@id_leccion", OracleDbType.Int16).Value =  Convert.ToInt16(this.textBoxLeccionId.Text);
+                
                 comandoinse.Parameters.Add("@NIVELES_ID_NIVEL", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxNiveles.SelectedValue);
                 comandoinse.Parameters.Add("@descripcion", OracleDbType.Varchar2).Value = this.textBoxNombreLeccion.Text;
 
@@ -58,6 +57,7 @@ namespace GoldenE.lecciones
                 comandoinse.ExecuteNonQuery();               
                 MessageBox.Show("Leccion Insertada ", "aviso", MessageBoxButtons.OK);
                 //Select para saber el numero actual.
+                limpiar();
 
             }
             catch (OracleException ex)
@@ -73,6 +73,22 @@ namespace GoldenE.lecciones
         private void InsertarLecciones_Load(object sender, EventArgs e)
         {
             SeleccionacomboNivles();
+            actualizarIdLeccion();
+        }
+
+        public void limpiar()
+        {
+            this.textBoxNombreLeccion.Clear();
+            actualizarIdLeccion();
+        }
+
+        public void actualizarIdLeccion()
+        {
+            string comp = "select * from(select id_leccion from lecciones order by id_leccion desc) where rownum =1";
+            OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
+            publicas.id_leccion = Convert.ToInt32(cpe.ExecuteScalar());
+            publicas.id_leccion += 1;
+            textBoxLeccionId.Text = publicas.id_leccion.ToString();
         }
     }
 }

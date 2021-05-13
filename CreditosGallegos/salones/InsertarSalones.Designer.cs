@@ -35,7 +35,7 @@ namespace GoldenE.salones
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxNombreSalon = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxSalon = new System.Windows.Forms.TextBox();
+            this.textBoxSalonId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@ namespace GoldenE.salones
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textBoxNombreSalon);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBoxSalon);
+            this.groupBox1.Controls.Add(this.textBoxSalonId);
             this.groupBox1.Location = new System.Drawing.Point(249, 87);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(302, 220);
@@ -98,13 +98,14 @@ namespace GoldenE.salones
             this.label5.TabIndex = 8;
             this.label5.Text = "Id_salon";
             // 
-            // textBoxSalon
+            // textBoxSalonId
             // 
-            this.textBoxSalon.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxSalon.Location = new System.Drawing.Point(116, 49);
-            this.textBoxSalon.Name = "textBoxSalon";
-            this.textBoxSalon.Size = new System.Drawing.Size(100, 13);
-            this.textBoxSalon.TabIndex = 1;
+            this.textBoxSalonId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxSalonId.Enabled = false;
+            this.textBoxSalonId.Location = new System.Drawing.Point(116, 49);
+            this.textBoxSalonId.Name = "textBoxSalonId";
+            this.textBoxSalonId.Size = new System.Drawing.Size(100, 13);
+            this.textBoxSalonId.TabIndex = 1;
             // 
             // InsertarSalones
             // 
@@ -115,6 +116,7 @@ namespace GoldenE.salones
             this.Controls.Add(this.groupBox1);
             this.Name = "InsertarSalones";
             this.Text = "InsertarSalones";
+            this.Load += new System.EventHandler(this.InsertarSalones_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -129,6 +131,6 @@ namespace GoldenE.salones
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxNombreSalon;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxSalon;
+        private System.Windows.Forms.TextBox textBoxSalonId;
     }
 }

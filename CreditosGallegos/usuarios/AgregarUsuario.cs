@@ -109,7 +109,11 @@ namespace GoldenE.alumnos
             this.textBoxPaterno.Clear();
             this.textBoxDireccion.Clear();
             this.textBoxTelefono.Clear();
-
+            this.textBoxContrasena.Clear();
+            this.textBoxRfcUser.Clear();
+            this.radioButtonGerente.Checked = false;
+            this.radioButtonRecepcionista.Checked = false;
+            this.radioButtonMaestro.Checked = false;
         }
         private void InsertaAlumno_Load(object sender, EventArgs e)
         {

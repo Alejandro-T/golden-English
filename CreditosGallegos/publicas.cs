@@ -13,6 +13,8 @@ namespace Ge
         public static int _id_usuario;
         public static int _id_nivel;
         public static string _nombre;
+        public static int _id_leccion;
+        public static int _id_salon;
         public publicas()
         {
             id_alumno = 0;
@@ -20,6 +22,8 @@ namespace Ge
             id_t_user = 0;
             id_nivel = 0;
             nombre = "";
+            id_leccion = 0;
+            id_salon = 0;
         }
         
         public static int id_t_user
@@ -47,6 +51,18 @@ namespace Ge
         {
             get => _nombre;
             set => _nombre = value;
+        }
+
+        public static int id_leccion
+        {
+            get => _id_leccion;
+            set => _id_leccion = value;
+        }
+
+        public static int id_salon
+        {
+            get => _id_salon;
+            set => _id_salon = value;
         }
 
     }

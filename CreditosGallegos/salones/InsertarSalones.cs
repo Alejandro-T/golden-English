@@ -25,7 +25,7 @@ namespace GoldenE.salones
             {
                 OracleCommand comandoinse = new OracleCommand("insertar_salon", Conexion.conectar());
                 comandoinse.CommandType = CommandType.StoredProcedure;
-                comandoinse.Parameters.Add("@id_salon", OracleDbType.Int16).Value = Convert.ToInt16(this.textBoxSalon.Text);
+               
                 comandoinse.Parameters.Add("@descripcion", OracleDbType.Varchar2).Value = this.textBoxNombreSalon.Text;
 
                 comandoinse.ExecuteNonQuery();
@@ -44,7 +44,21 @@ namespace GoldenE.salones
         public void limpiar()
         {
             this.textBoxNombreSalon.Clear();
-            this.textBoxSalon.Clear();
+            actualizarIdSalon();
+        }
+
+        public void actualizarIdSalon()
+        {
+            string comp = "select * from(select id_salon from salones order by id_salon desc) where rownum =1";
+            OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
+            publicas.id_salon = Convert.ToInt32(cpe.ExecuteScalar());
+            publicas.id_salon += 1;
+            textBoxSalonId.Text = publicas.id_salon.ToString();
+        }
+
+        private void InsertarSalones_Load(object sender, EventArgs e)
+        {
+            actualizarIdSalon();
         }
     }
 }

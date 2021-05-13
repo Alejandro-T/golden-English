@@ -105,6 +105,14 @@ CREATE SEQUENCE seq_user_id_nivel START WITH 1
  INCREMENT BY 1 
 NOMAXVALUE; 
 
+CREATE SEQUENCE seq_id_leccion START WITH 1
+ INCREMENT BY 1 
+NOMAXVALUE; 
+
+CREATE SEQUENCE seq_id_salon START WITH 1
+ INCREMENT BY 1 
+NOMAXVALUE; 
+
 CREATE SEQUENCE seq_alum_id_alum START WITH 1 INCREMENT BY 1 NOMAXVALUE; 
 
 create or replace trigger alumno_triger_auto
@@ -131,6 +139,24 @@ for each row
 begin
 select seq_user_id_nivel.nextval
 into:new.id_nivel
+from dual;
+end;
+
+create or replace trigger leccion_triger_auto
+before insert on lecciones
+for each row
+begin
+select seq_id_leccion.nextval
+into:new.id_leccion
+from dual;
+end;
+
+create or replace trigger salon_triger_auto
+before insert on salones
+for each row
+begin
+select seq_id_salon.nextval
+into:new.id_salon
 from dual;
 end;
 
@@ -163,30 +189,30 @@ end insertar_nivel;
 
 
 create or replace procedure insertar_leccion
-(leccion_id numeric,leccion_nivel numeric,leccion_descripcion varchar2)
+(leccion_nivel numeric,leccion_descripcion varchar2)
 as
 begin
-      insert into lecciones(id_leccion,niveles_id_nivel,descripcion) 
-      values(leccion_id,leccion_nivel,lower(leccion_descripcion));
+      insert into lecciones(niveles_id_nivel,descripcion) 
+      values(leccion_nivel,lower(leccion_descripcion));
 end insertar_leccion;
 /
 
 create or replace procedure insertar_salon
-(salon_id numeric,salon_descripcion varchar2)
+(salon_descripcion varchar2)
 as
 begin
-      insert into salones(id_salon,descripcion) 
-      values(salon_id,lower(salon_descripcion));
+      insert into salones(descripcion) 
+      values(lower(salon_descripcion));
 end insertar_salon;
 /
 
 
 
 
-CREATE OR REPLACE PROCEDURE  ACTUALIZAUSUARIOS (id_usuario_in numeric,usuario_id_tipo_usuario numeric,usuario_id_genero numeric,NOMBREIN varchar2,PATERNOIN varchar2,MATERNOIN varchar2,usuario_fecha_na Date,usuario_telefono varchar2,usuario_direccion varchar2,usuario_contrasena varchar2)
+CREATE OR REPLACE PROCEDURE  ACTUALIZAUSUARIOS (id_usuario_in numeric,usuario_id_tipo_usuario numeric,usuario_id_genero numeric,NOMBREIN varchar2,PATERNOIN varchar2,MATERNOIN varchar2,usuario_fecha_na Date,usuario_telefono varchar2,usuario_direccion varchar2,usuario_rfc varchar2,usuario_contrasena varchar2)
 as
 begin
-update USUARIOS set TIPO_USUARIO_ID_TIPO_USUARIO = usuario_id_tipo_usuario,SEXO_ID_SEXO = usuario_id_genero,nombre = lower(nombrein),paterno=lower(PATERNOIN),MATERNO=lower(MATERNOIN),FECHA_NACIMIENTO = usuario_fecha_na, telefono = usuario_telefono, direccion = usuario_direccion, contrasena = usuario_contrasena
+update USUARIOS set TIPO_USUARIO_ID_TIPO_USUARIO = usuario_id_tipo_usuario,SEXO_ID_SEXO = usuario_id_genero,nombre = lower(nombrein),paterno=lower(PATERNOIN),MATERNO=lower(MATERNOIN),FECHA_NACIMIENTO = usuario_fecha_na, telefono = usuario_telefono, direccion = usuario_direccion,rfc = usuario_rfc, contrasena = usuario_contrasena
 where(ID_USUARIO)=id_usuario_in;
 end ACTUALIZAUSUARIOS;
 /

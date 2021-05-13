@@ -122,6 +122,7 @@ namespace GoldenE.lecciones
             // textBoxLeccionId
             // 
             this.textBoxLeccionId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLeccionId.Enabled = false;
             this.textBoxLeccionId.Location = new System.Drawing.Point(125, 49);
             this.textBoxLeccionId.Name = "textBoxLeccionId";
             this.textBoxLeccionId.Size = new System.Drawing.Size(100, 13);

@@ -14,6 +14,7 @@ namespace GoldenE.alumnos
 {
     public partial class ActualizarUsuarios : Form
     {
+        private static string rfc = "";
         public ActualizarUsuarios()
         {
             InitializeComponent();
@@ -49,6 +50,7 @@ namespace GoldenE.alumnos
                 act.Parameters.Add("usuario_fecha_na", OracleDbType.Varchar2).Value = dateTimePicker1.Text;
                 act.Parameters.Add("usuario_telefono", OracleDbType.Varchar2).Value = textBoxAtelefono.Text;
                 act.Parameters.Add("usuario_direccion", OracleDbType.Varchar2).Value = textBoxAdireccion.Text;
+                act.Parameters.Add("usuario_rfc", OracleDbType.Varchar2).Value = rfc;
                 act.Parameters.Add("usuario_contrasena", OracleDbType.Varchar2).Value = password;
 
 
@@ -137,6 +139,7 @@ namespace GoldenE.alumnos
                 {
                     this.radioButtonMaestro.Checked = true;
                 }
+                rfc = row.Cells["RFC"].Value.ToString();
                 this.textBoxAcontraseña.Text = row.Cells["contrasena"].Value.ToString();
             }
         }
@@ -145,7 +148,7 @@ namespace GoldenE.alumnos
             try
             {
                 DataTable dtsAlu = new DataTable();
-                string comprobacion = "select U.ID_USUARIO as Matricula,U.NOMBRE,U.PATERNO,U.MATERNO,G.DESCRIPCION AS SEXO ,U.TELEFONO,U.DIRECCION,U.FECHA_NACIMIENTO,U.sexo_id_sexo,U.tipo_usuario_id_tipo_usuario,U.contrasena from usuarios U JOIN sexo G ON U.sexo_id_sexo=G.ID_sexo where U.NOMBRE like '" + Convert.ToString(this.textBoxBnombre.Text).ToLower() + "%'and U.PATERNO like'" + Convert.ToString(this.textBoxBPaterno.Text).ToLower() + "%' and U.MATERNO like'" + Convert.ToString(this.textBoxBMaterno.Text).ToLower() + "%' order by U.id_usuario";
+                string comprobacion = "select U.ID_USUARIO as Matricula,U.NOMBRE,U.PATERNO,U.MATERNO,G.DESCRIPCION AS SEXO ,U.TELEFONO,U.DIRECCION,U.FECHA_NACIMIENTO,U.sexo_id_sexo,U.tipo_usuario_id_tipo_usuario,U.RFC,U.contrasena from usuarios U JOIN sexo G ON U.sexo_id_sexo=G.ID_sexo where U.NOMBRE like '" + Convert.ToString(this.textBoxBnombre.Text).ToLower() + "%'and U.PATERNO like'" + Convert.ToString(this.textBoxBPaterno.Text).ToLower() + "%' and U.MATERNO like'" + Convert.ToString(this.textBoxBMaterno.Text).ToLower() + "%' order by U.id_usuario";
 
                 OracleDataAdapter da = new OracleDataAdapter
                     (comprobacion, Conexion.conectar());
@@ -185,7 +188,7 @@ namespace GoldenE.alumnos
             try
             {
                 DataTable dtalumnos = new DataTable();
-                string comprobacion = "Select A.ID_USUARIO as Matricula,A.NOMBRE,A.PATERNO,A.MATERNO,G.DESCRIPCION AS SEXO ,A.TELEFONO,A.DIRECCION,A.FECHA_NACIMIENTO,A.sexo_id_sexo,A.tipo_usuario_id_tipo_usuario,A.contrasena from usuarios A JOIN sexo G ON A.sexo_id_sexo=G.id_sexo  where A.ID_USUARIO='" + this.textBoxSidUsuario.Text + "'";
+                string comprobacion = "Select A.ID_USUARIO as Matricula,A.NOMBRE,A.PATERNO,A.MATERNO,G.DESCRIPCION AS SEXO ,A.TELEFONO,A.DIRECCION,A.FECHA_NACIMIENTO,A.sexo_id_sexo,A.tipo_usuario_id_tipo_usuario,A.RFC,A.contrasena from usuarios A JOIN sexo G ON A.sexo_id_sexo=G.id_sexo  where A.ID_USUARIO='" + this.textBoxSidUsuario.Text + "'";
                 OracleDataAdapter da = new OracleDataAdapter
                     (comprobacion, Conexion.conectar());
                 OracleCommand cp = new OracleCommand(comprobacion, Conexion.conectar());
@@ -257,6 +260,7 @@ namespace GoldenE.alumnos
             this.textBoxAmaterno.Clear();
             this.textBoxAtelefono.Clear();
             this.textBoxAdireccion.Clear();
+            this.textBoxAcontraseña.Clear();
 
         }
         private void checkBox2_CheckedChanged(object sender, EventArgs e)

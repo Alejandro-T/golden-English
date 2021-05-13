@@ -33,7 +33,7 @@ namespace GoldenE.niveles
                 comandoinse.ExecuteNonQuery();
                 MessageBox.Show("nivel insertado ", "aviso", MessageBoxButtons.OK);
                 //Select para saber el numero actual.
-                this.actualizarNivel();
+                limpiar();
 
             }
             catch (OracleException ex)
@@ -50,6 +50,13 @@ namespace GoldenE.niveles
         {
             this.actualizarNivel();
         }
+
+        public void limpiar()
+        {
+            this.textBoxNombreNivel.Clear();
+            actualizarNivel();
+        }
+
         public void actualizarNivel()
         {
             string comp = "select * from(select id_nivel from niveles order by id_nivel desc) where rownum =1";
