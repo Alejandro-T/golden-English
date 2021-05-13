@@ -49,15 +49,26 @@ namespace GoldenE.lecciones
 
                 OracleCommand comandoinse = new OracleCommand("insertar_leccion", Conexion.conectar());
                 comandoinse.CommandType = CommandType.StoredProcedure;
-                
+
                 comandoinse.Parameters.Add("@NIVELES_ID_NIVEL", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxNiveles.SelectedValue);
                 comandoinse.Parameters.Add("@descripcion", OracleDbType.Varchar2).Value = this.textBoxNombreLeccion.Text;
 
+                string comp = " select id_leccion from lecciones where descripcion =lower('" + this.textBoxNombreLeccion.Text + "')and  NIVELES_ID_NIVEL ='"+ Convert.ToInt16(comboBoxNiveles.SelectedValue) + "'";
+                OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
+                OracleDataReader dre = cpe.ExecuteReader();
+                if (dre.Read())
+                {
+                    MessageBox.Show("Existe una leccion con el mismo nombre ", "aviso", MessageBoxButtons.OK);
+                }
+                else
+                {   
+                    comandoinse.ExecuteNonQuery();
+                    MessageBox.Show("Leccion Insertada ", "aviso", MessageBoxButtons.OK);
+                    //Select para saber el numero actual.
+                    limpiar();
+                }
 
-                comandoinse.ExecuteNonQuery();               
-                MessageBox.Show("Leccion Insertada ", "aviso", MessageBoxButtons.OK);
-                //Select para saber el numero actual.
-                limpiar();
+                
 
             }
             catch (OracleException ex)

@@ -27,10 +27,21 @@ namespace GoldenE.salones
                 comandoinse.CommandType = CommandType.StoredProcedure;
                
                 comandoinse.Parameters.Add("@descripcion", OracleDbType.Varchar2).Value = this.textBoxNombreSalon.Text;
-
-                comandoinse.ExecuteNonQuery();
-                MessageBox.Show("Salon insertado ", "aviso", MessageBoxButtons.OK);
-                limpiar();
+                
+                string comp = " select id_salon from salones where descripcion =lower('" + this.textBoxNombreSalon.Text + "')";
+                OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
+                OracleDataReader dre = cpe.ExecuteReader();
+                if (dre.Read())
+                {
+                    MessageBox.Show("Existe un salon con el mismo nombre ", "aviso", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    comandoinse.ExecuteNonQuery();
+                    MessageBox.Show("Salon insertado ", "aviso", MessageBoxButtons.OK);
+                    limpiar();
+                }
+                    
             }
             catch (OracleException ex)
             {

@@ -28,12 +28,22 @@ namespace GoldenE.niveles
                 OracleCommand comandoinse = new OracleCommand("insertar_nivel", Conexion.conectar());
                 comandoinse.CommandType = CommandType.StoredProcedure;
                 comandoinse.Parameters.Add("@descripcion", OracleDbType.Varchar2).Value = this.textBoxNombreNivel.Text;
-                
+                string comp = " select id_nivel from niveles where descripcion =lower('" + this.textBoxNombreNivel.Text + "')";
+                OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
+                OracleDataReader dre = cpe.ExecuteReader();
+                if (dre.Read())
+                {
+                    MessageBox.Show("Existe un nivel con el mismo nombre ", "aviso", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    comandoinse.ExecuteNonQuery();
+                    MessageBox.Show("nivel insertado ", "aviso", MessageBoxButtons.OK);
+                    //Select para saber el numero actual.
+                    limpiar();
+                }
 
-                comandoinse.ExecuteNonQuery();
-                MessageBox.Show("nivel insertado ", "aviso", MessageBoxButtons.OK);
-                //Select para saber el numero actual.
-                limpiar();
+               
 
             }
             catch (OracleException ex)
