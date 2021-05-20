@@ -31,5 +31,15 @@ namespace GoldenE.Catalogo_Horario
         {
             AbrirFormEnPanel(new InsertarCatalogo());
         }
+
+        private void buttonActu_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new ActualizarCatalogo());
+        }
+
+        private void buttonSelec_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new SeleccionarCatalogo());
+        }
     }
 }

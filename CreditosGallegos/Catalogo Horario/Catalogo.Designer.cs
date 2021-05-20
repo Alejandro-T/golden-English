@@ -71,6 +71,7 @@ namespace GoldenE.Catalogo_Horario
             this.buttonActu.TabIndex = 5;
             this.buttonActu.Text = "Actualizar";
             this.buttonActu.UseVisualStyleBackColor = true;
+            this.buttonActu.Click += new System.EventHandler(this.buttonActu_Click);
             // 
             // buttonAgre
             // 
@@ -99,6 +100,7 @@ namespace GoldenE.Catalogo_Horario
             this.buttonSelec.TabIndex = 1;
             this.buttonSelec.Text = "Seleccionar";
             this.buttonSelec.UseVisualStyleBackColor = true;
+            this.buttonSelec.Click += new System.EventHandler(this.buttonSelec_Click);
             // 
             // label3
             // 
