@@ -82,19 +82,34 @@ CREATE TABLE calificaciones (
 );
 
 CREATE TABLE horarios (
-  id_horario NUMERIC NOT NULL,
+  id_horario number(20) NOT NULL,
   tipo_clase_id_clase NUMBER(1) NOT NULL,
   lecciones_id_leccion NUMBER(2) NOT NULL,
   usuarios_id_maestro NUMBER(5) NOT NULL,
   alumnos_id_alumno NUMBER(5) NOT NULL,
   salones_id_salon NUMBER(2) NOT NULL,
+  RFC_ALUMNO_HORARIO VARCHAR2(40),
+  RFC_MAES_HORARIO  VARCHAR2(50),
   fecha DATE NOT NULL,
-  PRIMARY KEY(id_horario),
+  hora varchar2(10) not null,
+  PRIMARY KEY(alumnos_id_alumno,hora,fecha),
   constraint fk_hoarario_tipo_clase foreign key(tipo_clase_id_clase)references tipo_clase(id_clase),
   constraint fk_horario_leccion foreign key(lecciones_id_leccion)references lecciones(id_leccion),
-  constraint fk_horario_alumno foreign key(alumnos_id_alumno)references alumnos(id_alumno),
-  constraint fk_horario_user foreign key(usuarios_id_maestro)references usuarios(id_usuario)
+  constraint fk_horario_alumnoo foreign key(alumnos_id_alumno,RFC_ALUMNO_HORARIO)references alumnos(id_alumno,RFC_ALUMNO),
+  constraint fk_horario_user foreign key(usuarios_id_maestro,RFC_MAES_HORARIO)references usuarios(id_usuario,RFC)
 );
+
+
+create or replace procedure insertar_horario
+(HTIPO_CLASE_ID_CLASE numeric,HLECCIONES_ID_LECCION numeric,HUSUARIOS_ID_MAESTRO NUMERIC,HALUMNOS_ID_ALUMNO NUMERIC,HSALONES_ID_SALON NUMERIC,HRFC_ALUMNO_HORARIO varchar2, HRFC_MAES_HORARIO varchar2,HFECHA Date,HHORA varchar2)
+as
+begin
+      insert into horarios(TIPO_CLASE_ID_CLASE,LECCIONES_ID_LECCION,USUARIOS_ID_MAESTRO,ALUMNOS_ID_ALUMNO,SALONES_ID_SALON,RFC_ALUMNO_HORARIO,RFC_MAES_HORARIO,FECHA,HORA) 
+      values(HTIPO_CLASE_ID_CLASE,HLECCIONES_ID_LECCION,HUSUARIOS_ID_MAESTRO,HALUMNOS_ID_ALUMNO,HSALONES_ID_SALON,lower(HRFC_ALUMNO_HORARIO),lower(HRFC_MAES_HORARIO),HFECHA,HHORA);
+end insertar_horario;
+/
+
+
 
 CREATE SEQUENCE seq_user_id_user
 START WITH 1
@@ -113,7 +128,18 @@ CREATE SEQUENCE seq_id_salon START WITH 1
  INCREMENT BY 1 
 NOMAXVALUE; 
 
+
+CREATE SEQUENCE seq_id_catalogo START WITH 1
+ INCREMENT BY 1 
+NOMAXVALUE; 
+
+
 CREATE SEQUENCE seq_alum_id_alum START WITH 1 INCREMENT BY 1 NOMAXVALUE; 
+
+CREATE SEQUENCE seq_user_id_horario
+START WITH 1
+INCREMENT BY 1 
+NOMAXVALUE; 
 
 create or replace trigger alumno_triger_auto
 before insert on alumnos
@@ -157,6 +183,24 @@ for each row
 begin
 select seq_id_salon.nextval
 into:new.id_salon
+from dual;
+end;
+
+create or replace trigger catalogo_triger_auto
+before insert on tipo_clase
+for each row
+begin
+select seq_id_catalogo.nextval
+into:new.id_clase
+from dual;
+end;
+
+create or replace trigger horario_triger_auto
+before insert on horarios
+for each row
+begin
+select seq_user_id_horario.nextval
+into:new.id_horario
 from dual;
 end;
 
@@ -207,6 +251,15 @@ end insertar_salon;
 /
 
 
+create or replace procedure insertar_catalogo
+(catalogo_descripcion varchar2)
+as
+begin
+      insert into tipo_clase(descripcion) 
+      values(lower(catalogo_descripcion));
+end insertar_catalogo;
+/
+
 
 
 CREATE OR REPLACE PROCEDURE  ACTUALIZAUSUARIOS (id_usuario_in numeric,usuario_id_tipo_usuario numeric,usuario_id_genero numeric,NOMBREIN varchar2,PATERNOIN varchar2,MATERNOIN varchar2,usuario_fecha_na Date,usuario_telefono varchar2,usuario_direccion varchar2,usuario_rfc varchar2,usuario_contrasena varchar2)
@@ -239,4 +292,13 @@ begin
 update LECCIONES set NIVELES_ID_NIVEL = leccion_id_nivel,descripcion = leccion_descripcion
 where(ID_LECCION)=id_leccion_in; 
 end ACTUALIZALECCIONES;	
+/
+
+
+CREATE OR REPLACE PROCEDURE  ACTUALIZACATALOGO (id_catalogo_in numeric,catalogo_descripcion varchar2)
+as 
+begin 
+update tipo_clase set descripcion = catalogo_descripcion 
+where(ID_clase)=id_catalogo_in; 
+end ACTUALIZACATALOGO;
 /

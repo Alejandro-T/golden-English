@@ -31,20 +31,19 @@ namespace GoldenE.alumnos
                 act.Parameters.Add("salon_descripcion", OracleDbType.Varchar2).Value = textBoxAdescripcion.Text;
 
                 //
-                string comprobacion2 =
-                    "SELECT ID_SALON from salones where ID_SALON='" + textBoxSid.Text + "'";
-                OracleCommand cp2 = new OracleCommand(comprobacion2, Conexion.conectar());
-                OracleDataReader dr2 = cp2.ExecuteReader();
-                if (dr2.Read())
+                string comp = " select id_salon from salones where descripcion =lower('" + this.textBoxAdescripcion.Text + "')";
+                OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
+                OracleDataReader dre = cpe.ExecuteReader();
+                if (dre.Read())
+                {
+                    MessageBox.Show("Existe un salon con el mismo nombre ", "aviso", MessageBoxButtons.OK);
+                }
+                else
                 {
                     act.ExecuteNonQuery();
                     MessageBox.Show("Dato actualizado con exito", "exito", MessageBoxButtons.OK);
                     this.cargarSalon(this.dataGridViewCargaSalon);
                     this.Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("El salon no existe", "aviso", MessageBoxButtons.OK);
                 }
 
                 //aaaa
@@ -76,6 +75,7 @@ namespace GoldenE.alumnos
             {
                 DataGridViewRow row = this.dataGridViewCargaSalon.Rows[e.RowIndex];
                 this.textBoxSid.Text = row.Cells["ID_SALON"].Value.ToString();
+                this.textBoxIdSalon.Text = row.Cells["ID_SALON"].Value.ToString();
                 this.textBoxAdescripcion.Text = row.Cells["descripcion"].Value.ToString();
             }
         }
@@ -191,6 +191,7 @@ namespace GoldenE.alumnos
         public void Limpiar()
         {
             this.textBoxIdSalon.Clear();
+            this.textBoxSid.Clear();
             this.textBoxAdescripcion.Clear();
 
         }

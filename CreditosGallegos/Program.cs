@@ -1,4 +1,6 @@
 ﻿using GoldenE.alumnos;
+using GoldenE.Catalogo_Horario;
+using GoldenE.horarios;
 using GoldenE.lecciones;
 using GoldenE.niveles;
 using GoldenE.salones;
@@ -20,7 +22,7 @@ namespace Ge
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new AgregaHorario());
         }
     }
 }

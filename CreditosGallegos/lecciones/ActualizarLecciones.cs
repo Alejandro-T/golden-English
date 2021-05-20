@@ -31,20 +31,19 @@ namespace GoldenE.alumnos
                 act.Parameters.Add("leccion_id_nivel", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxNiveles.SelectedValue);
                 act.Parameters.Add("leccion_descripcion", OracleDbType.Varchar2).Value = textBoxAdescripcion.Text;
                 //
-                string comprobacion2 =
-                    "SELECT ID_LECCION from lecciones where ID_LECCION='" + textBoxSid.Text + "'";
-                OracleCommand cp2 = new OracleCommand(comprobacion2, Conexion.conectar());
-                OracleDataReader dr2 = cp2.ExecuteReader();
-                if (dr2.Read())
+                string comp = " select id_leccion from lecciones where descripcion =lower('" + this.textBoxAdescripcion.Text + "')and  NIVELES_ID_NIVEL ='" + Convert.ToInt16(comboBoxNiveles.SelectedValue) + "'";
+                OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
+                OracleDataReader dre = cpe.ExecuteReader();
+                if (dre.Read())
+                {
+                    MessageBox.Show("Existe una leccion con el mismo nombre ", "aviso", MessageBoxButtons.OK);
+                }
+                else
                 {
                     act.ExecuteNonQuery();
                     MessageBox.Show("Dato actualizado con exito", "exito", MessageBoxButtons.OK);
                     this.cargarLeccion(this.dataGridViewCargaLeccion);
                     this.Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("La lección no existe", "aviso", MessageBoxButtons.OK);
                 }
 
                 //aaaa
@@ -175,6 +174,7 @@ namespace GoldenE.alumnos
 
         private void ActualizarNiveles_Load(object sender, EventArgs e)
         {
+            SeleccionacomboNivles();
             if (groupBox1.Enabled == true || groupBox2.Enabled == true)
             {
 

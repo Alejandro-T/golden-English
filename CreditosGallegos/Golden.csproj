@@ -111,6 +111,18 @@
     <Compile Include="Backup.Designer.cs">
       <DependentUpon>Backup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogo Horario\Catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogo Horario\Catalogo.Designer.cs">
+      <DependentUpon>Catalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogo Horario\InsertarCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogo Horario\InsertarCatalogo.Designer.cs">
+      <DependentUpon>InsertarCatalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Conexion.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="Form1.cs">
@@ -118,6 +130,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="horarios\AgregaHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="horarios\AgregaHorario.Designer.cs">
+      <DependentUpon>AgregaHorario.cs</DependentUpon>
     </Compile>
     <Compile Include="lecciones\ActualizarLecciones.cs">
       <SubType>Form</SubType>
@@ -246,8 +264,17 @@
     <EmbeddedResource Include="Backup.resx">
       <DependentUpon>Backup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Catalogo Horario\Catalogo.resx">
+      <DependentUpon>Catalogo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogo Horario\InsertarCatalogo.resx">
+      <DependentUpon>InsertarCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="horarios\AgregaHorario.resx">
+      <DependentUpon>AgregaHorario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="lecciones\ActualizarLecciones.resx">
       <DependentUpon>ActualizarLecciones.cs</DependentUpon>

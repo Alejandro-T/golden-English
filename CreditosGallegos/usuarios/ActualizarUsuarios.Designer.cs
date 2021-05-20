@@ -67,6 +67,8 @@ namespace GoldenE.alumnos
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonBuscar = new System.Windows.Forms.Button();
             this.dataGridViewCargaUsuario = new System.Windows.Forms.DataGridView();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBoxRfc = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -217,6 +219,8 @@ namespace GoldenE.alumnos
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label15);
+            this.groupBox3.Controls.Add(this.textBoxRfc);
             this.groupBox3.Controls.Add(this.radioButtonMaestro);
             this.groupBox3.Controls.Add(this.radioButtonRecepcionista);
             this.groupBox3.Controls.Add(this.radioButtonGerente);
@@ -239,7 +243,7 @@ namespace GoldenE.alumnos
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Location = new System.Drawing.Point(8, 85);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(341, 284);
+            this.groupBox3.Size = new System.Drawing.Size(341, 321);
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             // 
@@ -253,7 +257,6 @@ namespace GoldenE.alumnos
             this.radioButtonMaestro.TabStop = true;
             this.radioButtonMaestro.Text = "Maestro";
             this.radioButtonMaestro.UseVisualStyleBackColor = true;
-            
             // 
             // radioButtonRecepcionista
             // 
@@ -265,7 +268,6 @@ namespace GoldenE.alumnos
             this.radioButtonRecepcionista.TabStop = true;
             this.radioButtonRecepcionista.Text = "Recepcionista";
             this.radioButtonRecepcionista.UseVisualStyleBackColor = true;
-            
             // 
             // radioButtonGerente
             // 
@@ -277,7 +279,6 @@ namespace GoldenE.alumnos
             this.radioButtonGerente.TabStop = true;
             this.radioButtonGerente.Text = "Gerente";
             this.radioButtonGerente.UseVisualStyleBackColor = true;
-            
             // 
             // label14
             // 
@@ -299,7 +300,7 @@ namespace GoldenE.alumnos
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(178, 222);
+            this.label13.Location = new System.Drawing.Point(170, 222);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(42, 13);
             this.label13.TabIndex = 27;
@@ -440,7 +441,7 @@ namespace GoldenE.alumnos
             this.panel1.Controls.Add(this.groupBox2);
             this.panel1.Location = new System.Drawing.Point(7, 28);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 387);
+            this.panel1.Size = new System.Drawing.Size(800, 428);
             this.panel1.TabIndex = 20;
             // 
             // buttonBuscar
@@ -463,6 +464,23 @@ namespace GoldenE.alumnos
             this.dataGridViewCargaUsuario.Size = new System.Drawing.Size(362, 150);
             this.dataGridViewCargaUsuario.TabIndex = 10;
             this.dataGridViewCargaUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCargaAlumno_CellContentClick);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(170, 287);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(24, 13);
+            this.label15.TabIndex = 34;
+            this.label15.Text = "Rfc";
+            // 
+            // textBoxRfc
+            // 
+            this.textBoxRfc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxRfc.Location = new System.Drawing.Point(62, 285);
+            this.textBoxRfc.Name = "textBoxRfc";
+            this.textBoxRfc.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRfc.TabIndex = 33;
             // 
             // ActualizarUsuarios
             // 
@@ -531,5 +549,7 @@ namespace GoldenE.alumnos
         private System.Windows.Forms.RadioButton radioButtonMaestro;
         private System.Windows.Forms.RadioButton radioButtonRecepcionista;
         private System.Windows.Forms.RadioButton radioButtonGerente;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBoxRfc;
     }
 }

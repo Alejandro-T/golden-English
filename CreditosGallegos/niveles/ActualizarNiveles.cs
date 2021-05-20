@@ -29,21 +29,23 @@ namespace GoldenE.alumnos
                 act.Parameters.Add("nivel_descripcion", OracleDbType.Varchar2).Value = textBoxAdescripcion.Text;
 
                 //
-                string comprobacion2 =
-                    "SELECT ID_NIVEL from niveles where ID_NIVEL='" + textBoxNid.Text + "'";
-                OracleCommand cp2 = new OracleCommand(comprobacion2, Conexion.conectar());
-                OracleDataReader dr2 = cp2.ExecuteReader();
-                if (dr2.Read())
+                string comp = " select id_nivel from niveles where descripcion =lower('" + this.textBoxAdescripcion.Text + "')";
+                OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());
+                OracleDataReader dre = cpe.ExecuteReader();
+                if (dre.Read())
+                {
+                    MessageBox.Show("Existe un nivel con el mismo nombre ", "aviso", MessageBoxButtons.OK);
+                }
+                else
                 {
                     act.ExecuteNonQuery();
                     MessageBox.Show("Dato actualizado con exito", "exito", MessageBoxButtons.OK);
                     this.cargarNivel(this.dataGridViewCargaNivel);
                     this.Limpiar();
                 }
-                else
-                {
-                    MessageBox.Show("El nivel no existe", "aviso", MessageBoxButtons.OK);
-                }
+                
+                
+               
 
                 //aaaa
             }

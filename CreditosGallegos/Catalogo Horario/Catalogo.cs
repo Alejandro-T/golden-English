@@ -1,5 +1,4 @@
-﻿using GoldenE.alumnos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GoldenE.lecciones
+namespace GoldenE.Catalogo_Horario
 {
-    public partial class Lecciones : Form
+    public partial class Catalogo : Form
     {
-        public Lecciones()
+        public Catalogo()
         {
             InitializeComponent();
         }
@@ -28,19 +27,9 @@ namespace GoldenE.lecciones
             this.panelContenedor.Tag = fh;
             fh.Show();
         }
-        private void buttonSelec_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(new niveles.SeleccionarLeccion());
-        }
-
         private void buttonAgre_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new InsertarLecciones());
-        }
-
-        private void buttonActu_Click(object sender, EventArgs e)
-        {
-            AbrirFormEnPanel(new ActualizarLecciones());
+            AbrirFormEnPanel(new InsertarCatalogo());
         }
     }
 }

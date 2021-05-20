@@ -29,8 +29,7 @@ namespace GoldenE.alumnos
                 string password = Helper.EncodePassword(string.Concat(textBoxSidUsuario.Text, this.textBoxAcontraseña.Text));
 
                 act.Parameters.Add("id_usuario_in", OracleDbType.Int16).Value = textBoxSidUsuario.Text;
-                act.Parameters.Add("usuario_id_genero", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxGeneros.SelectedValue);
-                if(this.radioButtonGerente.Checked == true)
+                if (this.radioButtonGerente.Checked == true)
                 {
                     act.Parameters.Add("usuario_id_tipo_usuario", OracleDbType.Int16).Value = 1;
                 }
@@ -42,7 +41,7 @@ namespace GoldenE.alumnos
                 {
                     act.Parameters.Add("usuario_id_tipo_usuario", OracleDbType.Int16).Value = 3;
                 }
-
+                act.Parameters.Add("usuario_id_genero", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxGeneros.SelectedValue);
                 act.Parameters.Add("nombrein", OracleDbType.Varchar2).Value = textBoxAnombre.Text;
                 act.Parameters.Add("paternoin", OracleDbType.Varchar2).Value = textBoxApaterno.Text;
                 act.Parameters.Add("maternoin", OracleDbType.Varchar2).Value = textBoxAmaterno.Text;
@@ -50,7 +49,7 @@ namespace GoldenE.alumnos
                 act.Parameters.Add("usuario_fecha_na", OracleDbType.Varchar2).Value = dateTimePicker1.Text;
                 act.Parameters.Add("usuario_telefono", OracleDbType.Varchar2).Value = textBoxAtelefono.Text;
                 act.Parameters.Add("usuario_direccion", OracleDbType.Varchar2).Value = textBoxAdireccion.Text;
-                act.Parameters.Add("usuario_rfc", OracleDbType.Varchar2).Value = rfc;
+                act.Parameters.Add("usuario_rfc", OracleDbType.Varchar2).Value = textBoxRfc.Text;
                 act.Parameters.Add("usuario_contrasena", OracleDbType.Varchar2).Value = password;
 
 
@@ -75,23 +74,16 @@ namespace GoldenE.alumnos
             }
             catch (OracleException ex)
             {
-                switch (ex.Number)
-                {
-                    case 1722:
-                        MessageBox.Show("Numero invalido(FormatException)--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                    case 2292:
-                        MessageBox.Show("No se puede eliminar el dato, porque existe una tabla hijo con ese dato", "Aviso", MessageBoxButtons.OK);
-                        break;
-                    default:
-                        MessageBox.Show("Formato invalido--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                }
+                ManejoErrores.erroresOracle(ex);
             }
-            finally
+            catch (System.FormatException exe)
             {
-                Conexion.cerrar();
+                ManejoErrores.erroresSystem(exe);
             }
+
+
+
+
         }
         public void SeleccionacomboGenero()
         {
@@ -121,6 +113,7 @@ namespace GoldenE.alumnos
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridViewCargaUsuario.Rows[e.RowIndex];;
+                this.textBoxSidUsuario.Text = row.Cells["matricula"].Value.ToString();
                 this.textBoxAnombre.Text = row.Cells["nombre"].Value.ToString();
                 this.textBoxApaterno.Text = row.Cells["paterno"].Value.ToString();
                 this.textBoxAmaterno.Text = row.Cells["materno"].Value.ToString();
@@ -139,8 +132,11 @@ namespace GoldenE.alumnos
                 {
                     this.radioButtonMaestro.Checked = true;
                 }
-                rfc = row.Cells["RFC"].Value.ToString();
+                
                 this.textBoxAcontraseña.Text = row.Cells["contrasena"].Value.ToString();
+                this.textBoxRfc.Text = row.Cells["rfc"].Value.ToString();
+               // string hash = Helper.EncodePassword(string.Concat(this.textBoxSidUsuario.Text, this.textBoxAcontraseña.Text));
+               // linkLabel1.Text = hash;
             }
         }
         public void CargarUsuarioName(DataGridView dvg)
@@ -257,6 +253,7 @@ namespace GoldenE.alumnos
             this.textBoxSidUsuario.Clear();
             this.textBoxAnombre.Clear();
             this.textBoxApaterno.Clear();
+            this.textBoxRfc.Clear();
             this.textBoxAmaterno.Clear();
             this.textBoxAtelefono.Clear();
             this.textBoxAdireccion.Clear();
