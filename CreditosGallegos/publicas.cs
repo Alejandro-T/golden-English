@@ -27,7 +27,7 @@ namespace Ge
             id_leccion = 0;
             id_salon = 0;
             id_catalogo = 0;
-            hora = "";
+            hora = "null";
         }
         
         public static int id_t_user

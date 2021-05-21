@@ -23,7 +23,10 @@ namespace GoldenE.horarios
         {
 
         }
-
+        public void limpiar()
+        {
+            textBoxKardexAlumno.Clear();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -52,24 +55,16 @@ namespace GoldenE.horarios
                     comandoinse.Parameters.Add("@SALONES_ID_SALON", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxSalon.SelectedValue);
                     comandoinse.Parameters.Add("@RFC_ALUMNO_HORARIO", OracleDbType.Varchar2).Value = ra;
                     comandoinse.Parameters.Add("@RFC_MAES_HORARIO", OracleDbType.Varchar2).Value = ru;
-                    //RFC_ALUMNO_HORARIO
-                    // RFC_MAES_HORARI
                     comandoinse.Parameters.Add("@FECHA", OracleDbType.Varchar2).Value = this.dateTimePicker1.Text;
                     comandoinse.Parameters.Add("@hora", OracleDbType.Varchar2).Value = publicas.hora.ToString();
-
-                    //MessageBox.Show("" + ra, "");
-                    //MessageBox.Show("" + ru, "");
-
-
-
                     comandoinse.ExecuteNonQuery();
-
-                    MessageBox.Show("Horario Insertado ", "aviso", MessageBoxButtons.OK);
-                    //Select para saber el numero actual.
+                    MessageBox.Show("Horario Insertado ", "aviso", MessageBoxButtons.OK);        
+                    limpiar();
                 }
                 else
                 {
                     MessageBox.Show("Horario NO Insertado ", "aviso", MessageBoxButtons.OK);
+                    limpiar();
                 }
 
             }
@@ -91,29 +86,7 @@ namespace GoldenE.horarios
             publicas.hora = listBox1.SelectedItem.ToString();
             //MessageBox.Show("" + hora, "");
         }
-        public void SeleccionacomboTipoLeccion()
-        {
-            DataTable dt = new DataTable();
-            DataSet ds = new DataSet();
-            string depto = "SELECT id_clase,descripcion FROM tipo_clase";
-            OracleDataAdapter da = new OracleDataAdapter
-                (depto, Ge.Conexion.conectar());
-            OracleCommand cmd = new OracleCommand(depto, Ge.Conexion.conectar());
-
-            OracleDataReader dr = cmd.ExecuteReader();
-            da.Fill(ds);
-
-            if (dr.Read())
-            {
-                comboBoxTipoDeLeccion.DataSource = ds.Tables[0];
-                comboBoxTipoDeLeccion.DisplayMember = "descripcion";
-                comboBoxTipoDeLeccion.ValueMember = "id_clase";
-            }
-            else
-            {
-                MessageBox.Show("no hay tipo de clases existentes");
-            }
-        }
+        
         public void SeleccionacomboSalones()
         {
             DataTable dt = new DataTable();
@@ -139,29 +112,7 @@ namespace GoldenE.horarios
         }
 
 
-        public void SeleccionacomboNivel()
-        {
-            DataTable dt = new DataTable();
-            DataSet ds = new DataSet();
-            string depto = "SELECT id_nivel,descripcion FROM niveles";
-            OracleDataAdapter da = new OracleDataAdapter
-                (depto, Ge.Conexion.conectar());
-            OracleCommand cmd = new OracleCommand(depto, Ge.Conexion.conectar());
-
-            OracleDataReader dr = cmd.ExecuteReader();
-            da.Fill(ds);
-
-            if (dr.Read())
-            {
-                comboBoxNivel.DataSource = ds.Tables[0];
-                comboBoxNivel.DisplayMember = "descripcion";
-                comboBoxNivel.ValueMember = "id_nivel";
-            }
-            else
-            {
-                MessageBox.Show("no hay niveles existentes");
-            }
-        }
+        
         public void SeleccionacomboLecciones()
         {
 
@@ -219,9 +170,9 @@ namespace GoldenE.horarios
 
         private void AgregaHorario_Load(object sender, EventArgs e)
         {
-            SeleccionacomboTipoLeccion();
+            CargaComboBox.SeleccionacomboTipoLeccion(comboBoxTipoDeLeccion);
             SeleccionacomboSalones();
-            SeleccionacomboNivel();
+            CargaComboBox.SeleccionacomboNivel(comboBoxNivel);
             SeleccionacomboMaestros();
         }
         int cont = 0;
@@ -238,6 +189,50 @@ namespace GoldenE.horarios
             }
             else { cont++; }
             //SeleccionacomboLecciones();
+        }
+
+
+        private void textBoxKardexAlumno_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                string nocA = " select nombre from alumnos where id_alumno ='" + this.textBoxKardexAlumno.Text + "'";
+                OracleCommand cpe = new OracleCommand(nocA, Conexion.conectar());
+                OracleDataReader dre = cpe.ExecuteReader();
+                string pacU = " select paterno from alumnos where id_alumno ='" + this.textBoxKardexAlumno.Text + "'";
+                OracleCommand cpe2 = new OracleCommand(pacU, Conexion.conectar());
+                OracleDataReader dre2 = cpe2.ExecuteReader();
+                string macU = " select materno from alumnos where id_alumno ='" + this.textBoxKardexAlumno.Text + "'";
+                OracleCommand cpe3 = new OracleCommand(pacU, Conexion.conectar());
+                OracleDataReader dre3 = cpe3.ExecuteReader();
+                if (dre.Read() && dre2.Read() && dre3.Read())
+                {
+                    string rn = "";
+                    string rm = "";
+                    string rp = "";
+                    rn = Convert.ToString(cpe.ExecuteScalar());
+                    rp = Convert.ToString(cpe2.ExecuteScalar());
+                    rm = Convert.ToString(cpe3.ExecuteScalar());
+                    textBoxNombre.Text = rn;
+                    textBoxPaterno.Text = rp;
+                    textBoxMaterno.Text = rm;
+                }
+                else
+                {
+                    MessageBox.Show("Alumno no encontrado","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    textBoxNombre.Clear();
+                    textBoxPaterno.Clear();
+                    textBoxMaterno.Clear();
+                }
+            }
+            catch (OracleException ex)
+            {
+                ManejoErrores.erroresOracle(ex);
+            }
+            catch (System.FormatException exe)
+            {
+                ManejoErrores.erroresSystem(exe);
+            }
         }
     }
 }

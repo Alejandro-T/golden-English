@@ -69,16 +69,19 @@ CREATE TABLE tipo_clase (
 
 CREATE TABLE calificaciones (
   id_calificacion NUMBER(5) NOT NULL,
+  RFC_ALUMNO_CALIF VARCHAR2(40),
+  RFC_MAES_CALIF  VARCHAR2(50),
   tipo_clase_id_clase NUMBER(1) NOT NULL,
   lecciones_id_leccion NUMBER(2) NOT NULL,
   alumnos_id_alumno NUMBER(5) NOT NULL,
   usuarios_id_maestro NUMBER(5) NOT NULL,
-  calificacion NUMBER(1) NOT NULL,
-  PRIMARY KEY(id_calificacion),
+  calificacion NUMBER(2) NOT NULL,
+  fechaCalif Date,
+  PRIMARY KEY(alumnos_id_alumno,tipo_clase_id_clase,lecciones_id_leccion),
   constraint fk_califi_tipo_clase foreign key(tipo_clase_id_clase)references tipo_clase(id_clase),
   constraint fk_califi_leccion foreign key(lecciones_id_leccion)references lecciones(id_leccion),
-  constraint fk_califi_alumno foreign key(alumnos_id_alumno)references alumnos(id_alumno),
-  constraint fk_califi_user foreign key(usuarios_id_maestro)references usuarios(id_usuario)
+  constraint fk_califi_alumno foreign key(alumnos_id_alumno,RFC_ALUMNO_CALIF)references alumnos(id_alumno,RFC_ALUMNO),
+  constraint fk_califi_user foreign key(usuarios_id_maestro,RFC_MAES_CALIF)references usuarios(id_usuario,RFC)
 );
 
 CREATE TABLE horarios (
@@ -109,7 +112,14 @@ begin
 end insertar_horario;
 /
 
-
+create or replace procedure insertar_calificacion
+(CRFC_ALUMNO_CALIF varchar2, CRFC_MAES_CALIF varchar2,CTIPO_CLASE_ID_CLASE numeric,CLECCIONES_ID_LECCION numeric,CALUMNOS_ID_ALUMNO NUMERIC,CUSUARIOS_ID_MAESTRO NUMERIC,CCALIFICACION NUMERIC,CFECHACALIF Date)
+as
+begin
+      insert into calificaciones(RFC_ALUMNO_CALIF,RFC_MAES_CALIF,TIPO_CLASE_ID_CLASE,LECCIONES_ID_LECCION,ALUMNOS_ID_ALUMNO,USUARIOS_ID_MAESTRO,CALIFICACION,FECHACALIF) 
+      values(lower(CRFC_ALUMNO_CALIF),lower(CRFC_MAES_CALIF),CTIPO_CLASE_ID_CLASE,CLECCIONES_ID_LECCION,CALUMNOS_ID_ALUMNO,CUSUARIOS_ID_MAESTRO,CCALIFICACION,CFECHACALIF);
+end insertar_calificacion;
+/
 
 CREATE SEQUENCE seq_user_id_user
 START WITH 1
@@ -139,6 +149,10 @@ CREATE SEQUENCE seq_alum_id_alum START WITH 1 INCREMENT BY 1 NOMAXVALUE;
 CREATE SEQUENCE seq_user_id_horario
 START WITH 1
 INCREMENT BY 1 
+NOMAXVALUE; 
+
+CREATE SEQUENCE seq_id_calif START WITH 1
+ INCREMENT BY 1 
 NOMAXVALUE; 
 
 create or replace trigger alumno_triger_auto
@@ -203,6 +217,16 @@ select seq_user_id_horario.nextval
 into:new.id_horario
 from dual;
 end;
+
+create or replace trigger calif_triger_auto
+before insert on calificaciones
+for each row
+begin
+select seq_id_calif.nextval
+into:new.ID_CALIFICACION
+from dual;
+end;
+/
 
 create or replace procedure insertar_usuario
 (usuario_id_tipo_usuario numeric,usuario_id_genero numeric,usuario_nombre varchar2,usuario_paterno varchar2,usuario_materno varchar2,usuario_fecha_na Date,usuario_telefono varchar2,usuario_direccion varchar2,usuario_rfc varchar2,usuario_contrasena varchar2)

@@ -1,4 +1,5 @@
-﻿using GoldenE.alumnos;
+﻿using GoldenE;
+using GoldenE.alumnos;
 using GoldenE.lecciones;
 using GoldenE.niveles;
 using GoldenE.usuarios;
@@ -22,19 +23,6 @@ namespace Ge
         {
             InitializeComponent();
         }
-
-        
-        private void AbrirFormEnPanel(object Formhijo)
-        {
-            if (this.panel2.Controls.Count > 0)
-                this.panel2.Controls.RemoveAt(0);
-            Form fh = Formhijo as Form;
-            fh.TopLevel = false;
-            fh.Dock = DockStyle.Fill;
-            this.panel2.Controls.Add(fh);
-            this.panel2.Tag = fh;
-            fh.Show();
-        }
         private void button1_Click(object sender, EventArgs e)
         {
            
@@ -57,8 +45,6 @@ namespace Ge
         {
 
         }
-
-       
 
         private void buttonDepartamentos_Click(object sender, EventArgs e)
         {
@@ -106,14 +92,14 @@ namespace Ge
 
         private void buttonAlumnos_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Alumnos());
+            ComponentesReusables.AbrirFormEnPanel(new Alumnos(), panel2);
         }
 
 
        
         private void buttonSalones_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Salones());
+            ComponentesReusables.AbrirFormEnPanel(new Salones(), panel2);
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -128,17 +114,17 @@ namespace Ge
 
         private void buttonNiveles_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Niveles());
+            ComponentesReusables.AbrirFormEnPanel(new Niveles(), panel2);
         }
 
         private void buttonUser_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Usuarios());
+            ComponentesReusables.AbrirFormEnPanel(new Usuarios(), panel2);
         }
 
         private void buttonLecciones_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new Lecciones());
+            ComponentesReusables.AbrirFormEnPanel(new Lecciones(), panel2);
         }
     }
 }

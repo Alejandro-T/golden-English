@@ -1,7 +1,7 @@
 ﻿
-namespace GoldenE.horarios
+namespace GoldenE.maestros
 {
-    partial class AgregaHorario
+    partial class Calificaciones
     {
         /// <summary>
         /// Required designer variable.
@@ -29,81 +29,99 @@ namespace GoldenE.horarios
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxMaterno = new System.Windows.Forms.TextBox();
+            this.textBoxPaterno = new System.Windows.Forms.TextBox();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBoxMaestros = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxlecc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxNivel = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBoxSalon = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxTipoDeLeccion = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxKardexAlumno = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.textBoxPaterno = new System.Windows.Forms.TextBox();
-            this.textBoxMaterno = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.textBoxCali = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBoxMaterno);
+            this.groupBox2.Controls.Add(this.textBoxPaterno);
+            this.groupBox2.Controls.Add(this.textBoxNombre);
+            this.groupBox2.Location = new System.Drawing.Point(192, 24);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(458, 69);
+            this.groupBox2.TabIndex = 29;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos Del Alumno";
+            // 
+            // textBoxMaterno
+            // 
+            this.textBoxMaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxMaterno.Enabled = false;
+            this.textBoxMaterno.Location = new System.Drawing.Point(338, 31);
+            this.textBoxMaterno.Name = "textBoxMaterno";
+            this.textBoxMaterno.Size = new System.Drawing.Size(100, 13);
+            this.textBoxMaterno.TabIndex = 37;
+            // 
+            // textBoxPaterno
+            // 
+            this.textBoxPaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPaterno.Enabled = false;
+            this.textBoxPaterno.Location = new System.Drawing.Point(185, 31);
+            this.textBoxPaterno.Name = "textBoxPaterno";
+            this.textBoxPaterno.Size = new System.Drawing.Size(100, 13);
+            this.textBoxPaterno.TabIndex = 36;
+            // 
+            // textBoxNombre
+            // 
+            this.textBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNombre.Enabled = false;
+            this.textBoxNombre.Location = new System.Drawing.Point(59, 31);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(100, 13);
+            this.textBoxNombre.TabIndex = 35;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(365, 341);
+            this.button1.Location = new System.Drawing.Point(346, 353);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 24;
+            this.button1.TabIndex = 27;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.textBoxCali);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.comboBoxMaestros);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.comboBoxlecc);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comboBoxNivel);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.comboBoxSalon);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.comboBoxTipoDeLeccion);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBoxKardexAlumno);
-            this.groupBox1.Location = new System.Drawing.Point(52, 87);
+            this.groupBox1.Location = new System.Drawing.Point(33, 99);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(725, 220);
-            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.listBox1.Location = new System.Drawing.Point(587, 32);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 26;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -156,32 +174,6 @@ namespace GoldenE.horarios
             this.comboBoxNivel.Size = new System.Drawing.Size(121, 21);
             this.comboBoxNivel.TabIndex = 29;
             this.comboBoxNivel.SelectedIndexChanged += new System.EventHandler(this.comboBoxNivel_SelectedIndexChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(275, 92);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(34, 13);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "Salon";
-            // 
-            // comboBoxSalon
-            // 
-            this.comboBoxSalon.FormattingEnabled = true;
-            this.comboBoxSalon.Location = new System.Drawing.Point(332, 84);
-            this.comboBoxSalon.Name = "comboBoxSalon";
-            this.comboBoxSalon.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSalon.TabIndex = 27;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(537, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "Hora";
             // 
             // dateTimePicker1
             // 
@@ -236,46 +228,15 @@ namespace GoldenE.horarios
             this.textBoxKardexAlumno.TabIndex = 1;
             this.textBoxKardexAlumno.Leave += new System.EventHandler(this.textBoxKardexAlumno_Leave);
             // 
-            // groupBox2
+            // textBoxCali
             // 
-            this.groupBox2.Controls.Add(this.textBoxMaterno);
-            this.groupBox2.Controls.Add(this.textBoxPaterno);
-            this.groupBox2.Controls.Add(this.textBoxNombre);
-            this.groupBox2.Location = new System.Drawing.Point(211, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(458, 69);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos Del Alumno";
+            this.textBoxCali.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCali.Location = new System.Drawing.Point(288, 182);
+            this.textBoxCali.Name = "textBoxCali";
+            this.textBoxCali.Size = new System.Drawing.Size(100, 13);
+            this.textBoxCali.TabIndex = 35;
             // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNombre.Enabled = false;
-            this.textBoxNombre.Location = new System.Drawing.Point(59, 31);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(100, 13);
-            this.textBoxNombre.TabIndex = 35;
-            // 
-            // textBoxPaterno
-            // 
-            this.textBoxPaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPaterno.Enabled = false;
-            this.textBoxPaterno.Location = new System.Drawing.Point(185, 31);
-            this.textBoxPaterno.Name = "textBoxPaterno";
-            this.textBoxPaterno.Size = new System.Drawing.Size(100, 13);
-            this.textBoxPaterno.TabIndex = 36;
-            // 
-            // textBoxMaterno
-            // 
-            this.textBoxMaterno.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxMaterno.Enabled = false;
-            this.textBoxMaterno.Location = new System.Drawing.Point(338, 31);
-            this.textBoxMaterno.Name = "textBoxMaterno";
-            this.textBoxMaterno.Size = new System.Drawing.Size(100, 13);
-            this.textBoxMaterno.TabIndex = 37;
-            // 
-            // AgregaHorario
+            // Calificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -283,40 +244,37 @@ namespace GoldenE.horarios
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
-            this.Name = "AgregaHorario";
-            this.Text = "AgregaHorario";
-            this.Load += new System.EventHandler(this.AgregaHorario_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Name = "Calificaciones";
+            this.Text = "Calificaciones";
+            this.Load += new System.EventHandler(this.Calificaciones_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBoxTipoDeLeccion;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBoxKardexAlumno;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBoxlecc;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxNivel;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBoxSalon;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBoxMaestros;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBoxMaterno;
         private System.Windows.Forms.TextBox textBoxPaterno;
         private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboBoxMaestros;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBoxlecc;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxNivel;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox comboBoxTipoDeLeccion;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxKardexAlumno;
+        private System.Windows.Forms.TextBox textBoxCali;
     }
 }

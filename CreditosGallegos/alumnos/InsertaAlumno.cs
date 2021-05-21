@@ -22,29 +22,6 @@ namespace GoldenE.alumnos
         {
 
         }
-        public void SeleccionacomboGenero()
-        {
-            DataTable dt = new DataTable();
-            DataSet ds = new DataSet();
-            string depto = "SELECT id_sexo,descripcion FROM sexo";
-            OracleDataAdapter da = new OracleDataAdapter
-                (depto, Ge.Conexion.conectar());
-            OracleCommand cmd = new OracleCommand(depto, Ge.Conexion.conectar());
-
-            OracleDataReader dr = cmd.ExecuteReader();
-            da.Fill(ds);
-
-            if (dr.Read())
-            {
-                comboBoxGenero.DataSource = ds.Tables[0];
-                comboBoxGenero.DisplayMember = "descripcion";
-                comboBoxGenero.ValueMember = "id_sexo";
-            }
-            else
-            {
-                MessageBox.Show("no hay generos existentes");
-            }
-        }
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -73,18 +50,11 @@ namespace GoldenE.alumnos
             }
             catch (OracleException ex)
             {
-                switch (ex.Number)
-                {
-                    case 1722:
-                        MessageBox.Show("Numero invalido(FormatException)--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                    case 2292:
-                        MessageBox.Show("No se puede eliminar el dato, porque existe una tabla hijo con ese dato", "Aviso", MessageBoxButtons.OK);
-                        break;
-                    default:
-                        MessageBox.Show("Formato invalido--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                }
+                ManejoErrores.erroresOracle(ex);
+            }
+            catch (System.FormatException exe)
+            {
+                ManejoErrores.erroresSystem(exe);
             }
         }
         public void Limpiar()
@@ -98,7 +68,7 @@ namespace GoldenE.alumnos
         }
         private void InsertaAlumno_Load(object sender, EventArgs e)
         {
-            SeleccionacomboGenero();
+            CargaComboBox.comboGenero(comboBoxGenero);
             this.actualizarKardex();
         }
         public void actualizarKardex()

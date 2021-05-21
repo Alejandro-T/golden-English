@@ -1,7 +1,9 @@
-﻿using GoldenE.alumnos;
+﻿using GoldenE;
+using GoldenE.alumnos;
 using GoldenE.Catalogo_Horario;
 using GoldenE.horarios;
 using GoldenE.lecciones;
+using GoldenE.maestros;
 using GoldenE.niveles;
 using GoldenE.salones;
 using System;
@@ -22,7 +24,7 @@ namespace Ge
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Catalogo());
+            Application.Run(new Calificaciones());
         }
     }
 }

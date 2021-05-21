@@ -111,6 +111,7 @@
     <Compile Include="Backup.Designer.cs">
       <DependentUpon>Backup.cs</DependentUpon>
     </Compile>
+    <Compile Include="CargaComboBox.cs" />
     <Compile Include="Catalogo Horario\ActualizarCatalogo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +136,7 @@
     <Compile Include="Catalogo Horario\SeleccionarCatalogo.Designer.cs">
       <DependentUpon>SeleccionarCatalogo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComponentesReusables.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Encriptacion.cs" />
     <Compile Include="Form1.cs">
@@ -173,11 +175,23 @@
     <Compile Include="lecciones\SeleccionarLeccion.Designer.cs">
       <DependentUpon>SeleccionarLeccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="maestros\Calificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maestros\Calificaciones.Designer.cs">
+      <DependentUpon>Calificaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainMaestro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMaestro.Designer.cs">
+      <DependentUpon>MainMaestro.cs</DependentUpon>
     </Compile>
     <Compile Include="ManejoErrores.cs" />
     <Compile Include="niveles\ActualizarNiveles.cs">
@@ -306,8 +320,14 @@
     <EmbeddedResource Include="lecciones\SeleccionarLeccion.resx">
       <DependentUpon>SeleccionarLeccion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="maestros\Calificaciones.resx">
+      <DependentUpon>Calificaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMaestro.resx">
+      <DependentUpon>MainMaestro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="niveles\ActualizarNiveles.resx">
       <DependentUpon>ActualizarNiveles.cs</DependentUpon>

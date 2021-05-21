@@ -60,46 +60,13 @@ namespace GoldenE.alumnos
             }
             catch (OracleException ex)
             {
-                switch (ex.Number)
-                {
-                    case 1722:
-                        MessageBox.Show("Numero invalido(FormatException)--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                    case 2292:
-                        MessageBox.Show("No se puede eliminar el dato, porque existe una tabla hijo con ese dato", "Aviso", MessageBoxButtons.OK);
-                        break;
-                    default:
-                        MessageBox.Show("Formato invalido--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                }
+                ManejoErrores.erroresOracle(ex);
             }
-            finally
+            catch (System.FormatException exe)
             {
-                Conexion.cerrar();
+                ManejoErrores.erroresSystem(exe);
             }
-        }
-        public void SeleccionacomboGenero()
-        {
-            DataTable dt = new DataTable();
-            DataSet ds = new DataSet();
-            string depto = "SELECT id_sexo,descripcion FROM sexo";
-            OracleDataAdapter da = new OracleDataAdapter
-                (depto, Ge.Conexion.conectar());
-            OracleCommand cmd = new OracleCommand(depto, Ge.Conexion.conectar());
-
-            OracleDataReader dr = cmd.ExecuteReader();
-            da.Fill(ds);
-
-            if (dr.Read())
-            {
-                comboBoxGeneros.DataSource = ds.Tables[0];
-                comboBoxGeneros.DisplayMember = "descripcion";
-                comboBoxGeneros.ValueMember = "id_sexo";
-            }
-            else
-            {
-                MessageBox.Show("no hay generos existentes");
-            }
+            
         }
         private void dataGridViewCargaAlumno_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -140,18 +107,11 @@ namespace GoldenE.alumnos
             }
             catch (OracleException ex)
             {
-                switch (ex.Number)
-                {
-                    case 1722:
-                        MessageBox.Show("--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                    case 2292:
-                        MessageBox.Show("No se puede eliminar el dato, porque existe una tabla hijo con ese dato", "Aviso", MessageBoxButtons.OK);
-                        break;
-                    default:
-                        MessageBox.Show("Formato invalido--Error--" + ex.Number, "Aviso", MessageBoxButtons.OK);
-                        break;
-                }
+                ManejoErrores.erroresOracle(ex);
+            }
+            catch (System.FormatException exe)
+            {
+                ManejoErrores.erroresSystem(exe);
             }
 
 
@@ -189,7 +149,7 @@ namespace GoldenE.alumnos
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             this.cargarAlumno(this.dataGridViewCargaAlumno);
-            SeleccionacomboGenero();
+            CargaComboBox.comboGenero(comboBoxGeneros);
         }
 
         private void ActualizarAlumnos_Load(object sender, EventArgs e)
