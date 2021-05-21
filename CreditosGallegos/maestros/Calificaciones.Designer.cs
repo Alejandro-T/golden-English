@@ -35,8 +35,7 @@ namespace GoldenE.maestros
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxMaestros = new System.Windows.Forms.ComboBox();
+            this.textBoxCali = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBoxlecc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@ namespace GoldenE.maestros
             this.comboBoxTipoDeLeccion = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxKardexAlumno = new System.Windows.Forms.TextBox();
-            this.textBoxCali = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -93,7 +91,7 @@ namespace GoldenE.maestros
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(346, 353);
+            this.button1.Location = new System.Drawing.Point(346, 341);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 27;
@@ -104,8 +102,6 @@ namespace GoldenE.maestros
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxCali);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBoxMaestros);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.comboBoxlecc);
             this.groupBox1.Controls.Add(this.label1);
@@ -123,22 +119,13 @@ namespace GoldenE.maestros
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
-            // label8
+            // textBoxCali
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(474, 166);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 13);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Maestros";
-            // 
-            // comboBoxMaestros
-            // 
-            this.comboBoxMaestros.FormattingEnabled = true;
-            this.comboBoxMaestros.Location = new System.Drawing.Point(531, 158);
-            this.comboBoxMaestros.Name = "comboBoxMaestros";
-            this.comboBoxMaestros.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxMaestros.TabIndex = 33;
+            this.textBoxCali.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCali.Location = new System.Drawing.Point(288, 182);
+            this.textBoxCali.Name = "textBoxCali";
+            this.textBoxCali.Size = new System.Drawing.Size(100, 13);
+            this.textBoxCali.TabIndex = 35;
             // 
             // label6
             // 
@@ -228,14 +215,6 @@ namespace GoldenE.maestros
             this.textBoxKardexAlumno.TabIndex = 1;
             this.textBoxKardexAlumno.Leave += new System.EventHandler(this.textBoxKardexAlumno_Leave);
             // 
-            // textBoxCali
-            // 
-            this.textBoxCali.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCali.Location = new System.Drawing.Point(288, 182);
-            this.textBoxCali.Name = "textBoxCali";
-            this.textBoxCali.Size = new System.Drawing.Size(100, 13);
-            this.textBoxCali.TabIndex = 35;
-            // 
             // Calificaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -263,8 +242,6 @@ namespace GoldenE.maestros
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBoxMaestros;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBoxlecc;
         private System.Windows.Forms.Label label1;

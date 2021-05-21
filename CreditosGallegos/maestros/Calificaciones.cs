@@ -30,7 +30,7 @@ namespace GoldenE.maestros
                 string rfcA = " select RFC_ALUMNO from alumnos where id_alumno ='" + this.textBoxKardexAlumno.Text + "'";
                 OracleCommand cpe = new OracleCommand(rfcA, Conexion.conectar());
                 OracleDataReader dre = cpe.ExecuteReader();
-                string rfcU = " select RFC from usuarios where id_usuario ='" + Convert.ToInt16(comboBoxMaestros.SelectedValue) + "'";
+                string rfcU = " select RFC from usuarios where id_usuario ='" + Convert.ToInt16(publicas.id_t_user.ToString()) + "'";
                 OracleCommand cpe2 = new OracleCommand(rfcU, Conexion.conectar());
                 OracleDataReader dre2 = cpe2.ExecuteReader();
                 if (dre.Read() && dre2.Read())
@@ -45,7 +45,7 @@ namespace GoldenE.maestros
                     comandoinse.Parameters.Add("@TIPO_CLASE_ID_CLASE", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxTipoDeLeccion.SelectedValue);
                     comandoinse.Parameters.Add("@LECCIONES_ID_LECCION", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxlecc.SelectedValue);
                     comandoinse.Parameters.Add("@ALUMNOS_ID_ALUMNO", OracleDbType.Int16).Value = textBoxKardexAlumno.Text;
-                    comandoinse.Parameters.Add("@USUARIOS_ID_MAESTRO", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxMaestros.SelectedValue);
+                    comandoinse.Parameters.Add("@USUARIOS_ID_MAESTRO", OracleDbType.Int16).Value = Convert.ToInt16(publicas.id_t_user.ToString());
                     comandoinse.Parameters.Add("@CALIFICACION", OracleDbType.Int16).Value = Convert.ToInt16(textBoxCali.Text);
 
                     comandoinse.Parameters.Add("@FECHACALIF", OracleDbType.Varchar2).Value = this.dateTimePicker1.Text;
@@ -113,35 +113,10 @@ namespace GoldenE.maestros
                 ManejoErrores.erroresSystem(exe);
             }
         }
-        public void SeleccionacomboMaestros()
-        {
-
-            DataTable dt = new DataTable();
-            DataSet ds = new DataSet();
-
-            string depto = "SELECT id_usuario,nombre FROM usuarios where TIPO_USUARIO_ID_TIPO_USUARIO = '" + 3 + "'";
-
-            OracleDataAdapter da = new OracleDataAdapter
-                (depto, Ge.Conexion.conectar());
-            OracleCommand cmd = new OracleCommand(depto, Ge.Conexion.conectar());
-
-            OracleDataReader dr = cmd.ExecuteReader();
-            da.Fill(ds);
-
-            if (dr.Read())
-            {
-                comboBoxMaestros.DataSource = ds.Tables[0];
-                comboBoxMaestros.DisplayMember = "nombre";
-                comboBoxMaestros.ValueMember = "ID_USUARIO";
-            }
-            else
-            {
-                MessageBox.Show("no hay maestros existentes");
-            }
-        }
+        
         private void Calificaciones_Load(object sender, EventArgs e)
         {
-            SeleccionacomboMaestros();
+           
             CargaComboBox.SeleccionacomboTipoLeccion(comboBoxTipoDeLeccion);
            
             CargaComboBox.SeleccionacomboNivel(comboBoxNivel);

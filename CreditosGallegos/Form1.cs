@@ -61,17 +61,30 @@ namespace Ge
                 {
                     string comp2 = "Select nombre from usuarios where id_usuario ='" + this.textBoxUser.Text + "'and contrasena='" + hash + "'";
                     OracleCommand cpe2 = new OracleCommand(comp2, Conexion.conectar());
+
+                    string comp3 = " select id_usuario from usuarios where id_usuario ='" + this.textBoxUser.Text + "'and contrasena='" + hash + "'";
+                    OracleCommand cpe3 = new OracleCommand(comp, Conexion.conectar());
                     publicas.nombre = Convert.ToString(cpe2.ExecuteScalar());
+                    publicas.Id_tipoUser = Convert.ToInt32(cpe.ExecuteScalar());
+                    publicas.id_usr = Convert.ToInt32(cpe3.ExecuteScalar());
+                    if (Convert.ToInt32(publicas.Id_tipoUser.ToString()) == 1)
+                    {
+                        this.Hide();
+                        InsertarCarreras m = new InsertarCarreras();
+                        m.Show();
 
-                    
+                        MessageBox.Show("BIENVENIDO " + publicas.nombre.ToString(), "aviso", MessageBoxButtons.OK);
+                    }
+                    else if (Convert.ToInt32(publicas.Id_tipoUser.ToString()) == 3)
+                    {
+                        this.Hide();
+                        MainMaestro m = new MainMaestro();
+                        m.Show();
 
+                        MessageBox.Show("BIENVENIDO " + publicas.nombre.ToString(), "aviso", MessageBoxButtons.OK);
+                    }
                     //Mostar menu      
 
-                    this.Hide();
-                    InsertarCarreras m = new InsertarCarreras();
-                    m.Show();
-
-                    MessageBox.Show("BIENVENIDO " + publicas.nombre.ToString(), "aviso", MessageBoxButtons.OK);
 
                 }
                 else

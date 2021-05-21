@@ -56,10 +56,18 @@ namespace GoldenE.horarios
                     comandoinse.Parameters.Add("@RFC_ALUMNO_HORARIO", OracleDbType.Varchar2).Value = ra;
                     comandoinse.Parameters.Add("@RFC_MAES_HORARIO", OracleDbType.Varchar2).Value = ru;
                     comandoinse.Parameters.Add("@FECHA", OracleDbType.Varchar2).Value = this.dateTimePicker1.Text;
-                    comandoinse.Parameters.Add("@hora", OracleDbType.Varchar2).Value = publicas.hora.ToString();
-                    comandoinse.ExecuteNonQuery();
-                    MessageBox.Show("Horario Insertado ", "aviso", MessageBoxButtons.OK);        
-                    limpiar();
+
+                    if (publicas.hora.ToString() == "null")
+                    {
+                        MessageBox.Show("Agrega una hora", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else { 
+                        comandoinse.Parameters.Add("@hora", OracleDbType.Varchar2).Value = publicas.hora.ToString();
+                        comandoinse.ExecuteNonQuery();
+                        MessageBox.Show("Horario Insertado ", "aviso", MessageBoxButtons.OK);
+                        limpiar();
+                    }
+                    
                 }
                 else
                 {
@@ -67,6 +75,10 @@ namespace GoldenE.horarios
                     limpiar();
                 }
 
+            }
+            catch (System.NullReferenceException ex)
+            {
+                MessageBox.Show("Agrega una hora", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (OracleException ex)
             {
@@ -76,6 +88,7 @@ namespace GoldenE.horarios
             {
                 ManejoErrores.erroresSystem(exe);
             }
+           
 
         }
 
@@ -170,6 +183,7 @@ namespace GoldenE.horarios
 
         private void AgregaHorario_Load(object sender, EventArgs e)
         {
+            dateTimePicker1.Text = DateTime.Today.ToString("d/M/yyyy");
             CargaComboBox.SeleccionacomboTipoLeccion(comboBoxTipoDeLeccion);
             SeleccionacomboSalones();
             CargaComboBox.SeleccionacomboNivel(comboBoxNivel);

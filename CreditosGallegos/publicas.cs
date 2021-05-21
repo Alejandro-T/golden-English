@@ -11,12 +11,14 @@ namespace Ge
         public static int _id_t_user;
         public static int _id_alumno;
         public static int _id_usuario;
+        public static int _id_tipoUser;
         public static int _id_nivel;
         public static string _nombre;
-        public static string _hora;
+        public static string _hora = "null";
         public static int _id_leccion;
         public static int _id_salon;
         public static int _id_catalogo;
+        public static int _id_usr;
         public publicas()
         {
             id_alumno = 0;
@@ -28,12 +30,19 @@ namespace Ge
             id_salon = 0;
             id_catalogo = 0;
             hora = "null";
+            id_usr = 0;
+            Id_tipoUser = 0;
         }
         
         public static int id_t_user
         {
             get => _id_t_user;
             set => _id_t_user = value;
+        }
+        public static int Id_tipoUser
+        {
+            get => _id_tipoUser;
+            set => _id_tipoUser = value;
         }
         public static int id_alumno
         {
@@ -44,6 +53,11 @@ namespace Ge
         {
             get => _id_usuario;
             set => _id_usuario = value;
+        }
+        public static int id_usr
+        {
+            get => _id_usr;
+            set => _id_usr = value;
         }
         public static int id_nivel
         {

@@ -24,7 +24,7 @@ namespace Ge
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Calificaciones());
+            Application.Run(new Form1());
         }
     }
 }

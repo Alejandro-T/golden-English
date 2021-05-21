@@ -175,6 +175,12 @@
     <Compile Include="lecciones\SeleccionarLeccion.Designer.cs">
       <DependentUpon>SeleccionarLeccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="maestros\CalifAuto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maestros\CalifAuto.Designer.cs">
+      <DependentUpon>CalifAuto.cs</DependentUpon>
+    </Compile>
     <Compile Include="maestros\Calificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="publicas.cs" />
+    <Compile Include="recepcionista\MainRecepcionista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recepcionista\MainRecepcionista.Designer.cs">
+      <DependentUpon>MainRecepcionista.cs</DependentUpon>
+    </Compile>
     <Compile Include="salones\ActualizarSalones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +331,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="lecciones\SeleccionarLeccion.resx">
       <DependentUpon>SeleccionarLeccion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maestros\CalifAuto.resx">
+      <DependentUpon>CalifAuto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="maestros\Calificaciones.resx">
       <DependentUpon>Calificaciones.cs</DependentUpon>

@@ -1,4 +1,5 @@
 ﻿using GoldenE.alumnos;
+using GoldenE.maestros;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +26,7 @@ namespace GoldenE
 
         private void buttonCalif_Click(object sender, EventArgs e)
         {
-            ComponentesReusables.AbrirFormEnPanel(new Alumnos(), panel2);
+            ComponentesReusables.AbrirFormEnPanel(new CalifAuto(), panel2);
         }
     }
 }
