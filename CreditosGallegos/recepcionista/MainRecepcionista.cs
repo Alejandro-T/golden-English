@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GoldenE.horarios;
+using GoldenE.maestros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,21 @@ namespace GoldenE.recepcionista
         public MainRecepcionista()
         {
             InitializeComponent();
+        }
+
+        private void MainRecepcionista_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonCalif_Click(object sender, EventArgs e)
+        {
+            ComponentesReusables.AbrirFormEnPanel(new AgregaHorario(), panel2);
+        }
+
+        private void buttonReportes_Click(object sender, EventArgs e)
+        {
+            ComponentesReusables.AbrirFormEnPanel(new cargaravance(), panel2);
         }
     }
 }

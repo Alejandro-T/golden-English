@@ -1,4 +1,5 @@
 ﻿using GoldenE;
+using GoldenE.recepcionista;
 using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
@@ -30,10 +31,12 @@ namespace Ge
             {
                 Conexion.conectar();
                 MessageBox.Show("Conexion Exitosa", "aviso", MessageBoxButtons.OK);
+                limpiarVarialbes();
             }
             catch
             {
                 MessageBox.Show("Conexion con errores", "aviso", MessageBoxButtons.OK);
+                limpiarVarialbes();
             }
             
         }
@@ -63,7 +66,7 @@ namespace Ge
                     OracleCommand cpe2 = new OracleCommand(comp2, Conexion.conectar());
 
                     string comp3 = " select id_usuario from usuarios where id_usuario ='" + this.textBoxUser.Text + "'and contrasena='" + hash + "'";
-                    OracleCommand cpe3 = new OracleCommand(comp, Conexion.conectar());
+                    OracleCommand cpe3 = new OracleCommand(comp3, Conexion.conectar());
                     publicas.nombre = Convert.ToString(cpe2.ExecuteScalar());
                     publicas.Id_tipoUser = Convert.ToInt32(cpe.ExecuteScalar());
                     publicas.id_usr = Convert.ToInt32(cpe3.ExecuteScalar());
@@ -75,17 +78,25 @@ namespace Ge
 
                         MessageBox.Show("BIENVENIDO " + publicas.nombre.ToString(), "aviso", MessageBoxButtons.OK);
                     }
+                    else if (Convert.ToInt32(publicas.Id_tipoUser.ToString()) == 2)
+                    {
+                        this.Hide();
+                        MainRecepcionista m = new MainRecepcionista();
+                        m.Show();
+                        
+
+                        MessageBox.Show("BIENVENIDO " + publicas.nombre.ToString(), "aviso", MessageBoxButtons.OK);
+                    }
                     else if (Convert.ToInt32(publicas.Id_tipoUser.ToString()) == 3)
                     {
                         this.Hide();
                         MainMaestro m = new MainMaestro();
                         m.Show();
+                        MessageBox.Show("hola" + publicas.id_usr.ToString() , "aviso");
 
                         MessageBox.Show("BIENVENIDO " + publicas.nombre.ToString(), "aviso", MessageBoxButtons.OK);
                     }
                     //Mostar menu      
-
-
                 }
                 else
                 {
@@ -124,6 +135,20 @@ namespace Ge
 
         }
 
+        public void limpiarVarialbes()
+        {
+            publicas.id_alumno = 0;
+            publicas.id_catalogo = 0;
+            publicas.id_leccion = 0;
+            publicas.id_nivel = 0;
+            publicas.id_salon = 0;
+            publicas.Id_tipoUser = 0;
+            publicas.id_t_user = 0;
+            publicas.id_usr = 0;
+            publicas.id_usuario = 0;
+            publicas.nombre = "";
+            publicas.hora = "";
+        }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             DialogResult yes;
