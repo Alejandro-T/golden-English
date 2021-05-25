@@ -87,6 +87,7 @@ namespace GoldenE
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label2
             // 
@@ -162,6 +163,7 @@ namespace GoldenE
             this.buttonReportes.TabIndex = 1;
             this.buttonReportes.Text = "Reportes";
             this.buttonReportes.UseVisualStyleBackColor = false;
+            this.buttonReportes.Click += new System.EventHandler(this.buttonReportes_Click);
             // 
             // label5
             // 

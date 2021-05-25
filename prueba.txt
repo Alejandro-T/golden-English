@@ -4,4 +4,6 @@ insert into tipo_usuario values(1,'administrador');
 insert into tipo_usuario values(2,'recepcionista');
 insert into tipo_usuario values(3,'maestro');
 insert into sexo values(1,'masculino');
+insert into sexo values(2,'femenino');
 insert into usuarios(TIPO_USUARIO_ID_TIPO_USUARIO,SEXO_ID_SEXO,nombre,paterno,materno,FECHA_NACIMIENTO,TELEFONO,direccion,rfc,CONTRASENA) values(1,1,'pablo','hernandez','perez','03-05-1976','8442212735','Valle de las flores','TORA990701','yK4rIB@hU!');
+using Oracle.ManagedDataAccess.Client;

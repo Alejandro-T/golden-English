@@ -28,5 +28,20 @@ namespace GoldenE
         {
             ComponentesReusables.AbrirFormEnPanel(new CalifAuto(), panel2);
         }
+
+        private void buttonReportes_Click(object sender, EventArgs e)
+        {
+            ComponentesReusables.AbrirFormEnPanel(new HorarioDiaMaetro(), panel2);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            DialogResult yes;
+            yes = MessageBox.Show("¿Deseas salir?", "Aviso", MessageBoxButtons.YesNo);
+            if (yes == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
     }
 }

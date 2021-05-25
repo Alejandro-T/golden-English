@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ge;
-using Oracle.DataAccess.Client;
+//using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 namespace GoldenE.alumnos
 {
     public partial class InsertaAlumno : Form

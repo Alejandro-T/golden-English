@@ -1,7 +1,7 @@
 ﻿using Ge;
 using GoldenE.reporte;
 using Microsoft.Reporting.WinForms;
-using Oracle.DataAccess.Client;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,6 +49,7 @@ namespace GoldenE.maestros
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(rds1);
             this.reportViewer1.RefreshReport();
+            //DataSetHoraDiaMaestro
         }
 
         public DataTable Datos()
