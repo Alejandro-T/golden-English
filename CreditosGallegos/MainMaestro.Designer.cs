@@ -44,6 +44,7 @@ namespace GoldenE
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -119,6 +120,7 @@ namespace GoldenE
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(152)))), ((int)(((byte)(17)))));
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.buttonCalif);
             this.panel1.Controls.Add(this.buttonReportes);
@@ -161,7 +163,7 @@ namespace GoldenE
             this.buttonReportes.Name = "buttonReportes";
             this.buttonReportes.Size = new System.Drawing.Size(196, 60);
             this.buttonReportes.TabIndex = 1;
-            this.buttonReportes.Text = "Reportes";
+            this.buttonReportes.Text = "Horas Diarias";
             this.buttonReportes.UseVisualStyleBackColor = false;
             this.buttonReportes.Click += new System.EventHandler(this.buttonReportes_Click);
             // 
@@ -204,6 +206,21 @@ namespace GoldenE
             this.label8.Size = new System.Drawing.Size(48, 18);
             this.label8.TabIndex = 14;
             this.label8.Text = "Date";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(0, 200);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(196, 60);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Horas Por Semana";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainMaestro
             // 
@@ -252,5 +269,6 @@ namespace GoldenE
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
     }
 }

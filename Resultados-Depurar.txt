@@ -13,9 +13,31 @@
 'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
 'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\System.EnterpriseServices\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.EnterpriseServices.Wrapper.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
 'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualBasic\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\Users\90474\Desktop\golden-English-master\CreditosGallegos\bin\Debug\Microsoft.ReportViewer.WinForms.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\Users\90474\Desktop\golden-English-master\CreditosGallegos\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll' cargado. El módulo se compiló sin símbolos.
+'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\Users\90474\Desktop\golden-English-master\CreditosGallegos\bin\Debug\Microsoft.ReportViewer.Common.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
 'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Windows.Forms.resources\v4.0_4.0.0.0_es_b77a5c561934e089\System.Windows.Forms.resources.dll' cargado. El módulo se compiló sin símbolos.
 'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.Numerics\v4.0_4.0.0.0__b77a5c561934e089\System.Numerics.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
-El subproceso 0x2c08 terminó con código 0 (0x0).
-El subproceso 0x2218 terminó con código 0 (0x0).
+'GoldenE.exe' (CLR v4.0.30319: Domain 2): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\Users\90474\Desktop\golden-English-master\CreditosGallegos\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll' cargado. El módulo se compiló sin símbolos.
+'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\Users\90474\Desktop\golden-English-master\CreditosGallegos\bin\Debug\Microsoft.SqlServer.Types.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\Users\90474\Desktop\golden-English-master\CreditosGallegos\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\System.resources\v4.0_4.0.0.0_es_b77a5c561934e089\System.resources.dll' cargado. El módulo se compiló sin símbolos.
+'GoldenE.exe' (CLR v4.0.30319: Domain 2): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' descargado
+'GoldenE.exe' (CLR v4.0.30319: Domain 3): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
 'GoldenE.exe' (CLR v4.0.30319: GoldenE.exe): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\mscorlib.resources\v4.0_4.0.0.0_es_b77a5c561934e089\mscorlib.resources.dll' cargado. El módulo se compiló sin símbolos.
-El programa '[5308] GoldenE.exe' terminó con código 0 (0x0).
+El subproceso 0x2ea0 terminó con código 0 (0x0).
+'GoldenE.exe' (CLR v4.0.30319: Local Processing 05/27/2021 18:30:25): 'C:\Users\90474\Desktop\golden-English-master\CreditosGallegos\bin\Debug\Microsoft.ReportViewer.Common.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'GoldenE.exe' (CLR v4.0.30319: Local Processing 05/27/2021 18:30:25): 'C:\Users\90474\Desktop\golden-English-master\CreditosGallegos\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'GoldenE.exe' (CLR v4.0.30319: Local Processing 05/27/2021 18:30:25): 'expression_host_09633bc3559b45688f02c575d41184f0' cargado. El módulo se compiló sin símbolos.
+'GoldenE.exe' (CLR v4.0.30319: Local Processing 05/27/2021 18:30:25): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualBasic\v4.0_10.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'GoldenE.exe' (CLR v4.0.30319: Local Processing 05/27/2021 18:30:25): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Microsoft.VisualBasic.resources\v4.0_10.0.0.0_es_b03f5f7f11d50a3a\Microsoft.VisualBasic.resources.dll' cargado. El módulo se compiló sin símbolos.
+Warning: La expresión Format del objeto ‘fecha.Paragraphs[0].TextRuns[0]’ de tipo textrun contiene un error: La conversión de la cadena "8 - 16" en el tipo 'Date' no es válida. (rsRuntimeErrorInExpression)
+Warning: La expresión Format usada en el objeto ‘fecha.Paragraphs[0].TextRuns[0]’ de tipo textrun ha devuelto un tipo de datos que no es válido. (rsInvalidExpressionDataType)
+El subproceso 0x3714 terminó con código 0 (0x0).
+El subproceso 0xc20 terminó con código 0 (0x0).
+'GoldenE.exe' (CLR v4.0.30319: Domain 4): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+'GoldenE.exe' (CLR v4.0.30319: Domain 4): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' descargado
+'GoldenE.exe' (CLR v4.0.30319: Domain 5): 'C:\WINDOWS\Microsoft.Net\assembly\GAC_64\mscorlib\v4.0_4.0.0.0__b77a5c561934e089\mscorlib.dll' cargado. Se omitió la carga de símbolos. El módulo está optimizado y la opción del depurador 'Sólo mi código' está habilitada.
+El subproceso 0x4a58 terminó con código 0 (0x0).
+El programa '[9232] GoldenE.exe' terminó con código -1 (0xffffffff).

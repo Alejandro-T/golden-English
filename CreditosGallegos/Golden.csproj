@@ -84,6 +84,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Oracle.DataAccess, Version=4.112.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=AMD64" />
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
@@ -163,6 +164,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="gerente\AgregaHorarioMaestro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gerente\AgregaHorarioMaestro.Designer.cs">
+      <DependentUpon>AgregaHorarioMaestro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gerente\Reporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gerente\Reporte.Designer.cs">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gerente\TraficoAulas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="gerente\TraficoAulas.Designer.cs">
+      <DependentUpon>TraficoAulas.cs</DependentUpon>
+    </Compile>
     <Compile Include="horarios\AgregaHorario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +236,12 @@
     <Compile Include="maestros\HorarioDiaMaetro.Designer.cs">
       <DependentUpon>HorarioDiaMaetro.cs</DependentUpon>
     </Compile>
+    <Compile Include="maestros\HorarioSemanaMaestro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maestros\HorarioSemanaMaestro.Designer.cs">
+      <DependentUpon>HorarioSemanaMaestro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +295,8 @@
     </Compile>
     <Compile Include="reporte\rAvance.cs" />
     <Compile Include="reporte\rHoraDiaMaestro.cs" />
+    <Compile Include="reporte\rSemanaMaestro.cs" />
+    <Compile Include="reporte\rTrafico.cs" />
     <Compile Include="salones\ActualizarSalones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +377,15 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="gerente\AgregaHorarioMaestro.resx">
+      <DependentUpon>AgregaHorarioMaestro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerente\Reporte.resx">
+      <DependentUpon>Reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gerente\TraficoAulas.resx">
+      <DependentUpon>TraficoAulas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="horarios\AgregaHorario.resx">
       <DependentUpon>AgregaHorario.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="maestros\HorarioDiaMaetro.resx">
       <DependentUpon>HorarioDiaMaetro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maestros\HorarioSemanaMaestro.resx">
+      <DependentUpon>HorarioSemanaMaestro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
@@ -405,6 +444,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reporte\AvanceReticular.rdlc" />
     <EmbeddedResource Include="reporte\HorasDiaMaestro.rdlc" />
+    <EmbeddedResource Include="reporte\ReporeSemanaMaestro1.rdlc" />
+    <EmbeddedResource Include="reporte\RhoraAulas.rdlc" />
     <EmbeddedResource Include="salones\ActualizarSalones.resx">
       <DependentUpon>ActualizarSalones.cs</DependentUpon>
     </EmbeddedResource>
@@ -433,6 +474,8 @@
     <None Include="Properties\app.manifest" />
     <None Include="Properties\DataSources\GoldenE.reporte.rAvance.datasource" />
     <None Include="Properties\DataSources\GoldenE.reporte.rHoraDiaMaestro.datasource" />
+    <None Include="Properties\DataSources\GoldenE.reporte.rSemanaMaestro.datasource" />
+    <None Include="Properties\DataSources\GoldenE.reporte.rTrafico.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

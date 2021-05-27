@@ -1,6 +1,7 @@
 ﻿using GoldenE;
 using GoldenE.alumnos;
 using GoldenE.Catalogo_Horario;
+using GoldenE.gerente;
 using GoldenE.horarios;
 using GoldenE.lecciones;
 using GoldenE.maestros;

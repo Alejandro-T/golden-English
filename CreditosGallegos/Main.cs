@@ -1,5 +1,6 @@
 ﻿using GoldenE;
 using GoldenE.alumnos;
+using GoldenE.gerente;
 using GoldenE.lecciones;
 using GoldenE.niveles;
 using GoldenE.usuarios;
@@ -25,7 +26,7 @@ namespace Ge
         }
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            ComponentesReusables.AbrirFormEnPanel(new Reporte(), panel2);
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -125,6 +126,11 @@ namespace Ge
         private void buttonLecciones_Click(object sender, EventArgs e)
         {
             ComponentesReusables.AbrirFormEnPanel(new Lecciones(), panel2);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ComponentesReusables.AbrirFormEnPanel(new AgregaHorarioMaestro(), panel2);
         }
     }
 }

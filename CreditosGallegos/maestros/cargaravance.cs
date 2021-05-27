@@ -59,7 +59,7 @@ namespace GoldenE.maestros
             DataTable Retornar = new DataTable();
 
             //Se ejecuta el procedimiento almacenado
-            string query = "select A.NOMBRE,A.PATERNO,A.MATERNO,C.CALIFICACION,L.DESCRIPCION,C.FECHACALIF FROM calificaciones C JOIN ALUMNOS A ON C.ALUMNOS_ID_ALUMNO = A.ID_ALUMNO JOIN LECCIONES L ON C.LECCIONES_ID_LECCION = L.ID_LECCION where c.ALUMNOS_ID_ALUMNO = '"+textBoxKardexAlumno.Text+"'";
+            string query = "select A.NOMBRE,A.PATERNO,A.MATERNO,C.CALIFICACION,L.DESCRIPCION,to_char(C.FECHACALIF,'dd-mm-yy') FROM calificaciones C JOIN ALUMNOS A ON C.ALUMNOS_ID_ALUMNO = A.ID_ALUMNO JOIN LECCIONES L ON C.LECCIONES_ID_LECCION = L.ID_LECCION where c.ALUMNOS_ID_ALUMNO = '" + textBoxKardexAlumno.Text+"'";
             OracleDataAdapter Comandosql = new OracleDataAdapter(query, Conexion.conectar());
             Comandosql.Fill(Retornar);
             Conexion.cerrar();

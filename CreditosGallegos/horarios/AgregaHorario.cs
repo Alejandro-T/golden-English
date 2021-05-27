@@ -29,7 +29,8 @@ namespace GoldenE.horarios
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
                 OracleCommand comandoinse = new OracleCommand("insertar_horario", Ge.Conexion.conectar());
                 comandoinse.CommandType = CommandType.StoredProcedure;
 
@@ -58,23 +59,33 @@ namespace GoldenE.horarios
                     {
                         MessageBox.Show("Agrega una hora", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else { 
+                    else
+                    {
                         comandoinse.Parameters.Add("@hora", OracleDbType.Varchar2).Value = publicas.hora.ToString();
                         comandoinse.ExecuteNonQuery();
                         MessageBox.Show("Horario Insertado ", "aviso", MessageBoxButtons.OK);
                         limpiar();
                     }
-                    
+
                 }
                 else
                 {
                     MessageBox.Show("Horario NO Insertado ", "aviso", MessageBoxButtons.OK);
                     limpiar();
                 }
+            }
+            catch (OracleException ex)
+            {
+                ManejoErrores.erroresOracle(ex);
+            }
+            catch (System.FormatException exe)
+            {
+                ManejoErrores.erroresSystem(exe);
+            }
 
-            
-            
-           
+
+
+
 
         }
 
@@ -83,6 +94,7 @@ namespace GoldenE.horarios
 
             
             publicas.hora = listBox1.SelectedItem.ToString();
+            SeleccionacomboMaestros();
             //MessageBox.Show("" + hora, "");
         }
         
@@ -146,7 +158,7 @@ namespace GoldenE.horarios
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
             
-            string depto = "SELECT id_usuario,nombre FROM usuarios where TIPO_USUARIO_ID_TIPO_USUARIO = '" + 3 + "'";
+            string depto = "SELECT id_usuario,nombre FROM usuarios JOIN horarioMaestro ON USUARIOSF_ID_USUARIO = ID_USUARIO where TIPO_USUARIO_ID_TIPO_USUARIO = '" + 3 + "'AND FECHA = '"+  this.dateTimePicker1.Text+"'and hora = '"+ publicas.hora.ToString()+ "'";
            
             OracleDataAdapter da = new OracleDataAdapter
                 (depto, Ge.Conexion.conectar());
@@ -173,7 +185,7 @@ namespace GoldenE.horarios
             CargaComboBox.SeleccionacomboTipoLeccion(comboBoxTipoDeLeccion);
             SeleccionacomboSalones();
             CargaComboBox.SeleccionacomboNivel(comboBoxNivel);
-            SeleccionacomboMaestros();
+            
         }
         int cont = 0;
         private void comboBoxNivel_SelectedIndexChanged(object sender, EventArgs e)

@@ -153,13 +153,14 @@ namespace GoldenE.maestros
                 OracleDataReader dre2 = cpe2.ExecuteReader();
                 if (dre.Read() && dre2.Read())
                 {
-                    if (Convert.ToInt16(textBoxCali.Text) <= 5)
+                    if (Convert.ToInt16(textBoxCali.Text) >= 0 && Convert.ToInt16(textBoxCali.Text) <= 5)
                     {
-                        MessageBox.Show("Usuario Reprobado","Aviso",MessageBoxButtons.OK);
+                        MessageBox.Show("Usuario Reprobado", "Aviso", MessageBoxButtons.OK);
 
                         comandoinseR.Parameters.Add("@C_LECCIONES_ID_LECCION", OracleDbType.Int32).Value = Convert.ToInt32(comboBoxlecc.SelectedValue);
                         comandoinseR.Parameters.Add("@C_TIPO_CLASE_ID_CLASE", OracleDbType.Int32).Value = Convert.ToInt32(comboBoxTipoDeLeccion.SelectedValue);
                         comandoinseR.Parameters.Add("@C_ALUMNOS_ID_ALUMNO", OracleDbType.Int32).Value = textBoxKardexAlumno.Text;
+                        
                         comandoinseR.Parameters.Add("@C_ID_CALIFICACION", OracleDbType.Int32).Value = Convert.ToInt32(textBoxCali.Text);
                         comandoinseR.Parameters.Add("@FECHA", OracleDbType.Varchar2).Value = this.dateTimePicker1.Text;
 
@@ -179,19 +180,26 @@ namespace GoldenE.maestros
                         comandoinse.Parameters.Add("@LECCIONES_ID_LECCION", OracleDbType.Int16).Value = Convert.ToInt16(comboBoxlecc.SelectedValue);
                         comandoinse.Parameters.Add("@ALUMNOS_ID_ALUMNO", OracleDbType.Int16).Value = textBoxKardexAlumno.Text;
                         comandoinse.Parameters.Add("@USUARIOS_ID_MAESTRO", OracleDbType.Int16).Value = Convert.ToInt16(publicas.id_usr.ToString());
-                        comandoinse.Parameters.Add("@CALIFICACION", OracleDbType.Int16).Value = Convert.ToInt16(textBoxCali.Text);
+                        if (Convert.ToInt32(textBoxCali.Text) >= 0 && Convert.ToInt32(textBoxCali.Text) <= 10) {
+                            comandoinse.Parameters.Add("@CALIFICACION", OracleDbType.Int16).Value = Convert.ToInt16(textBoxCali.Text);
 
-                        comandoinse.Parameters.Add("@FECHACALIF", OracleDbType.Varchar2).Value = this.dateTimePicker1.Text;
+                            comandoinse.Parameters.Add("@FECHACALIF", OracleDbType.Varchar2).Value = this.dateTimePicker1.Text;
 
-                        comandoinse.ExecuteNonQuery();
-                        MessageBox.Show("Calificacion Insertada ", "aviso", MessageBoxButtons.OK);
+                            comandoinse.ExecuteNonQuery();
+                            MessageBox.Show("Calificacion Insertada ", "aviso", MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingresa una calificacion entre 0 y 10 ", "aviso", MessageBoxButtons.OK);
+                        }
+                        
                     }
                     
 
                 }
                 else
                 {
-                    MessageBox.Show("Calificacion Insertada ", "aviso", MessageBoxButtons.OK);
+                    MessageBox.Show("Calificacion NO Insertada ", "aviso", MessageBoxButtons.OK);
 
                 }
 

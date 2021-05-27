@@ -327,17 +327,6 @@ where(ID_clase)=id_catalogo_in;
 end ACTUALIZACATALOGO;
 /
 
-CREATE TABLE review (
-  id_review NUMERIC NOT NULL,
-  c_lecciones_id_leccion NUMERIC NOT NULL,
-  c_tipo_clase_id_clase NUMERIC NOT NULL,
-  c_alumnos_id_alumno NUMERIC NOT NULL,
-  c_id_calificacion NUMERIC NOT NULL,
-  fecha DATE NOT NULL,
-  PRIMARY KEY(id_review),
-  FOREIGN KEY(c_alumnos_id_alumno, c_tipo_clase_id_clase, c_lecciones_id_leccion)
-    REFERENCES calificaciones(alumnos_id_alumno, tipo_clase_id_clase, lecciones_id_leccion)
-);
 
 
 CREATE SEQUENCE seq_id_revi START WITH 1
@@ -355,6 +344,20 @@ from dual;
 end;
 /
 
+
+CREATE TABLE review (
+  id_review NUMERIC NOT NULL,
+  c_lecciones_id_leccion NUMERIC NOT NULL,
+  c_tipo_clase_id_clase NUMERIC NOT NULL,
+  c_alumnos_id_alumno NUMERIC NOT NULL,
+  c_id_calificacion NUMERIC NOT NULL,
+  fecha DATE NOT NULL,
+  PRIMARY KEY(id_review),
+  FOREIGN KEY(c_alumnos_id_alumno, c_tipo_clase_id_clase, c_lecciones_id_leccion)
+    REFERENCES calificaciones(alumnos_id_alumno, tipo_clase_id_clase, lecciones_id_leccion)
+);
+
+
 create or replace procedure insertar_review
 (R_LECCION_ID NUMERIC,R_TIPO_CLASE NUMERIC,R_ALUMNO_ID NUMERIC,R_CALIFI NUMERIC,RFECHACALIF Date)
 as
@@ -364,29 +367,40 @@ begin
 end insertar_review;
 /
 
+CREATE TABLE horarioMaestro (
+  fecha DATE NOT NULL,
+  hora VARCHAR2(3) NOT NULL,
+  idhorarioMaestro NUMERIC NOT NULL,
+  usuariosf_rfc VARCHAR2(50) NOT NULL,
+  usuariosf_id_usuario NUMERIC NOT NULL,
+  PRIMARY KEY(fecha, hora,usuariosf_id_usuario),
+  FOREIGN KEY(usuariosf_id_usuario, usuariosf_rfc)
+    REFERENCES usuarios(id_usuario, rfc)
+);
 
+CREATE SEQUENCE seq_id_horariom START WITH 1
+ INCREMENT BY 1 
+NOMAXVALUE; 
+
+create or replace trigger horariom_triger_auto
+before insert on horarioMaestro
+for each row
+begin
+select seq_id_horariom.nextval
+into:new.idhorarioMaestro
+from dual;
+end;
+/
+
+create or replace procedure insertar_horariom
+(HMFECHACALIF Date, HMHORA varchar2,HMUSERRFC varchar2,HMUSERID numeric)
+as
+begin
+      insert into horarioMaestro(FECHA,hora, USUARIOSF_RFC,USUARIOSF_ID_USUARIO) 
+      values(HMFECHACALIF,HMHORA,HMUSERRFC,HMUSERID);
+end insertar_horariom;
+/
 
 ###NOOO AGREGAR####
 ########  ######
 ##### ###### #####
-CREATE OR REPLACE TRIGGER REVIEW
-    BEFORE INSERT ON CALIFICACIONES
-    FOR EACH ROW
-    DECLARE
-    CALI_ID_LECCION_REV NUMBER;
-    CALI_TIPO_REV NUMBER;
-    CALI_ALUMNO_REV NUMBER;
-    CALI_CALI_REV NUMBER;
-    FECHA_CALI DATE;
-   CALI_ALUMNO_ID NUMBER;
-   BEGIN
-   SELECT CALIFICACION INTO CALI_CALI_REV FROM CALIFICACIONES;
-   select sysdate INTO FECHA_CALI from dual;
-   SELECT LECCIONES_ID_LECCION INTO CALI_ID_LECCION_REV FROM CALIFICACIONES;
-   SELECT TIPO_CLASE_ID_CLASE INTO CALI_TIPO_REV FROM CALIFICACIONES;
-   SELECT FECHACALIF INTO FECHA_CALI FROM CALIFICACIONES;
-   SELECT ALUMNOS_ID_ALUMNO INTO CALI_ALUMNO_ID FROM CALIFICACIONES;
-   INSERT INTO REVIEW(ID_REVIEW,C_LECCIONES_ID_LECCION,C_TIPO_CLASE_ID_CLASE,C_ALUMNOS_ID_ALUMNO,C_ID_CALIFICACION,FECHA)
-   VALUES(1,CALI_ID_LECCION_REV,CALI_TIPO_REV,CALI_ALUMNO_ID,CALI_CALI_REV,FECHA_CALI);
-END REVIEW;
-  /
