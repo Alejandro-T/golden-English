@@ -1,6 +1,6 @@
 ﻿using GoldenE;
 using GoldenE.recepcionista;
-using Oracle.ManagedDataAccess.Client;
+using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +56,7 @@ namespace Ge
         {
             try
             {
+                
                 string hash = Helper.EncodePassword(string.Concat(this.textBoxUser.Text, this.textBoxPassword.Text));
                 string comp = " select tipo_usuario_id_tipo_usuario from usuarios where id_usuario ='" + this.textBoxUser.Text + "'and contrasena='" + hash + "'";
                 OracleCommand cpe = new OracleCommand(comp, Conexion.conectar());

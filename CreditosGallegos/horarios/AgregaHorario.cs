@@ -1,5 +1,5 @@
 ﻿using Ge;
-using Oracle.ManagedDataAccess.Client;
+using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,9 +30,6 @@ namespace GoldenE.horarios
         private void button1_Click(object sender, EventArgs e)
         {
 
-            //correcciones
-            try
-            {
                 OracleCommand comandoinse = new OracleCommand("insertar_horario", Ge.Conexion.conectar());
                 comandoinse.CommandType = CommandType.StoredProcedure;
 
@@ -75,19 +72,8 @@ namespace GoldenE.horarios
                     limpiar();
                 }
 
-            }
-            catch (System.NullReferenceException ex)
-            {
-                MessageBox.Show("Agrega una hora", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (OracleException ex)
-            {
-                ManejoErrores.erroresOracle(ex);
-            }
-            catch (System.FormatException exe)
-            {
-                ManejoErrores.erroresSystem(exe);
-            }
+            
+            
            
 
         }

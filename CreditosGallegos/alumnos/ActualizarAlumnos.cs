@@ -1,5 +1,5 @@
 ﻿using Ge;
-using Oracle.ManagedDataAccess.Client;
+using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

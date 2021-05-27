@@ -1,7 +1,7 @@
 ﻿using Ge;
 using GoldenE.reporte;
 using Microsoft.Reporting.WinForms;
-using Oracle.ManagedDataAccess.Client;
+using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

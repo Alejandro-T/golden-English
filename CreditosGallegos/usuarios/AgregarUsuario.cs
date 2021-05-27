@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ge;
-using Oracle.ManagedDataAccess.Client;
+using Oracle.DataAccess.Client;
 namespace GoldenE.alumnos
 {
     public partial class AgregarUsuario : Form
