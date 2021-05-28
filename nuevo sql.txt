@@ -369,11 +369,12 @@ end insertar_review;
 
 CREATE TABLE horarioMaestro (
   fecha DATE NOT NULL,
-  hora VARCHAR2(3) NOT NULL,
+  horaInicio NUMBER(2)  NOT NULL,
+  horaFin NUMBER(2) NOT NULL,
   idhorarioMaestro NUMERIC NOT NULL,
   usuariosf_rfc VARCHAR2(50) NOT NULL,
   usuariosf_id_usuario NUMERIC NOT NULL,
-  PRIMARY KEY(fecha, hora,usuariosf_id_usuario),
+  PRIMARY KEY(fecha, horaInicio,horaFin,usuariosf_id_usuario),
   FOREIGN KEY(usuariosf_id_usuario, usuariosf_rfc)
     REFERENCES usuarios(id_usuario, rfc)
 );
@@ -393,14 +394,21 @@ end;
 /
 
 create or replace procedure insertar_horariom
-(HMFECHACALIF Date, HMHORA varchar2,HMUSERRFC varchar2,HMUSERID numeric)
+(HMFECHACALIF Date, HMHORAI NUMERIC,HMHORAF NUMERIC,HMUSERRFC varchar2,HMUSERID numeric)
 as
 begin
-      insert into horarioMaestro(FECHA,hora, USUARIOSF_RFC,USUARIOSF_ID_USUARIO) 
-      values(HMFECHACALIF,HMHORA,HMUSERRFC,HMUSERID);
+      insert into horarioMaestro(FECHA,horaInicio,HORAFIN, USUARIOSF_RFC,USUARIOSF_ID_USUARIO) 
+      values(HMFECHACALIF,HMHORAI,HMHORAF,HMUSERRFC,HMUSERID);
 end insertar_horariom;
 /
 
+select next_day(sysdate,'lunes') from dual;
+
+select next_day(sysdate,'domingo') from dual;
+select  USUARIOSF_RFC from  horarioMaestro where to_char(fecha,'DD-MM')=to_char(sysdate+0,'DD-MM');
+
+
+select USUARIOSF_ID_USUARIO,fecha,hora from horarioMaestro where fecha between '27/05/2021' and  next_day(sysdate,'domingo');
 ###NOOO AGREGAR####
 ########  ######
 ##### ###### #####
