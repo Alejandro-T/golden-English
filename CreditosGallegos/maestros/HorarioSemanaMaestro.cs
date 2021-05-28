@@ -57,7 +57,7 @@ namespace GoldenE.maestros
             DataTable Retornar = new DataTable();
 
             //Se ejecuta el procedimiento almacenado
-            string query = "select U.NOMBRE,U.PATERNO,U.MATERNO,to_char(fecha,'day'), HORAINICIO ||' - '|| horafin from horarioMaestro JOIN USUARIOS U ON USUARIOSF_ID_USUARIO = U.ID_USUARIO where fecha between '"+ this.dateTimePicker1.Text + "' and  next_day(sysdate,'domingo') and USUARIOSF_ID_USUARIO = 63";
+            string query = "select U.NOMBRE,U.PATERNO,U.MATERNO,to_char(fecha,'day'), HORAINICIO ||' - '|| horafin from horarioMaestro JOIN USUARIOS U ON USUARIOSF_ID_USUARIO = U.ID_USUARIO where fecha between '" + this.dateTimePicker1.Text + "' and  next_day(sysdate,'domingo') and USUARIOSF_ID_USUARIO = '" + publicas.id_usr.ToString() + "'";
             OracleDataAdapter Comandosql = new OracleDataAdapter(query, Conexion.conectar());
             Comandosql.Fill(Retornar);
             Conexion.cerrar();

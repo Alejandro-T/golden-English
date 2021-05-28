@@ -93,7 +93,7 @@ namespace Ge
                         this.Hide();
                         MainMaestro m = new MainMaestro();
                         m.Show();
-                        MessageBox.Show("hola" + publicas.id_usr.ToString() , "aviso");
+                       
 
                         MessageBox.Show("BIENVENIDO " + publicas.nombre.ToString(), "aviso", MessageBoxButtons.OK);
                     }
