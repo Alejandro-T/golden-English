@@ -158,7 +158,7 @@ namespace GoldenE.horarios
             DataTable dt = new DataTable();
             DataSet ds = new DataSet();
             
-            string depto = "SELECT id_usuario,nombre FROM usuarios JOIN horarioMaestro ON USUARIOSF_ID_USUARIO = ID_USUARIO where TIPO_USUARIO_ID_TIPO_USUARIO = '" + 3 + "'AND FECHA = '"+  this.dateTimePicker1.Text+"'and hora = '"+ publicas.hora.ToString()+ "'";
+            string depto = "SELECT id_usuario,nombre FROM usuarios JOIN horarioMaestro ON USUARIOSF_ID_USUARIO = ID_USUARIO where TIPO_USUARIO_ID_TIPO_USUARIO = '" + 3 + "'AND FECHA = '"+  this.dateTimePicker1.Text+"'and horaInicio = '"+ publicas.hora.ToString()+ "'";
            
             OracleDataAdapter da = new OracleDataAdapter
                 (depto, Ge.Conexion.conectar());

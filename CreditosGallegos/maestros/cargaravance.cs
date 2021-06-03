@@ -39,7 +39,10 @@ namespace GoldenE.maestros
                     apellidMat = Lista[2].ToString(),
                     calificacion = Lista[3].ToString(),
                     lecciones_id_leccion = Lista[4].ToString(),
-                    fecha = Lista[5].ToString()
+                    fecha = Lista[5].ToString(),
+                    nombreM = Lista[6].ToString(),
+                    apellidoPatM = Lista[7].ToString(),
+                    apellidoMatM = Lista[8].ToString()
 
                 });
             }
@@ -59,7 +62,7 @@ namespace GoldenE.maestros
             DataTable Retornar = new DataTable();
 
             //Se ejecuta el procedimiento almacenado
-            string query = "select A.NOMBRE,A.PATERNO,A.MATERNO,C.CALIFICACION,L.DESCRIPCION,to_char(C.FECHACALIF,'dd-mm-yy') FROM calificaciones C JOIN ALUMNOS A ON C.ALUMNOS_ID_ALUMNO = A.ID_ALUMNO JOIN LECCIONES L ON C.LECCIONES_ID_LECCION = L.ID_LECCION where c.ALUMNOS_ID_ALUMNO = '" + textBoxKardexAlumno.Text+"'";
+            string query = "select A.NOMBRE,A.PATERNO,A.MATERNO,C.CALIFICACION,L.DESCRIPCION,to_char(C.FECHACALIF,'dd-mm-yy'),U.NOMBRE,U.PATERNO,U.MATERNO FROM calificaciones C JOIN ALUMNOS A ON C.ALUMNOS_ID_ALUMNO = A.ID_ALUMNO JOIN LECCIONES L ON C.LECCIONES_ID_LECCION = L.ID_LECCION JOIN USUARIOS U ON C.USUARIOs_ID_MAESTRO = U.ID_USUARIO where c.ALUMNOS_ID_ALUMNO = '" + textBoxKardexAlumno.Text+"'";
             OracleDataAdapter Comandosql = new OracleDataAdapter(query, Conexion.conectar());
             Comandosql.Fill(Retornar);
             Conexion.cerrar();

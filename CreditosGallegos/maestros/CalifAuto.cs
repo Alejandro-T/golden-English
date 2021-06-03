@@ -49,7 +49,7 @@ namespace GoldenE.maestros
             try
             {
                 DataTable dtalumnos = new DataTable();
-                string comprobacion = "Select ALUMNOS_ID_ALUMNO,FECHA,RFC_ALUMNO_HORARIO,USUARIOS_ID_MAESTRO,RFC_MAES_HORARIO,TIPO_CLASE_ID_CLASE,LECCIONES_ID_LECCION from HORARIOS where  hora ='" + comboBoxHora.SelectedValue + "' and fecha = '"+ DateTime.Today.ToString("d/M/yyyy") + "'";
+                string comprobacion = "Select ALUMNOS_ID_ALUMNO,NOMBRE,PATERNO,MATERNO,FECHA,RFC_ALUMNO_HORARIO,USUARIOS_ID_MAESTRO,RFC_MAES_HORARIO,TIPO_CLASE_ID_CLASE,LECCIONES_ID_LECCION from HORARIOS, ALUMNOS where ALUMNOS.ID_ALUMNO = HORARIOS.ALUMNOS_ID_ALUMNO and hora ='" + comboBoxHora.SelectedValue + "' and fecha = '"+ DateTime.Today.ToString("d/M/yyyy") + "'";
                 OracleDataAdapter da = new OracleDataAdapter
                     (comprobacion, Conexion.conectar());
                 OracleCommand cp = new OracleCommand(comprobacion, Conexion.conectar());
@@ -187,6 +187,7 @@ namespace GoldenE.maestros
 
                             comandoinse.ExecuteNonQuery();
                             MessageBox.Show("Calificacion Insertada ", "aviso", MessageBoxButtons.OK);
+                            this.Limpiar();
                         }
                         else
                         {
@@ -226,6 +227,12 @@ namespace GoldenE.maestros
             else { cont++; }
             //SeleccionacomboLecciones();
             
+        }
+
+        private void Limpiar()
+        {
+            this.textBoxKardexAlumno.Clear();
+            this.textBoxCali.Clear();
         }
     }
 }

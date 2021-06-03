@@ -28,7 +28,7 @@ namespace GoldenE.maestros
             string dia = "";
             dia = DateTime.Today.ToString("d/M/yyyy");
             //Se ejecuta el procedimiento almacenado
-            string query = "select U.NOMBRE,U.PATERNO,U.MATERNO,H.HORA,L.DESCRIPCION,H.ALUMNOS_ID_ALUMNO,T.DESCRIPCION FROM usuarios U JOIN HORARIOS H ON U.ID_USUARIO = H.USUARIOS_ID_MAESTRO JOIN LECCIONES L ON H.LECCIONES_ID_LECCION = L.ID_LECCION JOIN TIPO_CLASE T ON H.TIPO_CLASE_ID_CLASE = T.ID_CLASE WHERE H.USUARIOS_ID_MAESTRO = '" + publicas.id_usr.ToString() + "'and H.fecha = '" + dia + "'";
+            string query = "select U.NOMBRE,U.PATERNO,U.MATERNO,H.HORA,L.DESCRIPCION,H.ALUMNOS_ID_ALUMNO,T.DESCRIPCION,A.NOMBRE,A.PATERNO,A.MATERNO FROM usuarios U JOIN HORARIOS H ON U.ID_USUARIO = H.USUARIOS_ID_MAESTRO JOIN ALUMNOS A ON H.ALUMNOS_ID_ALUMNO = A.ID_ALUMNO JOIN LECCIONES L ON H.LECCIONES_ID_LECCION = L.ID_LECCION JOIN TIPO_CLASE T ON H.TIPO_CLASE_ID_CLASE = T.ID_CLASE WHERE H.USUARIOS_ID_MAESTRO = '" + publicas.id_usr.ToString() + "'and H.fecha = '" + dia + "'";
             OracleDataAdapter Comandosql = new OracleDataAdapter(query, Conexion.conectar());
             Comandosql.Fill(Retornar);
             Conexion.cerrar();
@@ -47,9 +47,12 @@ namespace GoldenE.maestros
                     apellidMat = Lista[2].ToString(),
                     hora = Lista[3].ToString(),
                     lecciones_id_leccion = Lista[4].ToString(),
-                    
+
                     Kardex = Convert.ToInt16(Lista[5].ToString()),
-                    tipolecciones_id_leccion = (Lista[6].ToString())
+                    tipolecciones_id_leccion = (Lista[6].ToString()),
+                    nombreA = Lista[7].ToString(),
+                    apellidoPatA = Lista[8].ToString(),
+                    apellidoMatA = Lista[9].ToString()
 
 
 

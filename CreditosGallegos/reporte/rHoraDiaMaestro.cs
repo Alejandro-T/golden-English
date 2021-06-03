@@ -17,6 +17,9 @@ namespace GoldenE.reporte
         public string tipolecciones_id_leccion { get; set; }
         public string fecha { get; set; }
         public string hora { get; set; }
+        public string nombreA { get; set; }
+        public string apellidoPatA { get; set; }
+        public string apellidoMatA { get; set; }
         //Asignar el constructor por
         //defecto para que no genere error
         //de argumentos
@@ -35,6 +38,9 @@ namespace GoldenE.reporte
             tipolecciones_id_leccion = Add.tipolecciones_id_leccion;
             fecha = Add.fecha;
             hora = Add.hora;
+            nombreA = Add.nombre;
+            apellidoPatA = Add.apellidoPat;
+            apellidoMatA = Add.apellidMat;
         }
     }
 }

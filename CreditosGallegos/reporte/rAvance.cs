@@ -15,6 +15,9 @@ namespace GoldenE.reporte
         public string calificacion { get; set; }
         public string lecciones_id_leccion { get; set; }
         public string fecha { get; set; }
+        public string nombreM { get; set; }
+        public string apellidoPatM { get; set; }
+        public string apellidoMatM { get; set; }
         //Asignar el constructor por
         //defecto para que no genere error
         //de argumentos
@@ -30,6 +33,9 @@ namespace GoldenE.reporte
             calificacion = Add.calificacion;
             lecciones_id_leccion = Add.lecciones_id_leccion;
             fecha = Add.fecha;
+            nombreM = Add.nombreM;
+            apellidoPatM = Add.apellidoPatM;
+            apellidoMatM = Add.apellidoMatM;
         }
     }
 }
