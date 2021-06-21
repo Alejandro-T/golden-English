@@ -350,7 +350,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>calificacion</rd:DefaultName>
@@ -381,7 +383,7 @@
                               <Style />
                             </TextRun>
                             <TextRun>
-                              <Value> </Value>
+                              <Value xml:space="preserve"> </Value>
                               <Style />
                             </TextRun>
                             <TextRun>
@@ -389,7 +391,7 @@
                               <Style />
                             </TextRun>
                             <TextRun>
-                              <Value> </Value>
+                              <Value xml:space="preserve"> </Value>
                               <Style />
                             </TextRun>
                             <TextRun>
@@ -401,8 +403,6 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nombreM</rd:DefaultName>
-                      <rd:DefaultName>apellidoPatM</rd:DefaultName>
-                      <rd:DefaultName>apellidoMatM</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -442,7 +442,7 @@
         <Top>4.91808cm</Top>
         <Left>3.09308cm</Left>
         <Height>2.62876cm</Height>
-        <Width>9.19332cm</Width>
+        <Width>12.25776cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>

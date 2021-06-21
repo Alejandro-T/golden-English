@@ -322,8 +322,8 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nombreA</rd:DefaultName>
-                      <rd:DefaultName>apellidoPatA</rd:DefaultName>
-                      <rd:DefaultName>apellidoMatA</rd:DefaultName>
+                      <rd:DefaultName2>apellidoPatA</rd:DefaultName2>
+                      <rd:DefaultName3>apellidoMatA</rd:DefaultName3>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
